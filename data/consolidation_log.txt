@@ -1,0 +1,177 @@
+[INFO] ======================================================================
+[INFO] KONSOLIDASI MASTER DATASET — 2026-05-17T22:15:51.749220
+[INFO] ======================================================================
+[INFO] 
+— Memproses wilayah: Bantul —
+[INFO]   Ditemukan 27 file CSV
+[INFO]   ✓ Puskesmas Bambanglipuro.csv                        → PKM_BTL_001 | Bambanglipuro                  |   356 reviews
+[INFO]   ✓ Puskesmas Banguntapan 1.csv                        → PKM_BTL_002 | Banguntapan 1                  |   755 reviews
+[INFO]   ✓ Puskesmas Banguntapan 2.csv                        → PKM_BTL_003 | Banguntapan 2                  |   405 reviews
+[INFO]   ✓ Puskesmas Banguntapan 3.csv                        → PKM_BTL_004 | Banguntapan 3                  |   719 reviews
+[INFO]   ✓ Puskesmas Bantul 1.csv                             → PKM_BTL_005 | Bantul 1                       |   688 reviews
+[INFO]   ✓ Puskesmas Bantul 2.csv                             → PKM_BTL_006 | Bantul 2                       |   429 reviews
+[INFO]   ✓ Puskesmas Dlingo 1.csv                             → PKM_BTL_007 | Dlingo 1                       |   100 reviews
+[INFO]   ✓ Puskesmas Dlingo 2.csv                             → PKM_BTL_008 | Dlingo 2                       |    70 reviews
+[INFO]   ✓ Puskesmas Imogiri 1.csv                            → PKM_BTL_009 | Imogiri 1                      |   230 reviews
+[INFO]   ✓ Puskesmas Imogiri 2.csv                            → PKM_BTL_010 | Imogiri 2                      |   215 reviews
+[INFO]   ✓ Puskesmas Jetis 1.csv                              → PKM_BTL_011 | Jetis 1                        |   270 reviews
+[INFO]   ✓ Puskesmas Jetis 2.csv                              → PKM_BTL_012 | Jetis 2                        |   120 reviews
+[INFO]   ✓ Puskesmas Kasihan 1.csv                            → PKM_BTL_013 | Kasihan 1                      |  1389 reviews
+[INFO]   ✓ Puskesmas Kasihan 2.csv                            → PKM_BTL_014 | Kasihan 2                      |   455 reviews
+[INFO]   ✓ Puskesmas Kretek.csv                               → PKM_BTL_015 | Kretek                         |   145 reviews
+[INFO]   ✓ Puskesmas Pajangan.csv                             → PKM_BTL_016 | Pajangan                       |   275 reviews
+[INFO]   ✓ Puskesmas Pandak 1.csv                             → PKM_BTL_017 | Pandak 1                       |   189 reviews
+[INFO]   ✓ Puskesmas Pandak 2.csv                             → PKM_BTL_018 | Pandak 2                       |   196 reviews
+[INFO]   ✓ Puskesmas Piyungan.csv                             → PKM_BTL_019 | Piyungan                       |   405 reviews
+[INFO]   ✓ Puskesmas Pleret.csv                               → PKM_BTL_020 | Pleret                         |   297 reviews
+[INFO]   ✓ Puskesmas Pundong.csv                              → PKM_BTL_021 | Pundong                        |   184 reviews
+[INFO]   ✓ Puskesmas Sanden.csv                               → PKM_BTL_022 | Sanden                         |   201 reviews
+[INFO]   ✓ Puskesmas Sedayu 1.csv                             → PKM_BTL_023 | Sedayu 1                       |   425 reviews
+[INFO]   ✓ Puskesmas Sedayu 2.csv                             → PKM_BTL_024 | Sedayu 2                       |   199 reviews
+[INFO]   ✓ Puskesmas Sewon 1.csv                              → PKM_BTL_025 | Sewon 1                        |  1039 reviews
+[INFO]   ✓ Puskesmas Sewon 2.csv                              → PKM_BTL_026 | Sewon 2                        |   438 reviews
+[INFO]   ✓ Puskesmas Srandakan.csv                            → PKM_BTL_027 | Srandakan                      |   131 reviews
+[INFO] 
+— Memproses wilayah: Surabaya —
+[INFO]   Ditemukan 63 file CSV
+[INFO]   ✓ Puskesmas Balas Klumprik.csv                       → PKM_SBY_001 | Balas  Klumprik                |   244 reviews
+[INFO]   ✓ Puskesmas Bangkingan.csv                           → PKM_SBY_002 | Bangkingan                     |   145 reviews
+[INFO]   ✓ Puskesmas Banyu Urip.csv                           → PKM_SBY_003 | Banyu  Urip                    |   424 reviews
+[INFO]   ✓ Puskesmas Bulak Banteng.csv                        → PKM_SBY_004 | Bulak  Banteng                 |   348 reviews
+[INFO]   ✓ Puskesmas Dukuh Kupang.csv                         → PKM_SBY_005 | Dukuh  Kupang                  |   944 reviews
+[INFO]   ✓ Puskesmas Gayungan.csv                             → PKM_SBY_006 | Gayungan                       |   718 reviews
+[INFO]   ✓ Puskesmas Gunung Anyar.csv                         → PKM_SBY_007 | Gunung  Anyar                  |   736 reviews
+[INFO]   ✓ Puskesmas Jagir.csv                                → PKM_SBY_008 | Jagir                          |   859 reviews
+[INFO]   ✓ Puskesmas Jemursari.csv                            → PKM_SBY_009 | Jemursari                      |   557 reviews
+[INFO]   ✓ Puskesmas Kalijudan.csv                            → PKM_SBY_010 | Kalijudan                      |   707 reviews
+[INFO]   ✓ Puskesmas Kebonsari.csv                            → PKM_SBY_011 | Kebonsari                      |   738 reviews
+[INFO]   ✓ Puskesmas Kedurus.csv                              → PKM_SBY_012 | Kedurus                        |   394 reviews
+[INFO]   ✓ Puskesmas Keputih.csv                              → PKM_SBY_013 | Keputih                        |   596 reviews
+[INFO]   ✓ Puskesmas Klampis Ngasem.csv                       → PKM_SBY_014 | Klampis  Ngasem                |   624 reviews
+[INFO]   ✓ Puskesmas Made.csv                                 → PKM_SBY_015 | Made                           |   188 reviews
+[INFO]   ✓ Puskesmas Menur.csv                                → PKM_SBY_016 | Menur                          |   433 reviews
+[INFO]   ✓ Puskesmas Morokrembangan.csv                       → PKM_SBY_017 | Morokrembangan                 |   601 reviews
+[INFO]   ✓ Puskesmas Mulyorejo.csv                            → PKM_SBY_018 | Mulyorejo                      |   504 reviews
+[INFO]   ✓ Puskesmas Ngagel Rejo.csv                          → PKM_SBY_019 | Ngagel  Rejo                   |   705 reviews
+[INFO]   ✓ Puskesmas Pakis.csv                                → PKM_SBY_020 | Pakis                          |   632 reviews
+[INFO]   ✓ Puskesmas Putat Jaya.csv                           → PKM_SBY_021 | Putat  Jaya                    |   421 reviews
+[INFO]   ✓ Puskesmas Sawah Pulo.csv                           → PKM_SBY_022 | Sawah  Pulo                    |   529 reviews
+[INFO]   ✓ Puskesmas Sawahan.csv                              → PKM_SBY_023 | Sawahan                        |   481 reviews
+[INFO]   ✓ Puskesmas Sidosermo.csv                            → PKM_SBY_024 | Sidosermo                      |    24 reviews
+[INFO]   ✓ Puskesmas Siwalankerto.csv                         → PKM_SBY_025 | Siwalankerto                   |   287 reviews
+[INFO]   ✓ Puskesmas Tambak Wedi.csv                          → PKM_SBY_026 | Tambak  Wedi                   |   339 reviews
+[INFO]   ✓ Puskesmas Wiyung.csv                               → PKM_SBY_027 | Wiyung                         |   465 reviews
+[INFO]   ✓ Puskesmas Wonokromo.csv                            → PKM_SBY_028 | Wonokromo                      |   491 reviews
+[INFO]   ✓ PuskesmasAsemrowo.csv                              → PKM_SBY_029 | Asemrowo                       |   393 reviews
+[INFO]   ✓ PuskesmasBalongsari.csv                            → PKM_SBY_030 | Balongsari                     |   510 reviews
+[INFO]   ✓ PuskesmasBenowo.csv                                → PKM_SBY_031 | Benowo                         |   600 reviews
+[INFO]   ✓ PuskesmasDrSoetomo.csv                             → PKM_SBY_032 | Dr Soetomo                     |   825 reviews
+[INFO]   ✓ PuskesmasDupak.csv                                 → PKM_SBY_033 | Dupak                          |   369 reviews
+[INFO]   ✓ PuskesmasGading.csv                                → PKM_SBY_034 | Gading                         |  1187 reviews
+[INFO]   ✓ PuskesmasGundih.csv                                → PKM_SBY_035 | Gundih                         |   316 reviews
+[INFO]   ✓ PuskesmasJeruk.csv                                 → PKM_SBY_036 | Jeruk                          |   290 reviews
+[INFO]   ✓ PuskesmasKalirungkut.csv                           → PKM_SBY_037 | Kalirungkut                    |   432 reviews
+[INFO]   ✓ PuskesmasKedungdoro.csv                            → PKM_SBY_038 | Kedungdoro                     |   311 reviews
+[INFO]   ✓ PuskesmasKenjeran.csv                              → PKM_SBY_039 | Kenjeran                       |   468 reviews
+[INFO]   ✓ PuskesmasKetabang.csv                              → PKM_SBY_040 | Ketabang                       |   800 reviews
+[INFO]   ✓ PuskesmasKrembanganSelatan.csv                     → PKM_SBY_041 | Krembangan Selatan             |   368 reviews
+[INFO]   ✓ PuskesmasLidahKulon.csv                            → PKM_SBY_042 | Lidah Kulon                    |   250 reviews
+[INFO]   ✓ PuskesmasLontar.csv                                → PKM_SBY_043 | Lontar                         |   459 reviews
+[INFO]   ✓ PuskesmasManukanKulon.csv                          → PKM_SBY_044 | Manukan Kulon                  |   558 reviews
+[INFO]   ✓ PuskesmasMedokanAyu.csv                            → PKM_SBY_045 | Medokan Ayu                    |  1202 reviews
+[INFO]   ✓ PuskesmasMojo.csv                                  → PKM_SBY_046 | Mojo                           |   842 reviews
+[INFO]   ✓ PuskesmasPacarKeling.csv                           → PKM_SBY_047 | Pacar Keling                   |   423 reviews
+[INFO]   ✓ PuskesmasPegirian.csv                              → PKM_SBY_048 | Pegirian                       |   174 reviews
+[INFO]   ✓ PuskesmasPeneleh.csv                               → PKM_SBY_049 | Peneleh                        |   372 reviews
+[INFO]   ✓ PuskesmasPerakTimur.csv                            → PKM_SBY_050 | Perak Timur                    |   465 reviews
+[INFO]   ✓ PuskesmasPucangsewu.csv                            → PKM_SBY_051 | Pucangsewu                     |   667 reviews
+[INFO]   ✓ PuskesmasRangkah.csv                               → PKM_SBY_052 | Rangkah                        |   623 reviews
+[INFO]   ✓ PuskesmasSememi.csv                                → PKM_SBY_053 | Sememi                         |   707 reviews
+[INFO]   ✓ PuskesmasSidotopo.csv                              → PKM_SBY_054 | Sidotopo                       |   346 reviews
+[INFO]   ✓ PuskesmasSidotopoWetan.csv                         → PKM_SBY_055 | Sidotopo Wetan                 |   812 reviews
+[INFO]   ✓ PuskesmasSimolawang.csv                            → PKM_SBY_056 | Simolawang                     |   381 reviews
+[INFO]   ✓ PuskesmasSimomulyo.csv                             → PKM_SBY_057 | Simomulyo                      |   732 reviews
+[INFO]   ✓ PuskesmasTambakrejo.csv                            → PKM_SBY_058 | Tambakrejo                     |   510 reviews
+[INFO]   ✓ PuskesmasTanahKaliKedinding.csv                    → PKM_SBY_059 | Tanah Kali Kedinding           |  1178 reviews
+[INFO]   ✓ PuskesmasTanjungsari.csv                           → PKM_SBY_060 | Tanjungsari                    |   538 reviews
+[INFO]   ✓ PuskesmasTembokDukuh.csv                           → PKM_SBY_061 | Tembok Dukuh                   |   454 reviews
+[INFO]   ✓ PuskesmasTenggilis.csv                             → PKM_SBY_062 | Tenggilis                      |   661 reviews
+[INFO]   ✓ PuskesmasWonokusumo.csv                            → PKM_SBY_063 | Wonokusumo                     |   836 reviews
+[INFO] 
+— Memproses wilayah: Semarang —
+[INFO]   Ditemukan 37 file CSV
+[INFO]   ✓ Puskesmas Bandarharjo.csv                          → PKM_SMG_001 | Bandarharjo                    |   400 reviews
+[INFO]   ✓ Puskesmas Bangetayu.csv                            → PKM_SMG_002 | Bangetayu                      |   816 reviews
+[INFO]   ✓ Puskesmas Bugangan.csv                             → PKM_SMG_003 | Bugangan                       |  1030 reviews
+[INFO]   ✓ Puskesmas Bulu Lor.csv                             → PKM_SMG_004 | Bulu Lor                       |   443 reviews
+[INFO]   ✓ Puskesmas Candilama.csv                            → PKM_SMG_005 | Candilama                      |   620 reviews
+[INFO]   ✓ Puskesmas Gayamsari.csv                            → PKM_SMG_006 | Gayamsari                      |   584 reviews
+[INFO]   ✓ Puskesmas Genuk.csv                                → PKM_SMG_007 | Genuk                          |   222 reviews
+[INFO]   ✓ Puskesmas Gunungpati.csv                           → PKM_SMG_008 | Gunungpati                     |   825 reviews
+[INFO]   ✓ Puskesmas Halmahera.csv                            → PKM_SMG_009 | Halmahera                      |   856 reviews
+[INFO]   ✓ Puskesmas Kagok.csv                                → PKM_SMG_010 | Kagok                          |   373 reviews
+[INFO]   ✓ Puskesmas Karangayu.csv                            → PKM_SMG_011 | Karangayu                      |   571 reviews
+[INFO]   ✓ Puskesmas Karangdoro.csv                           → PKM_SMG_012 | Karangdoro                     |   670 reviews
+[INFO]   ✓ Puskesmas Karangmalang.csv                         → PKM_SMG_013 | Karangmalang                   |   321 reviews
+[INFO]   ✓ Puskesmas Kedungmundu.csv                          → PKM_SMG_014 | Kedungmundu                    |  1278 reviews
+[INFO]   ✓ Puskesmas Krobokan.csv                             → PKM_SMG_015 | Krobokan                       |   523 reviews
+[INFO]   ✓ Puskesmas Lamper Tengah.csv                        → PKM_SMG_016 | Lamper Tengah                  |   340 reviews
+[INFO]   ✓ Puskesmas Lebdosari.csv                            → PKM_SMG_017 | Lebdosari                      |   788 reviews
+[INFO]   ✓ Puskesmas Mangkang.csv                             → PKM_SMG_018 | Mangkang                       |   225 reviews
+[INFO]   ✓ Puskesmas Manyaran.csv                             → PKM_SMG_019 | Manyaran                       |   418 reviews
+[INFO]   ✓ Puskesmas Mijen.csv                                → PKM_SMG_020 | Mijen                          |  1194 reviews
+[INFO]   ✓ Puskesmas Miroto.csv                               → PKM_SMG_021 | Miroto                         |   723 reviews
+[INFO]   ✓ Puskesmas Ngaliyan.csv                             → PKM_SMG_022 | Ngaliyan                       |  1188 reviews
+[INFO]   ✓ Puskesmas Ngemplak Simongan.csv                    → PKM_SMG_023 | Ngemplak Simongan              |   477 reviews
+[INFO]   ✓ Puskesmas Ngesrep.csv                              → PKM_SMG_024 | Ngesrep                        |   419 reviews
+[INFO]   ✓ Puskesmas Padangsari.csv                           → PKM_SMG_025 | Padangsari                     |   382 reviews
+[INFO]   ✓ Puskesmas Pandanaran.csv                           → PKM_SMG_026 | Pandanaran                     |   692 reviews
+[INFO]   ✓ Puskesmas Pegandan.csv                             → PKM_SMG_027 | Pegandan                       |   119 reviews
+[INFO]   ✓ Puskesmas Poncol.csv                               → PKM_SMG_028 | Poncol                         |   385 reviews
+[INFO]   ✓ Puskesmas Pudakpayung.csv                          → PKM_SMG_029 | Pudakpayung                    |   232 reviews
+[INFO]   ✓ Puskesmas Purwoyoso.csv                            → PKM_SMG_030 | Purwoyoso                      |   819 reviews
+[INFO]   ✓ Puskesmas Rowosari.csv                             → PKM_SMG_031 | Rowosari                       |   647 reviews
+[INFO]   ✓ Puskesmas Sekaran.csv                              → PKM_SMG_032 | Sekaran                        |   660 reviews
+[INFO]   ✓ Puskesmas Srondol.csv                              → PKM_SMG_033 | Srondol                        |  1686 reviews
+[INFO]   ✓ Puskesmas Tambakaji.csv                            → PKM_SMG_034 | Tambakaji                      |   270 reviews
+[INFO]   ✓ Puskesmas Telogosari Kulon.csv                     → PKM_SMG_035 | Telogosari Kulon               |  1955 reviews
+[INFO]   ✓ Puskesmas Telogosari Wetan.csv                     → PKM_SMG_036 | Telogosari Wetan               |   835 reviews
+[INFO]   ✓ PuskesmasKaranganyar.csv                           → PKM_SMG_037 | Karanganyar                    |   527 reviews
+[INFO] 
+— Menggabungkan 127 dataframe —
+[INFO]   Total rows mentah: 69,031
+[INFO] 
+— Adding quality flags —
+[INFO]   Empty text: 18277
+[INFO]   Very short (<20 char): 24710
+[INFO]   Missing rating: 0
+[INFO] 
+✓ Master dataset tersimpan: C:\Users\Andalan\Documents\Lomba\Satria Data 2026 - Belmawa\data\reviews_all.csv (69,031 rows)
+[INFO] 
+— Membuat ringkasan per puskesmas —
+[INFO] ✓ Summary per puskesmas: C:\Users\Andalan\Documents\Lomba\Satria Data 2026 - Belmawa\data\puskesmas_summary.csv (127 puskesmas)
+[INFO] 
+======================================================================
+[INFO] RINGKASAN
+[INFO] ======================================================================
+[INFO] Total puskesmas    : 127
+[INFO] Total reviews      : 69,031
+[INFO] 
+Per wilayah:
+[INFO]   Bantul    :  27 puskesmas, 10,325 reviews (rata-rata 382/puskesmas)
+[INFO]   Surabaya  :  63 puskesmas, 34,193 reviews (rata-rata 543/puskesmas)
+[INFO]   Semarang  :  37 puskesmas, 24,513 reviews (rata-rata 663/puskesmas)
+[INFO] 
+Distribusi rating global:
+[INFO]   Rating 1:  8,793 ( 12.7%)
+[INFO]   Rating 2:  1,386 (  2.0%)
+[INFO]   Rating 3:  1,334 (  1.9%)
+[INFO]   Rating 4:  2,677 (  3.9%)
+[INFO]   Rating 5: 54,841 ( 79.4%)
+[INFO] 
+Distribusi panjang teks:
+[INFO]   Median  : 37 karakter
+[INFO]   Mean    : 87 karakter
+[INFO]   Max     : 4092 karakter
+[INFO]   >100 chr: 16,120 (23.4%)
+[INFO]   >300 chr: 4,254 (6.2%)

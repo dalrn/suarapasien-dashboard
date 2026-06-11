@@ -1,0 +1,31 @@
+puskesmas_id,puskesmas_name,wilayah,n_reviews,rating_mean,rating_std,kategori
+PKM_SMG_003,Bugangan,Semarang,1030,4.93,0.46,top
+PKM_SMG_027,Pegandan,Semarang,119,4.88,0.65,top
+PKM_SMG_033,Srondol,Semarang,1686,4.86,0.65,top
+PKM_SMG_037,Karanganyar,Semarang,527,4.84,0.67,top
+PKM_SMG_021,Miroto,Semarang,723,4.8,0.83,top
+PKM_SMG_030,Purwoyoso,Semarang,819,4.79,0.82,top
+PKM_SMG_018,Mangkang,Semarang,225,4.76,0.88,top
+PKM_SMG_035,Telogosari Kulon,Semarang,1955,4.75,0.91,top
+PKM_SMG_023,Ngemplak Simongan,Semarang,477,4.74,0.88,top
+PKM_SMG_009,Halmahera,Semarang,856,4.72,0.93,top
+PKM_SBY_015,Made,Surabaya,188,3.44,1.82,bottom
+PKM_SBY_047,Pacar Keling,Surabaya,423,3.57,1.82,bottom
+PKM_SBY_025,Siwalankerto,Surabaya,287,3.62,1.78,bottom
+PKM_BTL_026,Sewon 2,Bantul,438,3.63,1.77,bottom
+PKM_SBY_038,Kedungdoro,Surabaya,311,3.64,1.78,bottom
+PKM_SBY_037,Kalirungkut,Surabaya,432,3.68,1.79,bottom
+PKM_SBY_013,Keputih,Surabaya,596,3.69,1.79,bottom
+PKM_SBY_061,Tembok Dukuh,Surabaya,454,3.69,1.82,bottom
+PKM_SBY_027,Wiyung,Surabaya,465,3.71,1.76,bottom
+PKM_SBY_016,Menur,Surabaya,433,3.72,1.75,bottom
+PKM_SBY_015,Made,Surabaya,188,3.44,1.82,polarized
+PKM_SBY_047,Pacar Keling,Surabaya,423,3.57,1.82,polarized
+PKM_SBY_061,Tembok Dukuh,Surabaya,454,3.69,1.82,polarized
+PKM_SBY_013,Keputih,Surabaya,596,3.69,1.79,polarized
+PKM_SBY_037,Kalirungkut,Surabaya,432,3.68,1.79,polarized
+PKM_SBY_025,Siwalankerto,Surabaya,287,3.62,1.78,polarized
+PKM_SBY_038,Kedungdoro,Surabaya,311,3.64,1.78,polarized
+PKM_BTL_026,Sewon 2,Bantul,438,3.63,1.77,polarized
+PKM_SBY_027,Wiyung,Surabaya,465,3.71,1.76,polarized
+PKM_SBY_016,Menur,Surabaya,433,3.72,1.75,polarized

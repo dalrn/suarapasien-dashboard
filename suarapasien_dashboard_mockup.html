@@ -1,0 +1,182 @@
+<div style="padding: 1rem 0;">
+<h2 class="sr-only">Mock-up dashboard SuaraPasien dengan enam tab: Beranda, Peta, Profil SERVQUAL, Sinyal, Topik, dan Workflow analisis</h2>
+
+<div style="display:flex; gap:0; border:0.5px solid var(--color-border-tertiary); border-radius:var(--border-radius-lg); overflow:hidden; background:var(--color-background-primary);">
+
+  <div style="width:172px; flex-shrink:0; border-right:0.5px solid var(--color-border-tertiary); background:var(--color-background-secondary); padding:12px 8px;">
+    <div style="font-size:13px; font-weight:500; padding:6px 10px 10px; color:var(--color-text-primary);"><i class="ti ti-activity-heartbeat" style="font-size:18px; vertical-align:-3px; margin-right:6px;" aria-hidden="true"></i>SuaraPasien</div>
+    <div id="nav"></div>
+    <div style="margin-top:10px; padding:8px 10px; font-size:11px; color:var(--color-text-tertiary); border-top:0.5px solid var(--color-border-tertiary);">3 wilayah · 127 puskesmas</div>
+  </div>
+
+  <div style="flex:1; min-width:0; padding:18px 20px; min-height:430px;">
+    <div id="panel"></div>
+  </div>
+</div>
+
+<p style="font-size:12px; color:var(--color-text-tertiary); margin:10px 4px 0;">Mock-up tata letak — angka & kutipan contoh, bukan hasil ABSA final.</p>
+</div>
+
+<script>
+const tabs = [
+  ["home","ti-home","Beranda"],
+  ["map","ti-map-2","Peta status"],
+  ["profile","ti-stethoscope","Profil SERVQUAL"],
+  ["signal","ti-alert-triangle","Sinyal"],
+  ["topic","ti-chart-dots","Topik keluhan"],
+  ["flow","ti-route","Workflow analisis"],
+];
+let active = "home";
+
+const navEl = document.getElementById("nav");
+const panelEl = document.getElementById("panel");
+
+function renderNav(){
+  navEl.innerHTML = tabs.map(([id,icon,label])=>{
+    const on = id===active;
+    return `<button onclick="setTab('${id}')" style="width:100%; text-align:left; border:none; background:${on?'var(--color-background-primary)':'transparent'}; color:${on?'var(--color-text-primary)':'var(--color-text-secondary)'}; font-size:13px; font-weight:${on?'500':'400'}; padding:9px 10px; border-radius:var(--border-radius-md); margin-bottom:2px; cursor:pointer; display:flex; align-items:center; gap:9px; ${on?'box-shadow:inset 2px 0 0 var(--color-text-info);':''}"><i class="ti ${icon}" style="font-size:17px;" aria-hidden="true"></i>${label}</button>`;
+  }).join("");
+}
+
+function statCard(label,val,sub){
+  return `<div style="background:var(--color-background-secondary); border-radius:var(--border-radius-md); padding:12px 14px;"><div style="font-size:12px; color:var(--color-text-secondary); margin-bottom:4px;">${label}</div><div style="font-size:22px; font-weight:500; line-height:1.1;">${val}</div>${sub?`<div style="font-size:11px; color:var(--color-text-tertiary); margin-top:3px;">${sub}</div>`:""}</div>`;
+}
+
+function bar(label, pct, color, count){
+  return `<div style="display:flex; align-items:center; gap:10px; margin-bottom:7px;">
+    <div style="width:96px; font-size:12px; color:var(--color-text-secondary); flex-shrink:0;">${label}</div>
+    <div style="flex:1; height:18px; background:var(--color-background-secondary); border-radius:4px; overflow:hidden;"><div style="width:${pct}%; height:100%; background:${color};"></div></div>
+    <div style="width:34px; font-size:11px; color:var(--color-text-tertiary); text-align:right;">${count}</div>
+  </div>`;
+}
+
+const dimCard = (name, score, ci, pos, neg, posTxt, negTxt, dim) => {
+  const total = pos+neg;
+  const negPct = Math.round(neg/total*100);
+  const tone = negPct>=50 ? "var(--color-text-danger)" : negPct>=30 ? "var(--color-text-warning)" : "var(--color-text-success)";
+  return `<div style="border:0.5px solid var(--color-border-tertiary); border-radius:var(--border-radius-lg); padding:13px 15px; margin-bottom:10px; background:var(--color-background-primary);">
+    <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:9px;">
+      <div style="font-size:14px; font-weight:500;">${name} <span style="font-size:11px; color:var(--color-text-tertiary); font-weight:400;">${dim}</span></div>
+      <div style="font-size:13px; color:${tone};">${score} <span style="font-size:11px; color:var(--color-text-tertiary);">± ${ci}</span></div>
+    </div>
+    <div style="display:flex; height:8px; border-radius:4px; overflow:hidden; margin-bottom:9px;">
+      <div style="width:${Math.round(pos/total*100)}%; background:#1D9E75;"></div>
+      <div style="width:${negPct}%; background:#E24B4A;"></div>
+    </div>
+    <div style="font-size:12px; color:var(--color-text-secondary); line-height:1.55;">
+      <div style="margin-bottom:3px;"><i class="ti ti-thumb-up" style="font-size:14px; vertical-align:-2px; color:#0F6E56; margin-right:5px;" aria-hidden="true"></i>${posTxt} <span style="color:var(--color-text-tertiary);">(${pos})</span></div>
+      <div><i class="ti ti-thumb-down" style="font-size:14px; vertical-align:-2px; color:#A32D2D; margin-right:5px;" aria-hidden="true"></i>${negTxt} <span style="color:var(--color-text-tertiary);">(${neg})</span></div>
+    </div>
+  </div>`;
+};
+
+function row(name, wil, a, b, c, tag, tagcolor, tagbg){
+  return `<tr style="border-bottom:0.5px solid var(--color-border-tertiary);">
+    <td style="padding:8px 6px; font-size:12px;">${name}</td>
+    <td style="padding:8px 6px; font-size:11px; color:var(--color-text-secondary);">${wil}</td>
+    <td style="padding:8px 6px; font-size:12px; text-align:right;">${a}</td>
+    <td style="padding:8px 6px; font-size:12px; text-align:right;">${b}</td>
+    <td style="padding:8px 6px; text-align:right;"><span style="font-size:10px; background:${tagbg}; color:${tagcolor}; padding:2px 8px; border-radius:var(--border-radius-md);">${tag}</span></td>
+  </tr>`;
+}
+
+const panels = {
+home: () => `
+  <div style="font-size:16px; font-weight:500; margin-bottom:3px;">Beranda — gambaran data</div>
+  <div style="font-size:12px; color:var(--color-text-secondary); margin-bottom:14px;">Apa isi data ini sebelum masuk ke analisis</div>
+  <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-bottom:18px;">
+    ${statCard("Ulasan total","69.031")}
+    ${statCard("Bisa dianalisis","≈33 rb","yield ~50%")}
+    ${statCard("Puskesmas","127","3 wilayah")}
+    ${statCard("Bintang 5","79%","")}
+  </div>
+  <div style="font-size:13px; font-weight:500; margin-bottom:8px;">Temuan menarik</div>
+  <div style="display:flex; flex-direction:column; gap:8px;">
+    <div style="border-left:2px solid #534AB7; border-radius:0; padding:8px 12px; background:var(--color-background-secondary); font-size:12px; line-height:1.5;"><b style="font-weight:500;">Distribusi-J ekstrem.</b> 92% ulasan menumpuk di bintang 1 atau 5 — rasio kutub:tengah 11,8:1. Tanda khas self-selection: yang menulis hanya yang sangat puas atau sangat kecewa.</div>
+    <div style="border-left:2px solid #1D9E75; border-radius:0; padding:8px 12px; background:var(--color-background-secondary); font-size:12px; line-height:1.5;"><b style="font-weight:500;">Keluhan = narasi, pujian = label.</b> Median ulasan bintang 1 = 175 karakter; bintang 5 hanya 49. Ulasan negatif membawa jauh lebih banyak sinyal aspek.</div>
+    <div style="border-left:2px solid #BA7517; border-radius:0; padding:8px 12px; background:var(--color-background-secondary); font-size:12px; line-height:1.5;"><b style="font-weight:500;">Bintang menyembunyikan keluhan.</b> 8,6% ulasan bintang 4–5 menyimpan kritik di teksnya — bukti kenapa rating saja tak cukup, perlu analisis teks.</div>
+  </div>`,
+
+map: () => `
+  <div style="font-size:16px; font-weight:500; margin-bottom:3px;">Peta status mutu</div>
+  <div style="font-size:12px; color:var(--color-text-secondary); margin-bottom:14px;">Di mana puskesmas yang butuh perhatian — klik pin untuk drill-down</div>
+  <div style="display:flex; gap:14px;">
+    <div style="flex:1; background:var(--color-background-secondary); border-radius:var(--border-radius-lg); height:250px; position:relative; overflow:hidden; border:0.5px solid var(--color-border-tertiary);">
+      <div style="position:absolute; top:10px; left:12px; font-size:11px; color:var(--color-text-tertiary);"><i class="ti ti-map-pin" style="vertical-align:-2px;" aria-hidden="true"></i> Surabaya</div>
+      ${[["28%","32%","#E24B4A"],["52%","48%","#BA7517"],["40%","68%","#1D9E75"],["66%","30%","#1D9E75"],["72%","60%","#E24B4A"],["46%","22%","#1D9E75"],["58%","75%","#BA7517"],["34%","54%","#1D9E75"]].map(([t,l,c])=>`<div style="position:absolute; top:${t}; left:${l}; width:15px; height:15px; border-radius:50%; background:${c}; border:2px solid var(--color-background-primary);"></div>`).join("")}
+    </div>
+    <div style="width:150px; flex-shrink:0;">
+      <div style="font-size:12px; font-weight:500; margin-bottom:8px;">Status</div>
+      <div style="font-size:12px; color:var(--color-text-secondary); display:flex; align-items:center; gap:8px; margin-bottom:7px;"><span style="width:12px; height:12px; border-radius:50%; background:#1D9E75; display:inline-block;"></span> Baik</div>
+      <div style="font-size:12px; color:var(--color-text-secondary); display:flex; align-items:center; gap:8px; margin-bottom:7px;"><span style="width:12px; height:12px; border-radius:50%; background:#BA7517; display:inline-block;"></span> Perlu pantau</div>
+      <div style="font-size:12px; color:var(--color-text-secondary); display:flex; align-items:center; gap:8px; margin-bottom:14px;"><span style="width:12px; height:12px; border-radius:50%; background:#E24B4A; display:inline-block;"></span> Perlu intervensi</div>
+      <div style="font-size:11px; color:var(--color-text-tertiary); line-height:1.5; border-top:0.5px solid var(--color-border-tertiary); padding-top:10px;">Warna dari ambang statistik (kuartil), mencerminkan persepsi reviewer — bukan vonis mutu.</div>
+    </div>
+  </div>`,
+
+profile: () => `
+  <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:4px;">
+    <div>
+      <div style="font-size:16px; font-weight:500;">Puskesmas Made <span style="font-size:12px; color:var(--color-text-tertiary); font-weight:400;">· Surabaya</span></div>
+      <div style="font-size:12px; color:var(--color-text-secondary); margin-top:2px;">312 ulasan · 188 bermakna · akreditasi Madya</div>
+    </div>
+    <select style="width:140px;"><option>Made</option><option>Pacar Keling</option><option>Tembok Dukuh</option></select>
+  </div>
+  <div style="font-size:12px; color:var(--color-text-secondary); margin:10px 0 12px;">Profil per dimensi SERVQUAL — apa yang dipuji vs dikeluhkan</div>
+  ${dimCard("Daya tanggap","2,4","0,5",18,61,"daftar online mempercepat","antre lama, sering diselak","Responsiveness")}
+  ${dimCard("Empati","3,1","0,6",44,39,"dokter membimbing dengan sabar","sebagian petugas judes & membeda-bedakan","Empathy")}
+  ${dimCard("Kehandalan","2,9","0,7",22,28,"layanan lab lengkap","obat sering kosong, rujukan dipersulit","Reliability")}
+  <div style="border:0.5px dashed var(--color-border-secondary); border-radius:var(--border-radius-lg); padding:11px 14px; font-size:12px; color:var(--color-text-tertiary); display:flex; align-items:center; gap:8px;"><i class="ti ti-info-circle" style="font-size:16px;" aria-hidden="true"></i> Jaminan & Bukti fisik: data belum cukup (&lt;10 ulasan menyebut) — tidak diberi skor.</div>`,
+
+signal: () => `
+  <div style="font-size:16px; font-weight:500; margin-bottom:3px;">Sinyal & diskrepansi</div>
+  <div style="font-size:12px; color:var(--color-text-secondary); margin-bottom:14px;">Puskesmas yang "terlihat baik di angka tapi bermasalah di teks"</div>
+  <div style="font-size:12px; font-weight:500; margin-bottom:7px;"><i class="ti ti-eye-off" style="font-size:15px; vertical-align:-2px; margin-right:5px;" aria-hidden="true"></i>Diskrepansi bintang vs teks</div>
+  <table style="width:100%; border-collapse:collapse; margin-bottom:16px;">
+    <tr style="border-bottom:0.5px solid var(--color-border-secondary);"><td style="font-size:11px; color:var(--color-text-tertiary); padding:0 6px 6px;">Puskesmas</td><td style="font-size:11px; color:var(--color-text-tertiary); padding:0 6px 6px;">Wilayah</td><td style="font-size:11px; color:var(--color-text-tertiary); padding:0 6px 6px; text-align:right;">Bintang</td><td style="font-size:11px; color:var(--color-text-tertiary); padding:0 6px 6px; text-align:right;">% teks kritik</td><td style="padding:0 6px 6px;"></td></tr>
+    ${row("Sukolilo","Surabaya","4,6","31%","gap besar","#A32D2D","#FCEBEB")}
+    ${row("Rowosari","Semarang","4,5","24%","perhatikan","#854F0B","#FAEEDA")}
+    ${row("Mlati 2","Bantul","4,7","19%","perhatikan","#854F0B","#FAEEDA")}
+  </table>
+  <div style="font-size:12px; font-weight:500; margin-bottom:7px;"><i class="ti ti-arrows-split" style="font-size:15px; vertical-align:-2px; margin-right:5px;" aria-hidden="true"></i>Puskesmas terpolarisasi (banyak ★1 & ★5 bersamaan)</div>
+  <table style="width:100%; border-collapse:collapse;">
+    ${row("Made","Surabaya","★1: 31%","★5: 53%","2 wajah","#26215C","#EEEDFE")}
+    ${row("Pacar Keling","Surabaya","★1: 29%","★5: 58%","2 wajah","#26215C","#EEEDFE")}
+  </table>`,
+
+topic: () => `
+  <div style="font-size:16px; font-weight:500; margin-bottom:3px;">Topik keluhan — level kabupaten</div>
+  <div style="font-size:12px; color:var(--color-text-secondary); margin-bottom:14px;">Masalah sistemik (urusan Dinkes) vs lokal (urusan puskesmas)</div>
+  <div style="font-size:12px; font-weight:500; margin-bottom:9px;">Tema keluhan & sebarannya</div>
+  ${bar("Antre/tunggu", 88, "#E24B4A", "88%")}
+  ${bar("Obat/farmasi", 41, "#BA7517", "41%")}
+  ${bar("Sikap petugas", 35, "#BA7517", "35%")}
+  ${bar("BPJS/admin", 22, "#1D9E75", "22%")}
+  ${bar("Fasilitas", 14, "#1D9E75", "14%")}
+  <div style="font-size:11px; color:var(--color-text-tertiary); margin:4px 0 16px;">% puskesmas di mana tema jadi keluhan menonjol (≥30% ulasan negatifnya)</div>
+  <div style="background:var(--color-background-secondary); border-radius:var(--border-radius-lg); padding:11px 14px; font-size:12px; line-height:1.55; color:var(--color-text-secondary);">
+    <b style="font-weight:500; color:var(--color-text-primary);">Antre menonjol di 88% puskesmas lintas 3 wilayah</b> → sinyal proses/kapasitas sistemik, bukan kinerja satu puskesmas. Sebaliknya, klaster <b style="font-weight:500; color:var(--color-text-primary);">BPJS+rujukan+obat</b> sering muncul bersama (lift 2,76) — satu paket masalah administratif yang terhubung.
+  </div>`,
+
+flow: () => `
+  <div style="font-size:16px; font-weight:500; margin-bottom:3px;">Workflow analisis</div>
+  <div style="font-size:12px; color:var(--color-text-secondary); margin-bottom:16px;">Dari ulasan mentah sampai kartu SERVQUAL — transparan & dapat dipertanggungjawabkan</div>
+  ${[
+    ["ti-download","1 · Pengumpulan","Scrape Google Maps 3 wilayah → 69.031 ulasan, 127 puskesmas","#534AB7"],
+    ["ti-filter","2 · Audit & pembersihan","Buang ulasan kosong/pendek, deteksi duplikat & spam → ~33 rb ulasan bermakna","#534AB7"],
+    ["ti-scissors","3 · Pra-proses ABSA","Sentence-splitting + filter kalimat ber-aspek (hemat token, jaga konteks negasi)","#1D9E75"],
+    ["ti-cpu","4 · Klasifikasi ABSA","IndoBERT: tiap kalimat → pasangan (aspek, sentimen) → dipetakan ke 5 dimensi SERVQUAL","#1D9E75"],
+    ["ti-calculator","5 · Agregasi & shrinkage","Empirical Bayes per puskesmas×dimensi + confidence interval","#BA7517"],
+    ["ti-layout-dashboard","6 · Dashboard","Skor, poin pujian/keluhan, kutipan, peta, sinyal diskrepansi","#BA7517"],
+  ].map((s,i,arr)=>`
+    <div style="display:flex; gap:12px; align-items:flex-start; ${i<arr.length-1?'padding-bottom:12px; margin-bottom:0; position:relative;':''}">
+      <div style="width:34px; height:34px; border-radius:50%; background:var(--color-background-secondary); display:flex; align-items:center; justify-content:center; flex-shrink:0; ${i<arr.length-1?'box-shadow:0 22px 0 -16px var(--color-border-secondary);':''}"><i class="ti ${s[0]}" style="font-size:17px; color:${s[3]};" aria-hidden="true"></i></div>
+      <div style="padding-top:6px;"><div style="font-size:13px; font-weight:500;">${s[1]}</div><div style="font-size:12px; color:var(--color-text-secondary); line-height:1.5; margin-top:1px;">${s[2]}</div></div>
+    </div>`).join("")}
+  <div style="font-size:11px; color:var(--color-text-tertiary); margin-top:8px; border-top:0.5px solid var(--color-border-tertiary); padding-top:10px;">Hijau = inti ML · Ungu = data engineering · Amber = statistik & penyajian</div>`,
+};
+
+function setTab(id){ active=id; renderNav(); panelEl.innerHTML = panels[id](); }
+renderNav();
+setTab("home");
+</script>

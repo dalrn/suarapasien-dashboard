@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SuaraPasien - Mock-up Dashboard</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/2.47.0/iconfont/tabler-icons.min.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg0:#ebe8df; --bg1:#ffffff; --bg2:#f4f2ec;
+    --tp:#1a1915; --ts:#5f5e5a; --tt:#8a8880;
+    --info:#185FA5; --ok:#0F6E56; --warn:#854F0B; --bad:#A32D2D;
+    --bt:rgba(0,0,0,0.12); --bs:rgba(0,0,0,0.22);
+    --r-md:8px; --r-lg:12px;
+  }
+  *{box-sizing:border-box;}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif; background:var(--bg0); color:var(--tp); margin:0; padding:28px 16px; line-height:1.6; -webkit-font-smoothing:antialiased;}
+  .wrap{max-width:800px; margin:0 auto;}
+  h1{font-size:20px; font-weight:500; margin:0 0 4px;}
+  .sub{font-size:13px; color:var(--ts); margin:0 0 18px;}
+  select{font-family:inherit; font-size:13px; padding:7px 10px; border:0.5px solid var(--bs); border-radius:var(--r-md); background:var(--bg1); color:var(--tp);}
+  .navbtn{font-family:inherit;}
+  .foot{font-size:12px; color:var(--tt); margin:10px 4px 0;}
+  .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);}
+  .hint{font-size:11px; color:var(--tt);}
+  .quotes{display:none; margin-top:9px; padding-top:9px; border-top:0.5px solid var(--bt);}
+  .quote{font-size:12px; color:var(--ts); font-style:italic; padding:5px 10px; border-left:2px solid var(--bt); margin-bottom:6px; line-height:1.5;}
+  .lnk{cursor:pointer; color:var(--info); font-size:12px; user-select:none;}
+  .lnk:hover{text-decoration:underline;}
+  .drill{display:none; margin-top:8px; background:var(--bg2); border-radius:var(--r-md); padding:10px 12px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1><i class="ti ti-activity-heartbeat" style="vertical-align:-3px; color:#185FA5;" aria-hidden="true"></i> SuaraPasien - Mock-up Dashboard</h1>
+  <p class="sub">Rancangan tata letak 6 tab. Klik tab di sidebar untuk berpindah; klik baris/tombol untuk membuka detail.</p>
+
+<div style="display:flex; gap:0; border:0.5px solid var(--bt); border-radius:var(--r-lg); overflow:hidden; background:var(--bg1);">
+  <div style="width:178px; flex-shrink:0; border-right:0.5px solid var(--bt); background:var(--bg2); padding:12px 8px;">
+    <div style="font-size:13px; font-weight:500; padding:6px 10px 10px;"><i class="ti ti-activity-heartbeat" style="font-size:18px; vertical-align:-3px; margin-right:6px;" aria-hidden="true"></i>SuaraPasien</div>
+    <div id="nav"></div>
+    <div style="margin-top:10px; padding:8px 10px; font-size:11px; color:var(--tt); border-top:0.5px solid var(--bt);">3 wilayah, 127 puskesmas</div>
+  </div>
+  <div style="flex:1; min-width:0; padding:18px 20px; min-height:470px;">
+    <div id="panel"></div>
+  </div>
+</div>
+<p class="foot">Mock-up tata letak. Angka tema (tab Topik) dari data nyata; skor per dimensi &amp; kutipan masih contoh, menunggu hasil model.</p>
+</div>
+
+<script>
+const tabs = [
+  ["home","ti-home","Beranda"],
+  ["map","ti-map-2","Peta status"],
+  ["profile","ti-stethoscope","Profil puskesmas"],
+  ["signal","ti-alert-triangle","Sinyal"],
+  ["topic","ti-chart-dots","Topik keluhan"],
+  ["flow","ti-route","Workflow analisis"],
+];
+let active="home";
+const navEl=document.getElementById("nav"), panelEl=document.getElementById("panel");
+
+function renderNav(){
+  navEl.innerHTML = tabs.map(([id,icon,label])=>{
+    const on=id===active;
+    return `<button class="navbtn" onclick="setTab('${id}')" style="width:100%; text-align:left; border:none; background:${on?'var(--bg1)':'transparent'}; color:${on?'var(--tp)':'var(--ts)'}; font-size:13px; font-weight:${on?'500':'400'}; padding:9px 10px; border-radius:var(--r-md); margin-bottom:2px; cursor:pointer; display:flex; align-items:center; gap:9px; ${on?'box-shadow:inset 2px 0 0 #185FA5;':''}"><i class="ti ${icon}" style="font-size:17px;" aria-hidden="true"></i>${label}</button>`;
+  }).join("");
+}
+function toggle(id){ const e=document.getElementById(id); e.style.display = e.style.display==='block'?'none':'block'; }
+function statCard(label,val,sub){
+  return `<div style="background:var(--bg2); border-radius:var(--r-md); padding:12px 14px;"><div style="font-size:12px; color:var(--ts); margin-bottom:4px;">${label}</div><div style="font-size:22px; font-weight:500; line-height:1.1;">${val}</div>${sub?`<div style="font-size:11px; color:var(--tt); margin-top:3px;">${sub}</div>`:""}</div>`;
+}
+function row(name, wil, a, b, tag, tagcolor, tagbg){
+  return `<tr style="border-bottom:0.5px solid var(--bt);">
+    <td style="padding:8px 6px; font-size:12px;">${name}</td>
+    <td style="padding:8px 6px; font-size:11px; color:var(--ts);">${wil}</td>
+    <td style="padding:8px 6px; font-size:12px; text-align:right;">${a}</td>
+    <td style="padding:8px 6px; font-size:12px; text-align:right;">${b}</td>
+    <td style="padding:8px 6px; text-align:right;"><span style="font-size:10px; background:${tagbg}; color:${tagcolor}; padding:2px 8px; border-radius:var(--r-md);">${tag}</span></td>
+  </tr>`;
+}
+function dimCard(idx, name, dim, score, conf, confTone, peer, badge, subs, quotes){
+  const subRows = subs.map(s=>{
+    const tone = s[2]==='neg'?'var(--bad)':'var(--ok)';
+    const icon = s[2]==='neg'?'ti-thumb-down':'ti-thumb-up';
+    return `<div style="display:flex; align-items:center; gap:8px; font-size:12px; color:var(--ts); margin-bottom:4px;">
+      <i class="ti ${icon}" style="font-size:13px; color:${tone};" aria-hidden="true"></i>
+      <span style="flex:1;">${s[0]}</span>
+      <span style="color:var(--tt); font-size:11px;">${s[1]} ulasan</span>
+    </div>`;
+  }).join("");
+  const q = quotes.map(t=>`<div class="quote">"${t}"</div>`).join("");
+  return `<div style="border:0.5px solid var(--bt); border-radius:var(--r-lg); padding:13px 15px; margin-bottom:10px; background:var(--bg1);">
+    <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:3px;">
+      <div style="font-size:14px; font-weight:500;">${name} <span style="font-size:11px; color:var(--tt); font-weight:400;">${dim}</span></div>
+      <div style="font-size:13px; color:${score<3?'var(--bad)':'var(--warn)'};">${score.toString().replace('.',',')} <span style="font-size:11px; color:var(--tt);">dari 5</span></div>
+    </div>
+    <div style="display:flex; gap:6px; flex-wrap:wrap; margin-bottom:9px;">
+      <span style="font-size:11px; color:var(--ts); background:var(--bg2); padding:2px 9px; border-radius:var(--r-md);"><i class="ti ti-users" style="font-size:12px; vertical-align:-2px;" aria-hidden="true"></i> ${peer}</span>
+      ${badge?`<span style="font-size:11px; color:var(--bad); background:#FCEBEB; padding:2px 9px; border-radius:var(--r-md);"><i class="ti ti-eye-off" style="font-size:12px; vertical-align:-2px;" aria-hidden="true"></i> ${badge}</span>`:''}
+      <span style="font-size:11px; color:${confTone}; background:var(--bg2); padding:2px 9px; border-radius:var(--r-md);"><i class="ti ti-circle-check" style="font-size:12px; vertical-align:-2px;" aria-hidden="true"></i> ${conf}</span>
+    </div>
+    ${subRows}
+    <div class="lnk" style="margin-top:7px;" onclick="toggle('q${idx}')"><i class="ti ti-quote" style="font-size:13px; vertical-align:-2px;" aria-hidden="true"></i> Lihat contoh ulasan asli</div>
+    <div class="quotes" id="q${idx}">${q}</div>
+  </div>`;
+}
+
+const panels = {
+home: () => `
+  <div style="font-size:16px; font-weight:500; margin-bottom:3px;">Beranda: gambaran data</div>
+  <div style="font-size:12px; color:var(--ts); margin-bottom:14px;">Apa isi data ini sebelum masuk ke analisis.</div>
+  <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-bottom:18px;">
+    ${statCard("Ulasan total","69.031")}
+    ${statCard("Bisa dianalisis","sekitar 33 rb","separuhnya berisi cerita")}
+    ${statCard("Puskesmas","127","di 3 wilayah")}
+    ${statCard("Bintang 5","79%","")}
+  </div>
+  <div style="font-size:13px; font-weight:500; margin-bottom:8px;">Beberapa fakta menarik</div>
+  <div style="display:flex; flex-direction:column; gap:8px;">
+    <div style="border-left:2px solid #534AB7; border-radius:0; padding:8px 12px; background:var(--bg2); font-size:12px; line-height:1.5;"><b style="font-weight:500;">Warga cenderung memberi nilai ekstrem.</b> 92% ulasan menumpuk di bintang 1 atau bintang 5; sangat sedikit yang di tengah. Yang menulis biasanya yang sangat puas atau sangat kecewa.</div>
+    <div style="border-left:2px solid #1D9E75; border-radius:0; padding:8px 12px; background:var(--bg2); font-size:12px; line-height:1.5;"><b style="font-weight:500;">Keluhan ditulis panjang, pujian ditulis singkat.</b> Ulasan bintang 1 rata-rata 175 huruf; bintang 5 cuma 49 huruf. Ulasan negatif membawa jauh lebih banyak detail yang bisa dianalisis.</div>
+    <div style="border-left:2px solid #BA7517; border-radius:0; padding:8px 12px; background:var(--bg2); font-size:12px; line-height:1.5;"><b style="font-weight:500;">Bintang sering menyembunyikan keluhan.</b> Hampir 1 dari 10 ulasan bintang tinggi ternyata menyimpan kritik di teksnya. Inilah alasan kita perlu membaca teks, bukan cuma melihat bintang.</div>
+  </div>`,
+
+map: () => `
+  <div style="font-size:16px; font-weight:500; margin-bottom:3px;">Peta status mutu</div>
+  <div style="font-size:12px; color:var(--ts); margin-bottom:14px;">Di mana puskesmas yang butuh perhatian. Klik pin untuk melihat detailnya.</div>
+  <div style="display:flex; gap:14px;">
+    <div style="flex:1; background:var(--bg2); border-radius:var(--r-lg); height:250px; position:relative; overflow:hidden; border:0.5px solid var(--bt);">
+      <div style="position:absolute; top:10px; left:12px; font-size:11px; color:var(--tt);"><i class="ti ti-map-pin" style="vertical-align:-2px;" aria-hidden="true"></i> Surabaya</div>
+      ${[["28%","32%","#E24B4A"],["52%","48%","#BA7517"],["40%","68%","#1D9E75"],["66%","30%","#1D9E75"],["72%","60%","#E24B4A"],["46%","22%","#1D9E75"],["58%","75%","#BA7517"],["34%","54%","#1D9E75"]].map(([t,l,c])=>`<div style="position:absolute; top:${t}; left:${l}; width:15px; height:15px; border-radius:50%; background:${c}; border:2px solid var(--bg1);"></div>`).join("")}
+    </div>
+    <div style="width:158px; flex-shrink:0;">
+      <div style="font-size:12px; font-weight:500; margin-bottom:8px;">Status</div>
+      <div style="font-size:12px; color:var(--ts); display:flex; align-items:center; gap:8px; margin-bottom:7px;"><span style="width:12px; height:12px; border-radius:50%; background:#1D9E75; display:inline-block;"></span> Baik</div>
+      <div style="font-size:12px; color:var(--ts); display:flex; align-items:center; gap:8px; margin-bottom:7px;"><span style="width:12px; height:12px; border-radius:50%; background:#BA7517; display:inline-block;"></span> Perlu dipantau</div>
+      <div style="font-size:12px; color:var(--ts); display:flex; align-items:center; gap:8px; margin-bottom:14px;"><span style="width:12px; height:12px; border-radius:50%; background:#E24B4A; display:inline-block;"></span> Perlu ditindaklanjuti</div>
+      <div style="font-size:11px; color:var(--tt); line-height:1.5; border-top:0.5px solid var(--bt); padding-top:10px;">Warna ditentukan secara statistik, dan mencerminkan persepsi warga yang menulis ulasan, bukan penilaian mutu resmi.</div>
+    </div>
+  </div>`,
+
+profile: () => `
+  <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:4px;">
+    <div>
+      <div style="font-size:16px; font-weight:500;">Puskesmas Made <span style="font-size:12px; color:var(--tt); font-weight:400;">, Surabaya</span></div>
+      <div style="font-size:12px; color:var(--ts); margin-top:2px;">312 ulasan warga, 188 yang berisi cerita, akreditasi resmi: Madya</div>
+    </div>
+    <select><option>Made</option><option>Pacar Keling</option><option>Tembok Dukuh</option></select>
+  </div>
+  <div style="font-size:12px; color:var(--ts); margin:10px 0 12px;">Apa kata warga, dikelompokkan per jenis layanan. Hijau berarti dipuji, merah berarti dikeluhkan.</div>
+
+  ${dimCard(1,"Kecepatan layanan","(daya tanggap)",2.4,"Cukup banyak data","var(--ok)","Termasuk paling lambat di antara 30 puskesmas sejenis","Bintang tinggi, tapi banyak keluhan di teks",
+    [["Antre lama menunggu giliran","38","neg"],["Antrean online dianggap tidak adil","15","neg"],["Sering diselak pasien lain","8","neg"],["Daftar online mempercepat","18","pos"]],
+    ["Antre 1 jam lebih, padahal sudah daftar online dari pagi","Yang datang belakangan malah dilayani duluan, tidak adil"])}
+
+  ${dimCard(2,"Keramahan petugas","(empati)",3.1,"Cukup banyak data","var(--ok)","Setara rata-rata puskesmas sejenis","",
+    [["Sebagian petugas judes atau membeda-bedakan","24","neg"],["Kurang menjelaskan ke pasien","15","neg"],["Dokter sabar membimbing","44","pos"]],
+    ["Dokternya sabar menjelaskan sampai saya paham","Sayang petugas depan kurang ramah, beda kalau pakai BPJS"])}
+
+  ${dimCard(3,"Ketersediaan obat &amp; layanan","(kehandalan)",2.9,"Datanya sedang","var(--warn)","Sedikit di bawah rata-rata","",
+    [["Obat sering kosong, harus beli di luar","19","neg"],["Rujukan dipersulit","9","neg"],["Layanan lab lengkap","22","pos"]],
+    ["Obatnya habis terus, akhirnya disuruh beli di apotek luar","Minta rujukan susah sekali, dipersulit"])}
+
+  <div style="border:0.5px dashed var(--bs); border-radius:var(--r-lg); padding:11px 14px; font-size:12px; color:var(--tt); display:flex; align-items:center; gap:8px;"><i class="ti ti-info-circle" style="font-size:16px;" aria-hidden="true"></i> Jaminan mutu &amp; kondisi gedung: belum cukup warga yang membahas ini (kurang dari 10 ulasan), jadi belum bisa dinilai.</div>`,
+
+signal: () => `
+  <div style="font-size:16px; font-weight:500; margin-bottom:3px;">Sinyal yang perlu diperhatikan</div>
+  <div style="font-size:12px; color:var(--ts); margin-bottom:14px;">Puskesmas yang terlihat baik di angka bintang, tapi teksnya banyak keluhan.</div>
+  <div style="font-size:12px; font-weight:500; margin-bottom:7px;"><i class="ti ti-eye-off" style="font-size:15px; vertical-align:-2px; margin-right:5px;" aria-hidden="true"></i>Bintang tinggi tapi teks mengeluh</div>
+  <table style="width:100%; border-collapse:collapse; margin-bottom:16px;">
+    <tr style="border-bottom:0.5px solid var(--bs);"><td style="font-size:11px; color:var(--tt); padding:0 6px 6px;">Puskesmas</td><td style="font-size:11px; color:var(--tt); padding:0 6px 6px;">Wilayah</td><td style="font-size:11px; color:var(--tt); padding:0 6px 6px; text-align:right;">Bintang</td><td style="font-size:11px; color:var(--tt); padding:0 6px 6px; text-align:right;">Teks mengeluh</td><td style="padding:0 6px 6px;"></td></tr>
+    ${row("Sukolilo","Surabaya","4,6","31%","selisih besar","#A32D2D","#FCEBEB")}
+    ${row("Rowosari","Semarang","4,5","24%","perlu dicek","#854F0B","#FAEEDA")}
+    ${row("Mlati 2","Bantul","4,7","19%","perlu dicek","#854F0B","#FAEEDA")}
+  </table>
+  <div style="font-size:12px; font-weight:500; margin-bottom:7px;"><i class="ti ti-arrows-split" style="font-size:15px; vertical-align:-2px; margin-right:5px;" aria-hidden="true"></i>Puskesmas dengan dua wajah (banyak yang sangat puas sekaligus banyak yang sangat kecewa)</div>
+  <table style="width:100%; border-collapse:collapse;">
+    ${row("Made","Surabaya","Bintang 1: 31%","Bintang 5: 53%","dua wajah","#26215C","#EEEDFE")}
+    ${row("Pacar Keling","Surabaya","Bintang 1: 29%","Bintang 5: 58%","dua wajah","#26215C","#EEEDFE")}
+  </table>
+  <div style="font-size:11px; color:var(--tt); margin-top:12px;">Puskesmas dua wajah menunjukkan kenapa satu label akreditasi saja tidak cukup: pengalaman warga sangat berbeda-beda di tempat yang sama.</div>`,
+
+topic: () => `
+  <div style="font-size:16px; font-weight:500; margin-bottom:3px;">Topik keluhan se-kabupaten</div>
+  <div style="font-size:12px; color:var(--ts); margin-bottom:16px;">Mana keluhan yang muncul di banyak puskesmas (perlu kebijakan dinas) dan mana yang hanya di sedikit puskesmas (urusan masing-masing).</div>
+
+  <div style="font-size:13px; font-weight:500; margin-bottom:4px;">Seberapa luas tiap keluhan menyebar</div>
+  <div class="hint" style="margin-bottom:10px;">Klik sebuah keluhan untuk melihat puskesmas mana saja yang paling sering dikeluhkan soal itu.</div>
+
+  ${[
+    ["Antre &amp; waktu tunggu","43","#E24B4A","merata di hampir semua puskesmas, masalah proses atau kapasitas",
+       [["Kedungmundu","Semarang","ramai dikeluhkan"],["Made","Surabaya","ramai dikeluhkan"],["Mlati 2","Bantul","ramai dikeluhkan"]],"sistemik"],
+    ["Sikap petugas","25","#BA7517","cukup tersebar di banyak puskesmas",
+       [["Tembok Dukuh","Surabaya","sering disebut"],["Pacar Keling","Surabaya","sering disebut"]],"sistemik"],
+    ["BPJS &amp; rujukan","18","#BA7517","tersebar merata, sering jadi satu paket masalah",
+       [["beberapa puskesmas Surabaya","Surabaya","pola serupa"]],"sistemik"],
+    ["Obat kosong","19","#1D9E75","menumpuk di sebagian puskesmas Semarang, kemungkinan soal pasokan setempat",
+       [["Ngemplak Simongan","Semarang","60% keluhannya soal obat"],["Pudakpayung","Semarang","42%"],["Pandak 2","Bantul","39%"]],"lokal"],
+    ["Fasilitas atau gedung","5","#1D9E75","hanya di sedikit puskesmas, urusan masing-masing",
+       [["beberapa puskesmas tertentu","-","kasus terbatas"]],"lokal"],
+  ].map((t,i)=>{
+    const drillRows = t[4].map(d=>`<div style="display:flex; justify-content:space-between; font-size:12px; color:var(--ts); padding:3px 0;"><span>${d[0]} <span style="color:var(--tt);">, ${d[1]}</span></span><span style="color:var(--tt);">${d[2]}</span></div>`).join("");
+    const tag = t[5]==='sistemik'
+      ? `<span style="font-size:10px; color:#26215C; background:#EEEDFE; padding:2px 8px; border-radius:var(--r-md);">perlu kebijakan dinas</span>`
+      : `<span style="font-size:10px; color:#0F6E56; background:#E1F5EE; padding:2px 8px; border-radius:var(--r-md);">urusan puskesmas</span>`;
+    return `<div style="margin-bottom:9px;">
+      <div onclick="toggle('d${i}')" style="cursor:pointer; display:flex; align-items:center; gap:10px;">
+        <div style="width:124px; font-size:12px; color:var(--ts); flex-shrink:0;">${t[0]}</div>
+        <div style="flex:1; height:18px; background:var(--bg2); border-radius:4px; overflow:hidden;"><div style="width:${t[1]}%; height:100%; background:${t[2]};"></div></div>
+        <div style="width:30px; font-size:11px; color:var(--tt); text-align:right;">${t[1]}%</div>
+        <i class="ti ti-chevron-down" style="font-size:14px; color:var(--tt);" aria-hidden="true"></i>
+      </div>
+      <div style="margin:3px 0 0 134px;">${tag} <span style="font-size:11px; color:var(--tt);">${t[3]}</span></div>
+      <div class="drill" id="d${i}">${drillRows}</div>
+    </div>`;
+  }).join("")}
+
+  <div style="font-size:11px; color:var(--tt); margin:4px 0 16px;">Angka adalah persen keluhan warga yang menyebut topik ini. Perkiraan awal dari kata kunci, akan diperhalus oleh model.</div>
+
+  <div style="font-size:13px; font-weight:500; margin-bottom:8px;">Keluhan yang sering datang bersamaan</div>
+  <div style="background:var(--bg2); border-radius:var(--r-lg); padding:12px 14px; font-size:12px; color:var(--ts); line-height:1.6; margin-bottom:16px;">
+    Warga yang mengeluh soal <b style="font-weight:500; color:var(--tp);">BPJS</b> hampir selalu juga menyebut <b style="font-weight:500; color:var(--tp);">rujukan</b> dan <b style="font-weight:500; color:var(--tp);">obat</b> dalam ulasan yang sama. Ini satu rangkaian masalah administratif, sebaiknya dibenahi bersamaan, bukan satu per satu.
+  </div>
+
+  <div style="font-size:13px; font-weight:500; margin-bottom:8px;">Apakah sama di tiap wilayah?</div>
+  <table style="width:100%; border-collapse:collapse; font-size:12px;">
+    <tr style="border-bottom:0.5px solid var(--bs); color:var(--tt); font-size:11px;"><td style="padding:0 6px 6px;">Keluhan</td><td style="padding:0 6px 6px; text-align:right;">Bantul</td><td style="padding:0 6px 6px; text-align:right;">Semarang</td><td style="padding:0 6px 6px; text-align:right;">Surabaya</td></tr>
+    ${[["Antre &amp; tunggu","46%","40%","42%"],["Sikap petugas","28%","23%","25%"],["BPJS &amp; rujukan","17%","18%","18%"],["Obat kosong","14%","21%","19%"]].map(r=>`<tr style="border-bottom:0.5px solid var(--bt);"><td style="padding:7px 6px;">${r[0]}</td><td style="padding:7px 6px; text-align:right;">${r[1]}</td><td style="padding:7px 6px; text-align:right;">${r[2]}</td><td style="padding:7px 6px; text-align:right;">${r[3]}</td></tr>`).join("")}
+  </table>
+  <div style="font-size:11px; color:var(--tt); margin-top:8px;">Antre dan sikap petugas hampir sama di tiga wilayah, jadi benar-benar merata. Obat lebih tinggi di Semarang, patut dicek pasokannya.</div>`,
+
+flow: () => `
+  <div style="font-size:16px; font-weight:500; margin-bottom:3px;">Workflow analisis</div>
+  <div style="font-size:12px; color:var(--ts); margin-bottom:16px;">Dari ulasan mentah sampai jadi penilaian, langkah demi langkah yang transparan.</div>
+  ${[
+    ["ti-download","1. Pengumpulan","Ambil ulasan dari Google Maps di 3 wilayah: 69.031 ulasan, 127 puskesmas.","#534AB7"],
+    ["ti-filter","2. Audit &amp; pembersihan","Buang ulasan kosong atau terlalu pendek, deteksi duplikat dan spam. Tersisa sekitar 33 rb ulasan berisi.","#534AB7"],
+    ["ti-scissors","3. Persiapan analisis","Pecah ulasan panjang jadi kalimat, ambil hanya yang menyebut layanan, jaga konteks kalimat.","#1D9E75"],
+    ["ti-cpu","4. Analisis isi ulasan","Model membaca tiap kalimat, mengenali layanan apa yang dibahas dan apakah dipuji atau dikeluhkan.","#1D9E75"],
+    ["ti-calculator","5. Penggabungan nilai","Hitung nilai tiap puskesmas per jenis layanan, dengan koreksi agar adil untuk yang ulasannya sedikit.","#BA7517"],
+    ["ti-layout-dashboard","6. Dashboard","Tampilkan nilai, poin pujian dan keluhan, kutipan asli, peta, dan sinyal yang perlu perhatian.","#BA7517"],
+  ].map((s,i,arr)=>`
+    <div style="display:flex; gap:12px; align-items:flex-start; ${i<arr.length-1?'padding-bottom:12px; position:relative;':''}">
+      <div style="width:34px; height:34px; border-radius:50%; background:var(--bg2); display:flex; align-items:center; justify-content:center; flex-shrink:0; ${i<arr.length-1?'box-shadow:0 22px 0 -16px var(--bs);':''}"><i class="ti ${s[0]}" style="font-size:17px; color:${s[3]};" aria-hidden="true"></i></div>
+      <div style="padding-top:6px;"><div style="font-size:13px; font-weight:500;">${s[1]}</div><div style="font-size:12px; color:var(--ts); line-height:1.5; margin-top:1px;">${s[2]}</div></div>
+    </div>`).join("")}
+  <div style="font-size:11px; color:var(--tt); margin-top:8px; border-top:0.5px solid var(--bt); padding-top:10px;">Warna ikon menandai pembagian kerja tim: ungu = pengolahan data, hijau = analisis isi, amber = statistik dan tampilan.</div>`,
+};
+
+function setTab(id){ active=id; renderNav(); panelEl.innerHTML=panels[id](); }
+renderNav(); setTab("home");
+</script>
+</body>
+</html>
