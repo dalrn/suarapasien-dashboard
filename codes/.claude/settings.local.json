@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python -c ' *)"
+    ],
+    "additionalDirectories": [
+      "c:\\Users\\Andalan\\Documents\\Lomba\\Satria Data 2026 - Belmawa\\codes"
+    ]
+  }
+}
