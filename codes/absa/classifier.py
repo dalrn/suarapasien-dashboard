@@ -8,6 +8,8 @@ Results are saved incrementally to outputs/absa_raw.jsonl so runs are resumable.
 from __future__ import annotations
 import json
 import time
+import threading
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 
 import anthropic
@@ -129,4 +131,104 @@ def classify_batch(
 
             time.sleep(delay_seconds)
 
+    return results
+
+
+# ---------------------------------------------------------------------------
+# Concurrent batch extraction (for the full ~9k-chunk run)
+# ---------------------------------------------------------------------------
+
+class _ChunkFailed(Exception):
+    """Raised when a chunk could not be classified after all retries.
+
+    The chunk is NOT written to disk so that a resume run retries it — this is
+    what keeps a transient API failure from being silently recorded as an empty
+    (no-findings) result, which would otherwise corrupt the dataset.
+    """
+
+
+def classify_batch_concurrent(
+    chunks: list[dict],
+    client: anthropic.Anthropic,
+    *,
+    max_workers: int = 5,
+    max_retries: int = 5,
+    out_file: str = "absa_raw.jsonl",
+) -> list[dict]:
+    """
+    Concurrent version of classify_batch for large runs (full dataset).
+    Resumable, per-chunk retry with backoff, incremental flush.
+
+    IMPORTANT — failure handling: a chunk that still errors after `max_retries`
+    is NOT written to disk; it is counted as failed and left for the next resume
+    run to retry. Only genuine model results (including a real empty findings
+    list) are persisted. This prevents the silent-empty corruption where a
+    rate-limited/failed call was saved as "no findings".
+    """
+    OUTPUTS.mkdir(exist_ok=True)
+    out_path = OUTPUTS / out_file
+
+    # Resume: skip already-processed (review_id, chunk_index) pairs
+    done_keys: set[tuple[str, int]] = set()
+    if out_path.exists():
+        with open(out_path, encoding="utf-8") as f:
+            for line in f:
+                try:
+                    rec = json.loads(line)
+                    done_keys.add((rec["review_id"], rec["chunk_index"]))
+                except json.JSONDecodeError:
+                    pass
+        if done_keys:
+            print(f"Resuming: {len(done_keys)} chunks already done, skipping.")
+
+    todo = [c for c in chunks if (c["review_id"], c["chunk_index"]) not in done_keys]
+    if not todo:
+        print("Nothing to do — all chunks already processed.")
+        return []
+
+    write_lock = threading.Lock()
+    results: list[dict] = []
+    n_failed = 0
+
+    def work(chunk: dict) -> dict:
+        last_err: Exception | None = None
+        for attempt in range(max_retries):
+            try:
+                findings = classify_chunk(chunk["chunk_text"], client)
+                return {**chunk, "findings": findings}
+            except anthropic.RateLimitError as e:
+                last_err = e
+                # honour Retry-After if present, else exponential backoff
+                wait = 15 * (2 ** attempt)
+                retry_after = getattr(getattr(e, "response", None), "headers", {})
+                try:
+                    wait = max(wait, float(retry_after.get("retry-after", 0)))
+                except (ValueError, AttributeError):
+                    pass
+                time.sleep(wait)
+            except anthropic.APIError as e:
+                last_err = e
+                time.sleep(5 * (2 ** attempt))
+        # exhausted retries — do NOT fabricate an empty result
+        raise _ChunkFailed(str(last_err))
+
+    with open(out_path, "a", encoding="utf-8") as f:
+        with ThreadPoolExecutor(max_workers=max_workers) as pool:
+            futures = {pool.submit(work, c): c for c in todo}
+            for fut in tqdm(as_completed(futures), total=len(todo), desc="Classifying (concurrent)"):
+                try:
+                    record = fut.result()
+                except _ChunkFailed:
+                    n_failed += 1
+                    continue   # leave unprocessed; resume will retry
+                with write_lock:
+                    f.write(json.dumps(record, ensure_ascii=False) + "\n")
+                    f.flush()
+                    results.append(record)
+
+    n_with = sum(1 for r in results if r["findings"])
+    print(f"Selesai: {len(results)} chunk baru diproses, {n_with} berisi temuan.")
+    if n_failed:
+        print(f"⚠ {n_failed} chunk GAGAL (tidak ditulis) — jalankan ulang sel ini "
+              f"untuk mencoba lagi chunk yang gagal.")
     return results

@@ -146,3 +146,97 @@ def load_annotations(path: str) -> pd.DataFrame:
             if val in ("pos", "neg", "both"):
                 rows.append({"review_id": r["review_id"], "category": cat, "polarity": val})
     return pd.DataFrame(rows, columns=["review_id", "category", "polarity"])
+
+
+# ---------------------------------------------------------------------------
+# FULL-DATASET manual labeling (dimension + polarity + sub_issue + quote)
+# ---------------------------------------------------------------------------
+# Unlike the gold-set template above (one polarity cell per category, for
+# evaluation), this template captures the SAME shape as the model output so
+# manual labels can be merged straight into findings_full.csv. The dashboard's
+# "sumber komplain" + "lihat ulasan asli" features depend on sub_issue & quote.
+
+# Columns the annotator fills, one ROW PER FINDING. A review with no service
+# content gets a single row with all four blank.
+FINDING_COLUMNS = ["dimension", "polarity", "sub_issue", "quote"]
+LABEL_META_COLUMNS = ["review_id", "puskesmas_id", "puskesmas_name", "wilayah", "rating", "review_text"]
+
+
+def write_label_template(
+    reviews: pd.DataFrame, out_path: str, blank_rows_per_review: int = 3
+) -> None:
+    """
+    Write a full-label template (.xlsx) for manual extraction matching the model
+    output. For each review: one pre-filled meta row plus `blank_rows_per_review`
+    empty finding-rows (dimension / polarity / sub_issue / quote) for the
+    annotator to fill. Meta columns repeat the review_id so rows stay linked;
+    only the first row of each review shows the review_text (to reduce clutter).
+
+    Annotator instructions (also in the notebook guide):
+      - dimension: one of Responsiveness/Reliability/Assurance/Empathy/Tangibles/Umum
+      - polarity:  neg / pos
+      - sub_issue: short Indonesian noun phrase (2-5 words), e.g. "antre lama"
+      - quote:     verbatim span copied from review_text
+      - If a review has more findings than blank rows, add rows (keep same review_id).
+      - If a review has NO service content (off-topic / pure inquiry), leave one row
+        with review_id filled and the four finding columns blank.
+    """
+    cols = LABEL_META_COLUMNS + FINDING_COLUMNS
+    rows = []
+    for _, r in reviews.iterrows():
+        for k in range(blank_rows_per_review):
+            row = {c: "" for c in cols}
+            row["review_id"] = r["review_id"]
+            if k == 0:
+                # show full meta only on the first row of each review block
+                for c in LABEL_META_COLUMNS:
+                    row[c] = r[c] if c in r.index else ""
+            else:
+                row["review_id"] = r["review_id"]   # keep link, blank the rest
+            rows.append(row)
+
+    df_out = pd.DataFrame(rows, columns=cols)
+
+    with pd.ExcelWriter(out_path, engine="openpyxl") as writer:
+        df_out.to_excel(writer, index=False, sheet_name="Label")
+        ws = writer.sheets["Label"]
+        widths = {
+            "review_id": 26, "puskesmas_id": 14, "puskesmas_name": 22,
+            "wilayah": 12, "rating": 7, "review_text": 70,
+            "dimension": 16, "polarity": 9, "sub_issue": 28, "quote": 50,
+        }
+        for i, col_name in enumerate(cols, start=1):
+            ws.column_dimensions[ws.cell(row=1, column=i).column_letter].width = widths.get(col_name, 14)
+        ws.freeze_panes = "B2"
+
+
+def load_label_template(path: str) -> pd.DataFrame:
+    """
+    Load a completed full-label template into model-compatible long form:
+    one row per finding with columns review_id, dimension, polarity, sub_issue, quote.
+
+    Rows where dimension/polarity are blank are dropped (they were just spare
+    finding-rows or no-content markers). Whitespace is trimmed; dimension is
+    title-cased to match CATEGORIES; polarity lower-cased.
+    """
+    path = str(path)
+    if path.endswith(".xlsx"):
+        df = pd.read_excel(path, sheet_name="Label", dtype=str).fillna("")
+    else:
+        df = pd.read_csv(path, encoding="utf-8-sig", dtype=str).fillna("")
+
+    valid_dims = {c.lower(): c for c in CATEGORIES}
+    out = []
+    for _, r in df.iterrows():
+        dim = str(r.get("dimension", "")).strip().lower()
+        pol = str(r.get("polarity", "")).strip().lower()
+        if dim not in valid_dims or pol not in ("neg", "pos"):
+            continue   # blank/spare row or invalid entry → skip
+        out.append({
+            "review_id": str(r["review_id"]).strip(),
+            "dimension": valid_dims[dim],
+            "polarity": pol,
+            "sub_issue": str(r.get("sub_issue", "")).strip(),
+            "quote": str(r.get("quote", "")).strip(),
+        })
+    return pd.DataFrame(out, columns=["review_id", "dimension", "polarity", "sub_issue", "quote"])
