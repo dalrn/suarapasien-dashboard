@@ -1,0 +1,134 @@
+{
+ "topik": {
+  "Responsiveness": {
+   "persen_keluhan": 42.1,
+   "n_puskesmas_terdampak": 126
+  },
+  "Reliability": {
+   "persen_keluhan": 47.1,
+   "n_puskesmas_terdampak": 126
+  },
+  "Assurance": {
+   "persen_keluhan": 20.6,
+   "n_puskesmas_terdampak": 124
+  },
+  "Empathy": {
+   "persen_keluhan": 54.1,
+   "n_puskesmas_terdampak": 125
+  },
+  "Tangibles": {
+   "persen_keluhan": 6.0,
+   "n_puskesmas_terdampak": 111
+  }
+ },
+ "chi2_antar_wilayah": {
+  "chi2": 101.258,
+  "dof": 8,
+  "p": 2.3609705331329143e-18
+ },
+ "residual_terstandarisasi": {
+  "Bantul": {
+   "Assurance": -2.58,
+   "Empathy": 0.6,
+   "Reliability": -2.57,
+   "Responsiveness": 3.35,
+   "Tangibles": 1.76
+  },
+  "Semarang": {
+   "Assurance": 0.59,
+   "Empathy": -3.29,
+   "Reliability": 5.38,
+   "Responsiveness": -3.71,
+   "Tangibles": 3.36
+  },
+  "Surabaya": {
+   "Assurance": 0.95,
+   "Empathy": 1.1,
+   "Reliability": -1.07,
+   "Responsiveness": 0.01,
+   "Tangibles": -2.22
+  }
+ },
+ "co_occurrence_lift": [
+  {
+   "dim_a": "Assurance",
+   "dim_b": "Empathy",
+   "p_a": 0.207,
+   "p_b": 0.551,
+   "p_both": 0.125,
+   "lift": 1.1
+  },
+  {
+   "dim_a": "Responsiveness",
+   "dim_b": "Reliability",
+   "p_a": 0.425,
+   "p_b": 0.472,
+   "p_both": 0.212,
+   "lift": 1.06
+  },
+  {
+   "dim_a": "Reliability",
+   "dim_b": "Assurance",
+   "p_a": 0.472,
+   "p_b": 0.207,
+   "p_both": 0.094,
+   "lift": 0.96
+  },
+  {
+   "dim_a": "Responsiveness",
+   "dim_b": "Tangibles",
+   "p_a": 0.425,
+   "p_b": 0.068,
+   "p_both": 0.028,
+   "lift": 0.95
+  },
+  {
+   "dim_a": "Empathy",
+   "dim_b": "Tangibles",
+   "p_a": 0.551,
+   "p_b": 0.068,
+   "p_both": 0.031,
+   "lift": 0.81
+  },
+  {
+   "dim_a": "Assurance",
+   "dim_b": "Tangibles",
+   "p_a": 0.207,
+   "p_b": 0.068,
+   "p_both": 0.011,
+   "lift": 0.81
+  },
+  {
+   "dim_a": "Reliability",
+   "dim_b": "Tangibles",
+   "p_a": 0.472,
+   "p_b": 0.068,
+   "p_both": 0.025,
+   "lift": 0.79
+  },
+  {
+   "dim_a": "Reliability",
+   "dim_b": "Empathy",
+   "p_a": 0.472,
+   "p_b": 0.551,
+   "p_both": 0.205,
+   "lift": 0.79
+  },
+  {
+   "dim_a": "Responsiveness",
+   "dim_b": "Empathy",
+   "p_a": 0.425,
+   "p_b": 0.551,
+   "p_both": 0.162,
+   "lift": 0.69
+  },
+  {
+   "dim_a": "Responsiveness",
+   "dim_b": "Assurance",
+   "p_a": 0.425,
+   "p_b": 0.207,
+   "p_both": 0.056,
+   "lift": 0.64
+  }
+ ]
+}

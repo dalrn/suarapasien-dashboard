@@ -1,0 +1,636 @@
+﻿id_puskesmas,dimensi,z,p_value,vs_peer,n_peer
+PKM_BTL_001,Assurance,-1.122,0.2619,setara,8240
+PKM_BTL_002,Assurance,1.04,0.2983,setara,8198
+PKM_BTL_003,Assurance,0.13,0.8967,setara,8178
+PKM_BTL_004,Assurance,-0.117,0.9067,setara,8199
+PKM_BTL_005,Assurance,-1.013,0.3109,setara,8217
+PKM_BTL_006,Assurance,0.222,0.8245,setara,8234
+PKM_BTL_007,Assurance,0.151,0.8803,setara,8248
+PKM_BTL_008,Assurance,-0.647,0.5176,setara,8258
+PKM_BTL_009,Assurance,-0.886,0.3756,setara,8243
+PKM_BTL_010,Assurance,-1.195,0.2319,setara,8239
+PKM_BTL_011,Assurance,-0.951,0.3417,setara,8236
+PKM_BTL_012,Assurance,0.464,0.6428,setara,8255
+PKM_BTL_013,Assurance,-0.861,0.3892,setara,8119
+PKM_BTL_014,Assurance,-0.974,0.33,setara,8183
+PKM_BTL_015,Assurance,-0.552,0.5811,setara,8241
+PKM_BTL_016,Assurance,-0.951,0.3417,setara,8236
+PKM_BTL_017,Assurance,-1.094,0.2738,setara,8234
+PKM_BTL_018,Assurance,-2.102,0.0355,lebih jarang dikeluhkan,8249
+PKM_BTL_019,Assurance,-0.746,0.4554,setara,8227
+PKM_BTL_020,Assurance,-1.196,0.2318,setara,8220
+PKM_BTL_021,Assurance,0.137,0.8911,setara,8238
+PKM_BTL_022,Assurance,-0.802,0.4227,setara,8244
+PKM_BTL_023,Assurance,-1.195,0.2319,setara,8239
+PKM_BTL_024,Assurance,-1.046,0.2956,setara,8241
+PKM_BTL_025,Assurance,1.686,0.0917,setara,8151
+PKM_BTL_026,Assurance,-0.203,0.839,setara,8156
+PKM_BTL_027,Assurance,-0.723,0.4696,setara,8251
+PKM_SBY_001,Assurance,1.661,0.0966,setara,8239
+PKM_SBY_002,Assurance,1.661,0.0966,setara,8239
+PKM_SBY_003,Assurance,0.566,0.5716,setara,8181
+PKM_SBY_004,Assurance,-0.929,0.3528,setara,8201
+PKM_SBY_005,Assurance,0.266,0.7903,setara,8121
+PKM_SBY_006,Assurance,-0.047,0.9622,setara,8144
+PKM_SBY_007,Assurance,1.642,0.1006,setara,8110
+PKM_SBY_008,Assurance,1.831,0.0671,setara,8123
+PKM_SBY_009,Assurance,-0.805,0.4206,setara,8192
+PKM_SBY_010,Assurance,-0.48,0.631,setara,8198
+PKM_SBY_011,Assurance,5.396,0.0,lebih sering dikeluhkan,8157
+PKM_SBY_012,Assurance,-0.819,0.4127,setara,8203
+PKM_SBY_013,Assurance,0.556,0.5779,setara,8118
+PKM_SBY_014,Assurance,0.608,0.5435,setara,8196
+PKM_SBY_015,Assurance,0.857,0.3916,setara,8209
+PKM_SBY_016,Assurance,2.921,0.0035,lebih sering dikeluhkan,8152
+PKM_SBY_017,Assurance,0.081,0.9356,setara,8167
+PKM_SBY_018,Assurance,3.44,0.0006,lebih sering dikeluhkan,8194
+PKM_SBY_019,Assurance,2.34,0.0193,lebih sering dikeluhkan,8179
+PKM_SBY_020,Assurance,0.003,0.9973,setara,8201
+PKM_SBY_021,Assurance,0.758,0.4484,setara,8189
+PKM_SBY_022,Assurance,-0.331,0.7407,setara,8238
+PKM_SBY_023,Assurance,-0.044,0.9646,setara,8190
+PKM_SBY_024,Assurance,-0.495,0.6206,setara,8266
+PKM_SBY_025,Assurance,2.825,0.0047,lebih sering dikeluhkan,8186
+PKM_SBY_026,Assurance,-0.432,0.6659,setara,8215
+PKM_SBY_027,Assurance,0.618,0.5366,setara,8158
+PKM_SBY_028,Assurance,1.636,0.1018,setara,8185
+PKM_SBY_029,Assurance,-0.915,0.3601,setara,8207
+PKM_SBY_030,Assurance,-0.748,0.4543,setara,8182
+PKM_SBY_031,Assurance,0.352,0.7247,setara,8221
+PKM_SBY_032,Assurance,2.328,0.0199,lebih sering dikeluhkan,8133
+PKM_SBY_033,Assurance,0.471,0.6374,setara,8213
+PKM_SBY_034,Assurance,1.289,0.1975,setara,8125
+PKM_SBY_035,Assurance,0.495,0.6204,setara,8199
+PKM_SBY_036,Assurance,0.128,0.8978,setara,8218
+PKM_SBY_037,Assurance,-0.352,0.7248,setara,8158
+PKM_SBY_038,Assurance,0.483,0.6292,setara,8194
+PKM_SBY_039,Assurance,-0.819,0.4127,setara,8175
+PKM_SBY_040,Assurance,-0.178,0.8588,setara,8224
+PKM_SBY_041,Assurance,-0.652,0.5143,setara,8173
+PKM_SBY_042,Assurance,0.222,0.8245,setara,8234
+PKM_SBY_043,Assurance,-0.536,0.5917,setara,8197
+PKM_SBY_044,Assurance,-1.01,0.3125,setara,8154
+PKM_SBY_045,Assurance,-0.268,0.7889,setara,8056
+PKM_SBY_046,Assurance,-0.775,0.4384,setara,8105
+PKM_SBY_047,Assurance,0.696,0.4862,setara,8150
+PKM_SBY_048,Assurance,2.065,0.0389,lebih sering dikeluhkan,8231
+PKM_SBY_049,Assurance,-0.348,0.7276,setara,8195
+PKM_SBY_050,Assurance,0.238,0.8119,setara,8180
+PKM_SBY_051,Assurance,-1.817,0.0692,setara,8189
+PKM_SBY_052,Assurance,1.636,0.1018,setara,8185
+PKM_SBY_053,Assurance,0.001,0.999,setara,8140
+PKM_SBY_054,Assurance,-0.385,0.6999,setara,8205
+PKM_SBY_055,Assurance,-2.384,0.0171,lebih jarang dikeluhkan,8149
+PKM_SBY_056,Assurance,-0.036,0.9715,setara,8231
+PKM_SBY_057,Assurance,1.504,0.1326,setara,8152
+PKM_SBY_058,Assurance,0.405,0.6855,setara,8183
+PKM_SBY_059,Assurance,-0.639,0.5225,setara,8157
+PKM_SBY_060,Assurance,2.027,0.0427,lebih sering dikeluhkan,8199
+PKM_SBY_061,Assurance,1.083,0.279,setara,8153
+PKM_SBY_062,Assurance,1.384,0.1665,setara,8181
+PKM_SBY_063,Assurance,-1.184,0.2362,setara,8167
+PKM_SMG_001,Assurance,-0.217,0.8282,setara,8234
+PKM_SMG_002,Assurance,-1.164,0.2443,setara,8179
+PKM_SMG_003,Assurance,-0.884,0.3767,setara,8256
+PKM_SMG_004,Assurance,-0.217,0.8282,setara,8234
+PKM_SMG_005,Assurance,-1.491,0.136,setara,8196
+PKM_SMG_006,Assurance,-0.432,0.6659,setara,8215
+PKM_SMG_007,Assurance,-0.719,0.472,setara,8239
+PKM_SMG_008,Assurance,-0.216,0.8294,setara,8213
+PKM_SMG_009,Assurance,-1.391,0.1641,setara,8223
+PKM_SMG_010,Assurance,-2.133,0.0329,lebih jarang dikeluhkan,8216
+PKM_SMG_011,Assurance,2.027,0.0427,lebih sering dikeluhkan,8199
+PKM_SMG_012,Assurance,-0.46,0.6456,setara,8220
+PKM_SMG_013,Assurance,-1.975,0.0483,lebih jarang dikeluhkan,8242
+PKM_SMG_014,Assurance,-2.551,0.0107,lebih jarang dikeluhkan,8178
+PKM_SMG_015,Assurance,-0.676,0.4988,setara,8228
+PKM_SMG_016,Assurance,-1.852,0.064,setara,8244
+PKM_SMG_017,Assurance,-0.46,0.6456,setara,8220
+PKM_SMG_018,Assurance,-0.511,0.6093,setara,8259
+PKM_SMG_019,Assurance,-0.103,0.9176,setara,8225
+PKM_SMG_020,Assurance,-1.147,0.2514,setara,8191
+PKM_SMG_021,Assurance,-0.464,0.6429,setara,8242
+PKM_SMG_022,Assurance,-0.044,0.9646,setara,8190
+PKM_SMG_023,Assurance,-0.714,0.4752,setara,8245
+PKM_SMG_024,Assurance,-1.094,0.2738,setara,8234
+PKM_SMG_025,Assurance,-0.177,0.8595,setara,8245
+PKM_SMG_026,Assurance,-0.196,0.8448,setara,8229
+PKM_SMG_027,Assurance,-0.7,0.4838,setara,8265
+PKM_SMG_028,Assurance,-0.676,0.4988,setara,8228
+PKM_SMG_029,Assurance,-0.073,0.9418,setara,8246
+PKM_SMG_030,Assurance,-0.152,0.8791,setara,8240
+PKM_SMG_031,Assurance,-2.95,0.0032,lebih jarang dikeluhkan,8205
+PKM_SMG_032,Assurance,-1.668,0.0953,setara,8205
+PKM_SMG_033,Assurance,-1.014,0.3107,setara,8229
+PKM_SMG_034,Assurance,0.272,0.786,setara,8249
+PKM_SMG_035,Assurance,-2.038,0.0415,lebih jarang dikeluhkan,8171
+PKM_SMG_036,Assurance,-1.246,0.2129,setara,8213
+PKM_SMG_037,Assurance,0.464,0.6428,setara,8255
+PKM_BTL_001,Empathy,1.166,0.2438,setara,8240
+PKM_BTL_002,Empathy,-1.385,0.1662,setara,8198
+PKM_BTL_003,Empathy,-1.083,0.2789,setara,8178
+PKM_BTL_004,Empathy,1.9,0.0575,setara,8199
+PKM_BTL_005,Empathy,2.303,0.0213,lebih sering dikeluhkan,8217
+PKM_BTL_006,Empathy,0.669,0.5038,setara,8234
+PKM_BTL_007,Empathy,0.535,0.5929,setara,8248
+PKM_BTL_008,Empathy,-1.108,0.268,setara,8258
+PKM_BTL_009,Empathy,-0.583,0.5598,setara,8243
+PKM_BTL_010,Empathy,-0.567,0.5708,setara,8239
+PKM_BTL_011,Empathy,-1.098,0.2722,setara,8236
+PKM_BTL_012,Empathy,-1.279,0.2008,setara,8255
+PKM_BTL_013,Empathy,1.723,0.085,setara,8119
+PKM_BTL_014,Empathy,-0.766,0.4439,setara,8183
+PKM_BTL_015,Empathy,-2.147,0.0318,lebih jarang dikeluhkan,8241
+PKM_BTL_016,Empathy,0.342,0.7321,setara,8236
+PKM_BTL_017,Empathy,-0.728,0.4668,setara,8234
+PKM_BTL_018,Empathy,0.794,0.4273,setara,8249
+PKM_BTL_019,Empathy,-0.859,0.3902,setara,8227
+PKM_BTL_020,Empathy,-0.39,0.6964,setara,8220
+PKM_BTL_021,Empathy,-0.005,0.9959,setara,8238
+PKM_BTL_022,Empathy,2.128,0.0333,lebih sering dikeluhkan,8244
+PKM_BTL_023,Empathy,-0.946,0.3443,setara,8239
+PKM_BTL_024,Empathy,-1.754,0.0795,setara,8241
+PKM_BTL_025,Empathy,-0.572,0.5675,setara,8151
+PKM_BTL_026,Empathy,0.102,0.9188,setara,8156
+PKM_BTL_027,Empathy,0.359,0.7197,setara,8251
+PKM_SBY_001,Empathy,-0.946,0.3443,setara,8239
+PKM_SBY_002,Empathy,-0.946,0.3443,setara,8239
+PKM_SBY_003,Empathy,0.103,0.9178,setara,8181
+PKM_SBY_004,Empathy,-0.042,0.9665,setara,8201
+PKM_SBY_005,Empathy,-1.602,0.1091,setara,8121
+PKM_SBY_006,Empathy,0.785,0.4322,setara,8144
+PKM_SBY_007,Empathy,2.051,0.0403,lebih sering dikeluhkan,8110
+PKM_SBY_008,Empathy,0.58,0.5618,setara,8123
+PKM_SBY_009,Empathy,1.665,0.096,setara,8192
+PKM_SBY_010,Empathy,2.244,0.0248,lebih sering dikeluhkan,8198
+PKM_SBY_011,Empathy,0.97,0.3319,setara,8157
+PKM_SBY_012,Empathy,1.724,0.0847,setara,8203
+PKM_SBY_013,Empathy,1.631,0.1028,setara,8118
+PKM_SBY_014,Empathy,-1.612,0.107,setara,8196
+PKM_SBY_015,Empathy,1.839,0.066,setara,8209
+PKM_SBY_016,Empathy,0.463,0.6436,setara,8152
+PKM_SBY_017,Empathy,3.066,0.0022,lebih sering dikeluhkan,8167
+PKM_SBY_018,Empathy,1.225,0.2206,setara,8194
+PKM_SBY_019,Empathy,2.668,0.0076,lebih sering dikeluhkan,8179
+PKM_SBY_020,Empathy,0.205,0.8373,setara,8201
+PKM_SBY_021,Empathy,1.279,0.2009,setara,8189
+PKM_SBY_022,Empathy,1.484,0.1378,setara,8238
+PKM_SBY_023,Empathy,1.177,0.2393,setara,8190
+PKM_SBY_024,Empathy,0.965,0.3344,setara,8266
+PKM_SBY_025,Empathy,0.908,0.3637,setara,8186
+PKM_SBY_026,Empathy,1.692,0.0906,setara,8215
+PKM_SBY_027,Empathy,5.127,0.0,lebih sering dikeluhkan,8158
+PKM_SBY_028,Empathy,-0.323,0.7469,setara,8185
+PKM_SBY_029,Empathy,1.28,0.2005,setara,8207
+PKM_SBY_030,Empathy,-0.001,0.9989,setara,8182
+PKM_SBY_031,Empathy,0.055,0.9564,setara,8221
+PKM_SBY_032,Empathy,5.687,0.0,lebih sering dikeluhkan,8133
+PKM_SBY_033,Empathy,1.378,0.1682,setara,8213
+PKM_SBY_034,Empathy,-0.765,0.4442,setara,8125
+PKM_SBY_035,Empathy,1.9,0.0575,setara,8199
+PKM_SBY_036,Empathy,1.902,0.0572,setara,8218
+PKM_SBY_037,Empathy,-3.171,0.0015,lebih jarang dikeluhkan,8158
+PKM_SBY_038,Empathy,1.46,0.1442,setara,8194
+PKM_SBY_039,Empathy,2.595,0.0094,lebih sering dikeluhkan,8175
+PKM_SBY_040,Empathy,2.368,0.0179,lebih sering dikeluhkan,8224
+PKM_SBY_041,Empathy,0.069,0.9447,setara,8173
+PKM_SBY_042,Empathy,0.669,0.5038,setara,8234
+PKM_SBY_043,Empathy,3.305,0.0009,lebih sering dikeluhkan,8197
+PKM_SBY_044,Empathy,-0.285,0.7758,setara,8154
+PKM_SBY_045,Empathy,-2.685,0.0073,lebih jarang dikeluhkan,8056
+PKM_SBY_046,Empathy,2.561,0.0104,lebih sering dikeluhkan,8105
+PKM_SBY_047,Empathy,-1.784,0.0744,setara,8150
+PKM_SBY_048,Empathy,0.79,0.4298,setara,8231
+PKM_SBY_049,Empathy,-0.776,0.4377,setara,8195
+PKM_SBY_050,Empathy,0.422,0.6727,setara,8180
+PKM_SBY_051,Empathy,-0.77,0.4413,setara,8189
+PKM_SBY_052,Empathy,-0.101,0.9198,setara,8185
+PKM_SBY_053,Empathy,1.297,0.1945,setara,8140
+PKM_SBY_054,Empathy,-0.28,0.7792,setara,8205
+PKM_SBY_055,Empathy,3.694,0.0002,lebih sering dikeluhkan,8149
+PKM_SBY_056,Empathy,-0.548,0.584,setara,8231
+PKM_SBY_057,Empathy,-0.101,0.9195,setara,8152
+PKM_SBY_058,Empathy,1.868,0.0618,setara,8183
+PKM_SBY_059,Empathy,0.01,0.9922,setara,8157
+PKM_SBY_060,Empathy,1.656,0.0977,setara,8199
+PKM_SBY_061,Empathy,1.506,0.132,setara,8153
+PKM_SBY_062,Empathy,0.32,0.7488,setara,8181
+PKM_SBY_063,Empathy,2.462,0.0138,lebih sering dikeluhkan,8167
+PKM_SMG_001,Empathy,-1.775,0.0759,setara,8234
+PKM_SMG_002,Empathy,-2.908,0.0036,lebih jarang dikeluhkan,8179
+PKM_SMG_003,Empathy,-3.439,0.0006,lebih jarang dikeluhkan,8256
+PKM_SMG_004,Empathy,-1.077,0.2816,setara,8234
+PKM_SMG_005,Empathy,-1.851,0.0642,setara,8196
+PKM_SMG_006,Empathy,-4.154,0.0,lebih jarang dikeluhkan,8215
+PKM_SMG_007,Empathy,-0.567,0.5708,setara,8239
+PKM_SMG_008,Empathy,-3.813,0.0001,lebih jarang dikeluhkan,8213
+PKM_SMG_009,Empathy,-2.656,0.0079,lebih jarang dikeluhkan,8223
+PKM_SMG_010,Empathy,-3.487,0.0005,lebih jarang dikeluhkan,8216
+PKM_SMG_011,Empathy,-3.462,0.0005,lebih jarang dikeluhkan,8199
+PKM_SMG_012,Empathy,-0.39,0.6964,setara,8220
+PKM_SMG_013,Empathy,-1.981,0.0475,lebih jarang dikeluhkan,8242
+PKM_SMG_014,Empathy,-5.135,0.0,lebih jarang dikeluhkan,8178
+PKM_SMG_015,Empathy,-1.989,0.0467,lebih jarang dikeluhkan,8228
+PKM_SMG_016,Empathy,-4.14,0.0,lebih jarang dikeluhkan,8244
+PKM_SMG_017,Empathy,-0.976,0.3292,setara,8220
+PKM_SMG_018,Empathy,-0.808,0.4189,setara,8259
+PKM_SMG_019,Empathy,-1.159,0.2464,setara,8225
+PKM_SMG_020,Empathy,-1.694,0.0902,setara,8191
+PKM_SMG_021,Empathy,-0.779,0.4361,setara,8242
+PKM_SMG_022,Empathy,-2.031,0.0422,lebih jarang dikeluhkan,8190
+PKM_SMG_023,Empathy,-3.157,0.0016,lebih jarang dikeluhkan,8245
+PKM_SMG_024,Empathy,-0.728,0.4668,setara,8234
+PKM_SMG_025,Empathy,-3.157,0.0016,lebih jarang dikeluhkan,8245
+PKM_SMG_026,Empathy,-1.846,0.0649,setara,8229
+PKM_SMG_027,Empathy,-1.465,0.1428,setara,8265
+PKM_SMG_028,Empathy,-1.667,0.0954,setara,8228
+PKM_SMG_029,Empathy,-1.693,0.0904,setara,8246
+PKM_SMG_030,Empathy,0.394,0.6935,setara,8240
+PKM_SMG_031,Empathy,-4.107,0.0,lebih jarang dikeluhkan,8205
+PKM_SMG_032,Empathy,-3.597,0.0003,lebih jarang dikeluhkan,8205
+PKM_SMG_033,Empathy,-1.195,0.232,setara,8229
+PKM_SMG_034,Empathy,-2.039,0.0414,lebih jarang dikeluhkan,8249
+PKM_SMG_035,Empathy,-1.171,0.2415,setara,8171
+PKM_SMG_036,Empathy,0.285,0.7756,setara,8213
+PKM_SMG_037,Empathy,-0.701,0.4833,setara,8255
+PKM_BTL_001,Reliability,-1.621,0.1049,setara,8240
+PKM_BTL_002,Reliability,-1.006,0.3145,setara,8198
+PKM_BTL_003,Reliability,-1.107,0.2685,setara,8178
+PKM_BTL_004,Reliability,-2.86,0.0042,lebih jarang dikeluhkan,8199
+PKM_BTL_005,Reliability,0.409,0.6826,setara,8217
+PKM_BTL_006,Reliability,-1.365,0.1724,setara,8234
+PKM_BTL_007,Reliability,-2.112,0.0347,lebih jarang dikeluhkan,8248
+PKM_BTL_008,Reliability,-0.041,0.967,setara,8258
+PKM_BTL_009,Reliability,0.891,0.373,setara,8243
+PKM_BTL_010,Reliability,-0.623,0.5335,setara,8239
+PKM_BTL_011,Reliability,1.45,0.1471,setara,8236
+PKM_BTL_012,Reliability,-0.241,0.8093,setara,8255
+PKM_BTL_013,Reliability,-2.299,0.0215,lebih jarang dikeluhkan,8119
+PKM_BTL_014,Reliability,0.681,0.4959,setara,8183
+PKM_BTL_015,Reliability,0.894,0.3711,setara,8241
+PKM_BTL_016,Reliability,-0.358,0.7202,setara,8236
+PKM_BTL_017,Reliability,-0.313,0.7542,setara,8234
+PKM_BTL_018,Reliability,-0.059,0.9533,setara,8249
+PKM_BTL_019,Reliability,1.257,0.2086,setara,8227
+PKM_BTL_020,Reliability,-0.356,0.7217,setara,8220
+PKM_BTL_021,Reliability,1.836,0.0663,setara,8238
+PKM_BTL_022,Reliability,-0.999,0.3179,setara,8244
+PKM_BTL_023,Reliability,0.519,0.604,setara,8239
+PKM_BTL_024,Reliability,0.894,0.3711,setara,8241
+PKM_BTL_025,Reliability,0.498,0.6188,setara,8151
+PKM_BTL_026,Reliability,-0.21,0.8334,setara,8156
+PKM_BTL_027,Reliability,-0.111,0.9115,setara,8251
+PKM_SBY_001,Reliability,2.04,0.0413,lebih sering dikeluhkan,8239
+PKM_SBY_002,Reliability,-2.144,0.032,lebih jarang dikeluhkan,8239
+PKM_SBY_003,Reliability,2.219,0.0265,lebih sering dikeluhkan,8181
+PKM_SBY_004,Reliability,1.791,0.0732,setara,8201
+PKM_SBY_005,Reliability,0.186,0.8525,setara,8121
+PKM_SBY_006,Reliability,1.55,0.1212,setara,8144
+PKM_SBY_007,Reliability,0.185,0.853,setara,8110
+PKM_SBY_008,Reliability,0.678,0.498,setara,8123
+PKM_SBY_009,Reliability,-1.596,0.1104,setara,8192
+PKM_SBY_010,Reliability,-0.034,0.9728,setara,8198
+PKM_SBY_011,Reliability,1.612,0.107,setara,8157
+PKM_SBY_012,Reliability,-0.475,0.6347,setara,8203
+PKM_SBY_013,Reliability,-1.204,0.2287,setara,8118
+PKM_SBY_014,Reliability,1.187,0.2351,setara,8196
+PKM_SBY_015,Reliability,-1.635,0.102,setara,8209
+PKM_SBY_016,Reliability,0.962,0.3359,setara,8152
+PKM_SBY_017,Reliability,-2.251,0.0244,lebih jarang dikeluhkan,8167
+PKM_SBY_018,Reliability,0.958,0.3382,setara,8194
+PKM_SBY_019,Reliability,0.277,0.7821,setara,8179
+PKM_SBY_020,Reliability,1.046,0.2954,setara,8201
+PKM_SBY_021,Reliability,1.783,0.0746,setara,8189
+PKM_SBY_022,Reliability,0.715,0.4748,setara,8238
+PKM_SBY_023,Reliability,-1.553,0.1203,setara,8190
+PKM_SBY_024,Reliability,-0.907,0.3644,setara,8266
+PKM_SBY_025,Reliability,2.568,0.0102,lebih sering dikeluhkan,8186
+PKM_SBY_026,Reliability,1.546,0.122,setara,8215
+PKM_SBY_027,Reliability,-1.006,0.3143,setara,8158
+PKM_SBY_028,Reliability,2.229,0.0258,lebih sering dikeluhkan,8185
+PKM_SBY_029,Reliability,0.761,0.4469,setara,8207
+PKM_SBY_030,Reliability,0.797,0.4254,setara,8182
+PKM_SBY_031,Reliability,0.071,0.9432,setara,8221
+PKM_SBY_032,Reliability,-2.359,0.0183,lebih jarang dikeluhkan,8133
+PKM_SBY_033,Reliability,0.721,0.4707,setara,8213
+PKM_SBY_034,Reliability,-0.525,0.5996,setara,8125
+PKM_SBY_035,Reliability,-0.413,0.6793,setara,8199
+PKM_SBY_036,Reliability,0.543,0.5872,setara,8218
+PKM_SBY_037,Reliability,0.738,0.4607,setara,8158
+PKM_SBY_038,Reliability,0.958,0.3382,setara,8194
+PKM_SBY_039,Reliability,-0.742,0.4582,setara,8175
+PKM_SBY_040,Reliability,1.719,0.0857,setara,8224
+PKM_SBY_041,Reliability,-0.714,0.4755,setara,8173
+PKM_SBY_042,Reliability,0.388,0.6981,setara,8234
+PKM_SBY_043,Reliability,0.34,0.7341,setara,8197
+PKM_SBY_044,Reliability,2.475,0.0133,lebih sering dikeluhkan,8154
+PKM_SBY_045,Reliability,1.229,0.2189,setara,8056
+PKM_SBY_046,Reliability,0.141,0.8875,setara,8105
+PKM_SBY_047,Reliability,1.534,0.1251,setara,8150
+PKM_SBY_048,Reliability,0.253,0.8005,setara,8231
+PKM_SBY_049,Reliability,-0.355,0.7222,setara,8195
+PKM_SBY_050,Reliability,-0.924,0.3557,setara,8180
+PKM_SBY_051,Reliability,2.469,0.0136,lebih sering dikeluhkan,8189
+PKM_SBY_052,Reliability,1.559,0.1189,setara,8185
+PKM_SBY_053,Reliability,0.302,0.7623,setara,8140
+PKM_SBY_054,Reliability,-1.02,0.3078,setara,8205
+PKM_SBY_055,Reliability,-1.352,0.1764,setara,8149
+PKM_SBY_056,Reliability,1.26,0.2078,setara,8231
+PKM_SBY_057,Reliability,-0.359,0.7198,setara,8152
+PKM_SBY_058,Reliability,-1.303,0.1927,setara,8183
+PKM_SBY_059,Reliability,1.033,0.3016,setara,8157
+PKM_SBY_060,Reliability,0.321,0.7484,setara,8199
+PKM_SBY_061,Reliability,0.673,0.501,setara,8153
+PKM_SBY_062,Reliability,0.476,0.6338,setara,8181
+PKM_SBY_063,Reliability,-0.229,0.8191,setara,8167
+PKM_SMG_001,Reliability,0.037,0.9702,setara,8234
+PKM_SMG_002,Reliability,-0.369,0.7118,setara,8179
+PKM_SMG_003,Reliability,1.234,0.2171,setara,8256
+PKM_SMG_004,Reliability,-1.715,0.0863,setara,8234
+PKM_SMG_005,Reliability,-0.25,0.8027,setara,8196
+PKM_SMG_006,Reliability,0.428,0.6685,setara,8215
+PKM_SMG_007,Reliability,-1.003,0.3158,setara,8239
+PKM_SMG_008,Reliability,-1.748,0.0805,setara,8213
+PKM_SMG_009,Reliability,-1.476,0.1401,setara,8223
+PKM_SMG_010,Reliability,0.277,0.7814,setara,8216
+PKM_SMG_011,Reliability,3.257,0.0011,lebih sering dikeluhkan,8199
+PKM_SMG_012,Reliability,-0.65,0.5156,setara,8220
+PKM_SMG_013,Reliability,1.094,0.2741,setara,8242
+PKM_SMG_014,Reliability,-2.177,0.0295,lebih jarang dikeluhkan,8178
+PKM_SMG_015,Reliability,-0.194,0.8462,setara,8228
+PKM_SMG_016,Reliability,1.938,0.0526,setara,8244
+PKM_SMG_017,Reliability,-2.414,0.0158,lebih jarang dikeluhkan,8220
+PKM_SMG_018,Reliability,-0.434,0.6643,setara,8259
+PKM_SMG_019,Reliability,-1.851,0.0641,setara,8225
+PKM_SMG_020,Reliability,-0.764,0.4448,setara,8191
+PKM_SMG_021,Reliability,-1.724,0.0847,setara,8242
+PKM_SMG_022,Reliability,-0.633,0.5268,setara,8190
+PKM_SMG_023,Reliability,-2.544,0.011,lebih jarang dikeluhkan,8245
+PKM_SMG_024,Reliability,-1.365,0.1724,setara,8234
+PKM_SMG_025,Reliability,0.46,0.6459,setara,8245
+PKM_SMG_026,Reliability,0.931,0.3517,setara,8229
+PKM_SMG_027,Reliability,0.138,0.8899,setara,8265
+PKM_SMG_028,Reliability,-0.516,0.6055,setara,8228
+PKM_SMG_029,Reliability,0.668,0.5038,setara,8246
+PKM_SMG_030,Reliability,-2.783,0.0054,lebih jarang dikeluhkan,8240
+PKM_SMG_031,Reliability,-0.764,0.445,setara,8205
+PKM_SMG_032,Reliability,-1.276,0.2019,setara,8205
+PKM_SMG_033,Reliability,-0.702,0.4824,setara,8229
+PKM_SMG_034,Reliability,-0.059,0.9533,setara,8249
+PKM_SMG_035,Reliability,-0.686,0.4926,setara,8171
+PKM_SMG_036,Reliability,-0.925,0.355,setara,8213
+PKM_SMG_037,Reliability,-0.822,0.4111,setara,8255
+PKM_BTL_001,Responsiveness,0.049,0.9611,setara,8240
+PKM_BTL_002,Responsiveness,0.051,0.9594,setara,8198
+PKM_BTL_003,Responsiveness,0.685,0.4936,setara,8178
+PKM_BTL_004,Responsiveness,-1.09,0.2757,setara,8199
+PKM_BTL_005,Responsiveness,0.827,0.4082,setara,8217
+PKM_BTL_006,Responsiveness,2.385,0.0171,lebih sering dikeluhkan,8234
+PKM_BTL_007,Responsiveness,-0.774,0.4388,setara,8248
+PKM_BTL_008,Responsiveness,-0.425,0.6707,setara,8258
+PKM_BTL_009,Responsiveness,-0.695,0.4871,setara,8243
+PKM_BTL_010,Responsiveness,1.822,0.0684,setara,8239
+PKM_BTL_011,Responsiveness,2.023,0.0431,lebih sering dikeluhkan,8236
+PKM_BTL_012,Responsiveness,1.276,0.202,setara,8255
+PKM_BTL_013,Responsiveness,2.094,0.0362,lebih sering dikeluhkan,8119
+PKM_BTL_014,Responsiveness,1.378,0.1681,setara,8183
+PKM_BTL_015,Responsiveness,2.214,0.0269,lebih sering dikeluhkan,8241
+PKM_BTL_016,Responsiveness,2.023,0.0431,lebih sering dikeluhkan,8236
+PKM_BTL_017,Responsiveness,-0.46,0.6457,setara,8234
+PKM_BTL_018,Responsiveness,0.361,0.7184,setara,8249
+PKM_BTL_019,Responsiveness,-0.359,0.7193,setara,8227
+PKM_BTL_020,Responsiveness,1.213,0.225,setara,8220
+PKM_BTL_021,Responsiveness,-0.258,0.7961,setara,8238
+PKM_BTL_022,Responsiveness,-0.538,0.5903,setara,8244
+PKM_BTL_023,Responsiveness,0.664,0.5064,setara,8239
+PKM_BTL_024,Responsiveness,1.012,0.3115,setara,8241
+PKM_BTL_025,Responsiveness,2.531,0.0114,lebih sering dikeluhkan,8151
+PKM_BTL_026,Responsiveness,2.005,0.045,lebih sering dikeluhkan,8156
+PKM_BTL_027,Responsiveness,0.793,0.4275,setara,8251
+PKM_SBY_001,Responsiveness,-3.195,0.0014,lebih jarang dikeluhkan,8239
+PKM_SBY_002,Responsiveness,0.664,0.5064,setara,8239
+PKM_SBY_003,Responsiveness,-0.584,0.5594,setara,8181
+PKM_SBY_004,Responsiveness,0.356,0.7215,setara,8201
+PKM_SBY_005,Responsiveness,3.948,0.0001,lebih sering dikeluhkan,8121
+PKM_SBY_006,Responsiveness,0.825,0.4093,setara,8144
+PKM_SBY_007,Responsiveness,0.453,0.6503,setara,8110
+PKM_SBY_008,Responsiveness,0.856,0.3918,setara,8123
+PKM_SBY_009,Responsiveness,-1.232,0.2178,setara,8192
+PKM_SBY_010,Responsiveness,-2.414,0.0158,lebih jarang dikeluhkan,8198
+PKM_SBY_011,Responsiveness,-1.039,0.2988,setara,8157
+PKM_SBY_012,Responsiveness,-1.479,0.1392,setara,8203
+PKM_SBY_013,Responsiveness,0.166,0.8686,setara,8118
+PKM_SBY_014,Responsiveness,2.285,0.0223,lebih sering dikeluhkan,8196
+PKM_SBY_015,Responsiveness,-3.053,0.0023,lebih jarang dikeluhkan,8209
+PKM_SBY_016,Responsiveness,3.002,0.0027,lebih sering dikeluhkan,8152
+PKM_SBY_017,Responsiveness,0.968,0.333,setara,8167
+PKM_SBY_018,Responsiveness,-2.015,0.0439,lebih jarang dikeluhkan,8194
+PKM_SBY_019,Responsiveness,-0.535,0.5929,setara,8179
+PKM_SBY_020,Responsiveness,2.12,0.034,lebih sering dikeluhkan,8201
+PKM_SBY_021,Responsiveness,-1.953,0.0508,setara,8189
+PKM_SBY_022,Responsiveness,0.5,0.617,setara,8238
+PKM_SBY_023,Responsiveness,-1.638,0.1015,setara,8190
+PKM_SBY_024,Responsiveness,-0.821,0.4115,setara,8266
+PKM_SBY_025,Responsiveness,-1.509,0.1314,setara,8186
+PKM_SBY_026,Responsiveness,2.001,0.0454,lebih sering dikeluhkan,8215
+PKM_SBY_027,Responsiveness,-2.734,0.0063,lebih jarang dikeluhkan,8158
+PKM_SBY_028,Responsiveness,1.351,0.1767,setara,8185
+PKM_SBY_029,Responsiveness,2.333,0.0196,lebih sering dikeluhkan,8207
+PKM_SBY_030,Responsiveness,0.392,0.6954,setara,8182
+PKM_SBY_031,Responsiveness,-0.762,0.4458,setara,8221
+PKM_SBY_032,Responsiveness,-5.323,0.0,lebih jarang dikeluhkan,8133
+PKM_SBY_033,Responsiveness,0.626,0.5314,setara,8213
+PKM_SBY_034,Responsiveness,0.138,0.89,setara,8125
+PKM_SBY_035,Responsiveness,-0.842,0.3999,setara,8199
+PKM_SBY_036,Responsiveness,0.661,0.5086,setara,8218
+PKM_SBY_037,Responsiveness,4.737,0.0,lebih sering dikeluhkan,8158
+PKM_SBY_038,Responsiveness,2.3,0.0215,lebih sering dikeluhkan,8194
+PKM_SBY_039,Responsiveness,1.27,0.204,setara,8175
+PKM_SBY_040,Responsiveness,-2.906,0.0037,lebih jarang dikeluhkan,8224
+PKM_SBY_041,Responsiveness,3.413,0.0006,lebih sering dikeluhkan,8173
+PKM_SBY_042,Responsiveness,-0.815,0.4149,setara,8234
+PKM_SBY_043,Responsiveness,0.931,0.3519,setara,8197
+PKM_SBY_044,Responsiveness,3.57,0.0004,lebih sering dikeluhkan,8154
+PKM_SBY_045,Responsiveness,4.409,0.0,lebih sering dikeluhkan,8056
+PKM_SBY_046,Responsiveness,2.709,0.0067,lebih sering dikeluhkan,8105
+PKM_SBY_047,Responsiveness,1.115,0.265,setara,8150
+PKM_SBY_048,Responsiveness,-1.192,0.2331,setara,8231
+PKM_SBY_049,Responsiveness,2.172,0.0299,lebih sering dikeluhkan,8195
+PKM_SBY_050,Responsiveness,-0.449,0.6533,setara,8180
+PKM_SBY_051,Responsiveness,3.846,0.0001,lebih sering dikeluhkan,8189
+PKM_SBY_052,Responsiveness,3.387,0.0007,lebih sering dikeluhkan,8185
+PKM_SBY_053,Responsiveness,1.43,0.1527,setara,8140
+PKM_SBY_054,Responsiveness,3.126,0.0018,lebih sering dikeluhkan,8205
+PKM_SBY_055,Responsiveness,-2.18,0.0293,lebih jarang dikeluhkan,8149
+PKM_SBY_056,Responsiveness,2.213,0.0269,lebih sering dikeluhkan,8231
+PKM_SBY_057,Responsiveness,1.661,0.0966,setara,8152
+PKM_SBY_058,Responsiveness,0.931,0.3518,setara,8183
+PKM_SBY_059,Responsiveness,1.31,0.1904,setara,8157
+PKM_SBY_060,Responsiveness,0.4,0.6895,setara,8199
+PKM_SBY_061,Responsiveness,-0.754,0.451,setara,8153
+PKM_SBY_062,Responsiveness,2.731,0.0063,lebih sering dikeluhkan,8181
+PKM_SBY_063,Responsiveness,-0.263,0.7928,setara,8167
+PKM_SMG_001,Responsiveness,-1.527,0.1269,setara,8234
+PKM_SMG_002,Responsiveness,-2.72,0.0065,lebih jarang dikeluhkan,8179
+PKM_SMG_003,Responsiveness,-1.495,0.1348,setara,8256
+PKM_SMG_004,Responsiveness,-1.882,0.0598,setara,8234
+PKM_SMG_005,Responsiveness,-5.492,0.0,lebih jarang dikeluhkan,8196
+PKM_SMG_006,Responsiveness,-3.105,0.0019,lebih jarang dikeluhkan,8215
+PKM_SMG_007,Responsiveness,-2.809,0.005,lebih jarang dikeluhkan,8239
+PKM_SMG_008,Responsiveness,-0.766,0.4437,setara,8213
+PKM_SMG_009,Responsiveness,0.085,0.9321,setara,8223
+PKM_SMG_010,Responsiveness,-0.156,0.8764,setara,8216
+PKM_SMG_011,Responsiveness,-6.056,0.0,lebih jarang dikeluhkan,8199
+PKM_SMG_012,Responsiveness,-4.752,0.0,lebih jarang dikeluhkan,8220
+PKM_SMG_013,Responsiveness,-2.887,0.0039,lebih jarang dikeluhkan,8242
+PKM_SMG_014,Responsiveness,1.554,0.1203,setara,8178
+PKM_SMG_015,Responsiveness,-3.832,0.0001,lebih jarang dikeluhkan,8228
+PKM_SMG_016,Responsiveness,-1.39,0.1646,setara,8244
+PKM_SMG_017,Responsiveness,-1.471,0.1413,setara,8220
+PKM_SMG_018,Responsiveness,-0.882,0.378,setara,8259
+PKM_SMG_019,Responsiveness,-3.128,0.0018,lebih jarang dikeluhkan,8225
+PKM_SMG_020,Responsiveness,-3.668,0.0002,lebih jarang dikeluhkan,8191
+PKM_SMG_021,Responsiveness,-2.479,0.0132,lebih jarang dikeluhkan,8242
+PKM_SMG_022,Responsiveness,-3.505,0.0005,lebih jarang dikeluhkan,8190
+PKM_SMG_023,Responsiveness,2.672,0.0075,lebih sering dikeluhkan,8245
+PKM_SMG_024,Responsiveness,-4.016,0.0001,lebih jarang dikeluhkan,8234
+PKM_SMG_025,Responsiveness,-1.246,0.2129,setara,8245
+PKM_SMG_026,Responsiveness,-3.748,0.0002,lebih jarang dikeluhkan,8229
+PKM_SMG_027,Responsiveness,1.722,0.085,setara,8265
+PKM_SMG_028,Responsiveness,-2.523,0.0116,lebih jarang dikeluhkan,8228
+PKM_SMG_029,Responsiveness,-0.65,0.5157,setara,8246
+PKM_SMG_030,Responsiveness,-1.13,0.2584,setara,8240
+PKM_SMG_031,Responsiveness,0.527,0.5985,setara,8205
+PKM_SMG_032,Responsiveness,-0.773,0.4395,setara,8205
+PKM_SMG_033,Responsiveness,-3.085,0.002,lebih jarang dikeluhkan,8229
+PKM_SMG_034,Responsiveness,-2.526,0.0115,lebih jarang dikeluhkan,8249
+PKM_SMG_035,Responsiveness,-2.443,0.0146,lebih jarang dikeluhkan,8171
+PKM_SMG_036,Responsiveness,-4.385,0.0,lebih jarang dikeluhkan,8213
+PKM_SMG_037,Responsiveness,-1.08,0.2801,setara,8255
+PKM_BTL_001,Tangibles,0.384,0.701,setara,8240
+PKM_BTL_002,Tangibles,1.079,0.2806,setara,8198
+PKM_BTL_003,Tangibles,2.266,0.0234,lebih sering dikeluhkan,8178
+PKM_BTL_004,Tangibles,-0.459,0.6461,setara,8199
+PKM_BTL_005,Tangibles,-1.131,0.2579,setara,8217
+PKM_BTL_006,Tangibles,0.843,0.3994,setara,8234
+PKM_BTL_007,Tangibles,-1.073,0.2834,setara,8248
+PKM_BTL_008,Tangibles,-0.738,0.4606,setara,8258
+PKM_BTL_009,Tangibles,0.558,0.5769,setara,8243
+PKM_BTL_010,Tangibles,1.147,0.2513,setara,8239
+PKM_BTL_011,Tangibles,-0.595,0.552,setara,8236
+PKM_BTL_012,Tangibles,0.394,0.6934,setara,8255
+PKM_BTL_013,Tangibles,0.561,0.5747,setara,8119
+PKM_BTL_014,Tangibles,1.521,0.1283,setara,8183
+PKM_BTL_015,Tangibles,3.829,0.0001,lebih sering dikeluhkan,8241
+PKM_BTL_016,Tangibles,0.182,0.856,setara,8236
+PKM_BTL_017,Tangibles,0.09,0.9281,setara,8234
+PKM_BTL_018,Tangibles,-0.026,0.9793,setara,8249
+PKM_BTL_019,Tangibles,-0.875,0.3818,setara,8227
+PKM_BTL_020,Tangibles,2.097,0.036,lebih sering dikeluhkan,8220
+PKM_BTL_021,Tangibles,-1.326,0.1848,setara,8238
+PKM_BTL_022,Tangibles,0.621,0.5345,setara,8244
+PKM_BTL_023,Tangibles,1.964,0.0495,lebih sering dikeluhkan,8239
+PKM_BTL_024,Tangibles,-1.255,0.2094,setara,8241
+PKM_BTL_025,Tangibles,-0.649,0.5163,setara,8151
+PKM_BTL_026,Tangibles,0.691,0.4896,setara,8156
+PKM_BTL_027,Tangibles,-0.984,0.325,setara,8251
+PKM_SBY_001,Tangibles,-0.486,0.6269,setara,8239
+PKM_SBY_002,Tangibles,1.147,0.2513,setara,8239
+PKM_SBY_003,Tangibles,0.047,0.9626,setara,8181
+PKM_SBY_004,Tangibles,4.393,0.0,lebih sering dikeluhkan,8201
+PKM_SBY_005,Tangibles,-1.556,0.1198,setara,8121
+PKM_SBY_006,Tangibles,-0.787,0.4313,setara,8144
+PKM_SBY_007,Tangibles,-0.328,0.7426,setara,8110
+PKM_SBY_008,Tangibles,-0.437,0.6623,setara,8123
+PKM_SBY_009,Tangibles,-0.637,0.5241,setara,8192
+PKM_SBY_010,Tangibles,-2.05,0.0403,lebih jarang dikeluhkan,8198
+PKM_SBY_011,Tangibles,0.304,0.7615,setara,8157
+PKM_SBY_012,Tangibles,-1.433,0.152,setara,8203
+PKM_SBY_013,Tangibles,2.679,0.0074,lebih sering dikeluhkan,8118
+PKM_SBY_014,Tangibles,-1.052,0.293,setara,8196
+PKM_SBY_015,Tangibles,-0.742,0.4584,setara,8209
+PKM_SBY_016,Tangibles,0.182,0.856,setara,8152
+PKM_SBY_017,Tangibles,0.999,0.3176,setara,8167
+PKM_SBY_018,Tangibles,-0.588,0.5566,setara,8194
+PKM_SBY_019,Tangibles,-0.469,0.6393,setara,8179
+PKM_SBY_020,Tangibles,-0.939,0.348,setara,8201
+PKM_SBY_021,Tangibles,-0.218,0.8275,setara,8189
+PKM_SBY_022,Tangibles,-0.523,0.6007,setara,8238
+PKM_SBY_023,Tangibles,1.785,0.0743,setara,8190
+PKM_SBY_024,Tangibles,-0.246,0.8058,setara,8266
+PKM_SBY_025,Tangibles,-0.778,0.4366,setara,8186
+PKM_SBY_026,Tangibles,0.623,0.5335,setara,8215
+PKM_SBY_027,Tangibles,-2.583,0.0098,lebih jarang dikeluhkan,8158
+PKM_SBY_028,Tangibles,-0.322,0.7477,setara,8185
+PKM_SBY_029,Tangibles,-0.234,0.8151,setara,8207
+PKM_SBY_030,Tangibles,-0.396,0.6918,setara,8182
+PKM_SBY_031,Tangibles,-1.672,0.0946,setara,8221
+PKM_SBY_032,Tangibles,0.513,0.6079,setara,8133
+PKM_SBY_033,Tangibles,-0.634,0.526,setara,8213
+PKM_SBY_034,Tangibles,2.158,0.0309,lebih sering dikeluhkan,8125
+PKM_SBY_035,Tangibles,1.117,0.2641,setara,8199
+PKM_SBY_036,Tangibles,-1.108,0.2681,setara,8218
+PKM_SBY_037,Tangibles,0.745,0.4565,setara,8158
+PKM_SBY_038,Tangibles,-0.081,0.9357,setara,8194
+PKM_SBY_039,Tangibles,-1.919,0.055,setara,8175
+PKM_SBY_040,Tangibles,-0.297,0.7667,setara,8224
+PKM_SBY_041,Tangibles,-0.607,0.5441,setara,8173
+PKM_SBY_042,Tangibles,0.843,0.3994,setara,8234
+PKM_SBY_043,Tangibles,-1.03,0.3032,setara,8197
+PKM_SBY_044,Tangibles,0.23,0.8184,setara,8154
+PKM_SBY_045,Tangibles,2.1,0.0358,lebih sering dikeluhkan,8056
+PKM_SBY_046,Tangibles,-2.133,0.033,lebih jarang dikeluhkan,8105
+PKM_SBY_047,Tangibles,1.339,0.1805,setara,8150
+PKM_SBY_048,Tangibles,-0.037,0.9707,setara,8231
+PKM_SBY_049,Tangibles,-1.073,0.2831,setara,8195
+PKM_SBY_050,Tangibles,0.95,0.3421,setara,8180
+PKM_SBY_051,Tangibles,0.273,0.7849,setara,8189
+PKM_SBY_052,Tangibles,-0.8,0.4234,setara,8185
+PKM_SBY_053,Tangibles,-0.091,0.9276,setara,8140
+PKM_SBY_054,Tangibles,-1.393,0.1637,setara,8205
+PKM_SBY_055,Tangibles,1.311,0.1899,setara,8149
+PKM_SBY_056,Tangibles,-0.037,0.9707,setara,8231
+PKM_SBY_057,Tangibles,-1.034,0.3012,setara,8152
+PKM_SBY_058,Tangibles,-1.318,0.1875,setara,8183
+PKM_SBY_059,Tangibles,0.304,0.7615,setara,8157
+PKM_SBY_060,Tangibles,-0.459,0.6461,setara,8199
+PKM_SBY_061,Tangibles,-0.201,0.8404,setara,8153
+PKM_SBY_062,Tangibles,-0.888,0.3743,setara,8181
+PKM_SBY_063,Tangibles,-2.473,0.0134,lebih jarang dikeluhkan,8167
+PKM_SMG_001,Tangibles,-1.415,0.1571,setara,8234
+PKM_SMG_002,Tangibles,0.456,0.6484,setara,8179
+PKM_SMG_003,Tangibles,0.486,0.627,setara,8256
+PKM_SMG_004,Tangibles,-1.415,0.1571,setara,8234
+PKM_SMG_005,Tangibles,0.491,0.6234,setara,8196
+PKM_SMG_006,Tangibles,0.022,0.9821,setara,8215
+PKM_SMG_007,Tangibles,1.964,0.0495,lebih sering dikeluhkan,8239
+PKM_SMG_008,Tangibles,-0.045,0.964,setara,8213
+PKM_SMG_009,Tangibles,1.626,0.104,setara,8223
+PKM_SMG_010,Tangibles,-0.549,0.5831,setara,8216
+PKM_SMG_011,Tangibles,-1.51,0.1311,setara,8199
+PKM_SMG_012,Tangibles,0.834,0.404,setara,8220
+PKM_SMG_013,Tangibles,-0.367,0.7138,setara,8242
+PKM_SMG_014,Tangibles,-0.492,0.6225,setara,8178
+PKM_SMG_015,Tangibles,-0.154,0.8778,setara,8228
+PKM_SMG_016,Tangibles,-1.18,0.2378,setara,8244
+PKM_SMG_017,Tangibles,0.834,0.404,setara,8220
+PKM_SMG_018,Tangibles,2.357,0.0184,lebih sering dikeluhkan,8259
+PKM_SMG_019,Tangibles,-0.93,0.3526,setara,8225
+PKM_SMG_020,Tangibles,-0.164,0.8697,setara,8191
+PKM_SMG_021,Tangibles,-0.367,0.7138,setara,8242
+PKM_SMG_022,Tangibles,1.291,0.1968,setara,8190
+PKM_SMG_023,Tangibles,-0.233,0.8154,setara,8245
+PKM_SMG_024,Tangibles,-0.662,0.5078,setara,8234
+PKM_SMG_025,Tangibles,-0.233,0.8154,setara,8245
+PKM_SMG_026,Tangibles,1.287,0.198,setara,8229
+PKM_SMG_027,Tangibles,-0.348,0.7281,setara,8265
+PKM_SMG_028,Tangibles,-0.154,0.8778,setara,8228
+PKM_SMG_029,Tangibles,-1.128,0.2594,setara,8246
+PKM_SMG_030,Tangibles,-0.448,0.6544,setara,8240
+PKM_SMG_031,Tangibles,0.807,0.4196,setara,8205
+PKM_SMG_032,Tangibles,-0.843,0.3994,setara,8205
+PKM_SMG_033,Tangibles,2.69,0.0071,lebih sering dikeluhkan,8229
+PKM_SMG_034,Tangibles,3.028,0.0025,lebih sering dikeluhkan,8249
+PKM_SMG_035,Tangibles,0.235,0.8142,setara,8171
+PKM_SMG_036,Tangibles,-1.223,0.2213,setara,8213
+PKM_SMG_037,Tangibles,-0.852,0.3942,setara,8255
