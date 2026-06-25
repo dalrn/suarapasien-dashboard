@@ -1,6 +1,6 @@
 """
 SuaraPasien — Beranda. BACKBONE.
-
+ajdsjdkjakdjaljdlaksjd
 Entry script (otomatis jadi halaman pertama). Tujuan: sambutan + gambaran besar
 sebelum pengguna masuk ke halaman lain.
 
