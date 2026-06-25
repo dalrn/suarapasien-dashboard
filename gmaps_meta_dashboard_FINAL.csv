@@ -1,0 +1,128 @@
+puskesmas_id,puskesmas_title,wilayah,avg_rating,jumlah_ulasan,latitude,longitude
+PKM_BTL_001,PUSKESMAS BAMBANGLIPURO,Bantul,1.14,29,-7.9558263,110.2928718
+PKM_BTL_002,Puskesmas Banguntapan I,Bantul,1.14,72,-7.829088,110.413992
+PKM_BTL_003,Puskesmas Banguntapan II,Bantul,1.15,92,-7.844359,110.383537
+PKM_BTL_004,Puskesmas Banguntapan III,Bantul,1.18,71,-7.807838,110.404452
+PKM_BTL_005,Puskesmas Bantul 1,Bantul,1.2,54,-7.903612,110.321894
+PKM_BTL_006,Puskesmas Bantul 2,Bantul,1.32,34,-7.87161,110.327167
+PKM_BTL_007,Puskesmas Dlingo I,Bantul,1.1,20,-7.9338157,110.4651979
+PKM_BTL_008,Puskesmas Dlingo II,Bantul,1.0,10,-7.8802457,110.4526249
+PKM_BTL_009,Puskesmas Imogiri I,Bantul,1.04,24,-7.9198651,110.3802131
+PKM_BTL_010,Puskesmas Imogiri II,Bantul,1.1,31,-7.9447297,110.372687
+PKM_BTL_011,Puskesmas Jetis I,Bantul,1.15,33,-7.897809,110.375175
+PKM_BTL_012,Puskesmas Jetis II,Bantul,1.33,12,-7.9281671,110.3491672
+PKM_BTL_013,Puskesmas Kasihan I,Bantul,1.15,155,-7.83836,110.312159
+PKM_BTL_014,Puskesmas Kasihan II,Bantul,1.11,87,-7.8289546,110.3450649
+PKM_BTL_015,Puskesmas Kretek Kabupaten Bantul,Bantul,1.12,26,-7.9725132,110.3188374
+PKM_BTL_016,Puskesmas Pajangan,Bantul,1.12,34,-7.8934081,110.2896644
+PKM_BTL_017,Puskesmas Pandak 1,Bantul,1.26,34,-7.90123,110.301635
+PKM_BTL_018,Puskesmas Pandak II,Bantul,1.25,20,-7.9183326,110.2841875
+PKM_BTL_019,Puskesmas Piyungan,Bantul,1.29,42,-7.8314195,110.4584522
+PKM_BTL_020,Puskesmas Pleret,Bantul,1.18,51,-7.86423,110.3897192
+PKM_BTL_021,Puskesmas Pundong,Bantul,1.07,29,-7.9567888,110.3437436
+PKM_BTL_022,Puskesmas Sanden Kabupaten Bantul (IGD),Bantul,1.17,24,-7.966732,110.264987
+PKM_BTL_023,Puskesmas Sedayu I,Bantul,1.18,28,-7.8016586,110.2765091
+PKM_BTL_024,Puskesmas Sedayu II,Bantul,1.12,26,-7.81679,110.256557
+PKM_BTL_025,Puskesmas Sewon 1,Bantul,1.15,122,-7.8608951,110.3534057
+PKM_BTL_026,Puskesmas Sewon II,Bantul,1.14,119,-7.846926,110.360509
+PKM_BTL_027,Puskesmas Srandakan,Bantul,1.24,17,-7.938125,110.2507658
+PKM_SBY_001,Puskesmas Balas Klumprik,Surabaya,1.0,31,-7.3315249,112.6900272
+PKM_SBY_002,Puskesmas Bangkingan,Surabaya,1.17,30,-7.32492,112.656109
+PKM_SBY_003,Puskesmas Banyu Urip,Surabaya,1.12,98,-7.2715069,112.7200273
+PKM_SBY_004,Puskesmas Bulak Banteng Kota Surabaya,Surabaya,1.07,72,-7.2177947,112.7662792
+PKM_SBY_005,Puskesmas Dukuh Kupang,Surabaya,1.17,150,-7.283236,112.7122257
+PKM_SBY_006,Puskesmas Gayungan,Surabaya,1.1,131,-7.3381017,112.7186968
+PKM_SBY_007,Puskesmas Gunung Anyar,Surabaya,1.11,160,-7.3408615,112.7839286
+PKM_SBY_008,Puskesmas Jagir,Surabaya,1.13,151,-7.3056601,112.7377323
+PKM_SBY_009,Puskesmas Jemursari,Surabaya,1.18,80,-7.3260818,112.739969
+PKM_SBY_010,Puskesmas Kalijudan,Surabaya,1.08,71,-7.2573961,112.7780142
+PKM_SBY_011,Puskesmas Kebonsari,Surabaya,1.1,118,-7.3284006,112.7144456
+PKM_SBY_012,Puskesmas Kedurus,Surabaya,1.0,66,-7.3197547,112.7093945
+PKM_SBY_013,Puskesmas Keputih,Surabaya,1.06,156,-7.2939955,112.801876
+PKM_SBY_014,Puskesmas Klampis Ngasem,Surabaya,1.11,75,-7.2891562,112.77849
+PKM_SBY_015,Puskesmas Made,Surabaya,1.12,65,-7.2773111,112.6370347
+PKM_SBY_016,Puskesmas Menur,Surabaya,1.15,123,-7.2968727,112.7643469
+PKM_SBY_017,Puskesmas Morokrembangan,Surabaya,1.11,103,-7.2347805,112.7124435
+PKM_SBY_018,Puskesmas Mulyorejo Surabaya,Surabaya,1.16,81,-7.2607225,112.784748
+PKM_SBY_019,Puskesmas Ngagel Rejo,Surabaya,1.14,91,-7.2929633,112.7487887
+PKM_SBY_020,Puskesmas Pakis,Surabaya,1.12,73,-7.281774,112.7284812
+PKM_SBY_021,Puskesmas Putat Jaya,Surabaya,1.08,85,-7.2814224,112.7223643
+PKM_SBY_022,Puskesmas Sawah Pulo,Surabaya,1.06,31,-7.2228123,112.7446748
+PKM_SBY_023,Puskesmas Sawahan,Surabaya,1.12,78,-7.2655813,112.7277504
+PKM_SBY_024,PUSKESMAS SIDOSERMO,Surabaya,1.0,1,-7.3073313,112.7556756
+PKM_SBY_025,UPTD Puskesmas Siwalankerto Surabaya,Surabaya,1.2,86,-7.340269,112.736466
+PKM_SBY_026,Puskesmas Tambak Wedi,Surabaya,1.25,52,-7.2174798,112.7724023
+PKM_SBY_027,Puskesmas Wiyung,Surabaya,1.14,116,-7.3315249,112.6900272
+PKM_SBY_028,Puskesmas Wonokromo,Surabaya,1.14,86,-7.3031765,112.7303925
+PKM_SBY_029,Puskesmas Asemrowo,Surabaya,1.1,62,-7.2518611,112.7145619
+PKM_SBY_030,Puskesmas Balongsari,Surabaya,1.14,94,-7.2592288,112.678301
+PKM_SBY_031,Puskesmas Benowo,Surabaya,1.04,52,-7.2516176,112.6526735
+PKM_SBY_032,Puskesmas Dr. Soetomo,Surabaya,1.07,137,-7.2773515,112.7341031
+PKM_SBY_033,Puskesmas Dupak Surabaya,Surabaya,1.11,55,-7.2393518,112.7172651
+PKM_SBY_034,Puskesmas Gading,Surabaya,1.1,149,-7.2424906,112.7640344
+PKM_SBY_035,Puskesmas Gundih,Surabaya,1.07,70,-7.2472447,112.7253905
+PKM_SBY_036,Puskesmas Jeruk,Surabaya,1.17,54,-7.3054418,112.6383803
+PKM_SBY_037,Puskesmas Kalirungkut,Surabaya,1.06,113,-7.322218,112.7707621
+PKM_SBY_038,Puskesmas Kedungdoro,Surabaya,1.12,85,-7.2637015,112.7382415
+PKM_SBY_039,Puskesmas Kenjeran,Surabaya,1.04,98,-7.2411107,112.7952791
+PKM_SBY_040,Puskesmas Ketabang,Surabaya,1.14,43,-7.2580613,112.746774
+PKM_SBY_041,Puskesmas Krembangan Selatan,Surabaya,1.15,99,-7.233071,112.7312176
+PKM_SBY_042,Puskesmas Lidah Kulon,Surabaya,1.09,34,-7.306379,112.661505
+PKM_SBY_043,Puskesmas Lontar Surabaya,Surabaya,1.15,73,-7.2850638,112.6627329
+PKM_SBY_044,Puskesmas Manukan Kulon,Surabaya,1.12,116,-7.2584652,112.6606438
+PKM_SBY_045,Puskesmas Medokan Ayu,Surabaya,1.17,217,-7.3239443,112.7949832
+PKM_SBY_046,Puskesmas Mojo Surabaya,Surabaya,1.08,170,-7.2709021,112.7708244
+PKM_SBY_047,Puskesmas Pacar Keling Surabaya,Surabaya,1.08,121,-7.2571931,112.7626846
+PKM_SBY_048,Pegirian Public Health Center,Surabaya,1.16,38,-7.224634,112.746916
+PKM_SBY_049,Puskesmas Peneleh,Surabaya,1.09,75,-7.2523042,112.7408308
+PKM_SBY_050,Puskesmas Perak Timur,Surabaya,1.08,88,-7.2227321,112.7354624
+PKM_SBY_051,Puskesmas Pucang Sewu,Surabaya,1.2,82,-7.2865941,112.7555283
+PKM_SBY_052,Puskesmas Rangkah Surabaya,Surabaya,1.13,85,-7.2463081,112.7672265
+PKM_SBY_053,Puskesmas Sememi,Surabaya,1.12,136,-7.2483503,112.6354712
+PKM_SBY_054,Puskesmas Sidotopo,Surabaya,1.22,64,-7.2303477,112.7458816
+PKM_SBY_055,Puskesmas Sidotopo Wetan,Surabaya,1.2,128,-7.2265892,112.7635013
+PKM_SBY_056,Puskesmas Simolawang,Surabaya,1.08,38,-7.2348687,112.7510499
+PKM_SBY_057,Puskesmas Simomulyo,Surabaya,1.18,123,-7.2624603,112.7120093
+PKM_SBY_058,Puskesmas Tambakrejo,Surabaya,1.08,86,-7.2484481,112.7555557
+PKM_SBY_059,Puskesmas Tanah Kali Kedinding,Surabaya,1.14,118,-7.2303762,112.7744697
+PKM_SBY_060,Puskesmas Tanjungsari,Surabaya,1.11,71,-7.2594043,112.6892628
+PKM_SBY_061,Puskesmas Tembok Dukuh,Surabaya,1.1,121,-7.2545274,112.7192133
+PKM_SBY_062,Puskesmas Tenggilis,Surabaya,1.12,91,-7.3223604,112.7621105
+PKM_SBY_063,Wonokusumo Public Health Center,Surabaya,1.14,104,-7.219664,112.752562
+PKM_SMG_001,Puskesmas Bandarharjo Dadapsari (Pusat),Semarang,1.09,33,-6.964786,110.422563
+PKM_SMG_002,Puskesmas Bangetayu,Semarang,1.23,92,-6.9830685,110.4765697
+PKM_SMG_003,Puskesmas Bugangan,Semarang,1.18,11,-6.9737931,110.440226
+PKM_SMG_004,Puskesmas Bulu Lor,Semarang,1.12,33,-6.9750391,110.4068695
+PKM_SMG_005,Puskesmas Candilama,Semarang,1.13,71,-7.013298,110.431682
+PKM_SMG_006,PUSKESMAS GAYAMSARI,Semarang,1.19,53,-6.9651965,110.4463644
+PKM_SMG_007,Puskesmas Pembantu Pasar Genuk,Semarang,1.1,29,-6.953236,110.479624
+PKM_SMG_008,Puskesmas Gunungpati,Semarang,1.2,55,-7.086482,110.3660739
+PKM_SMG_009,Puskesmas Halmahera,Semarang,1.22,45,-6.9948818,110.4377612
+PKM_SMG_010,Puskesmas Kagok Semarang,Semarang,1.18,51,-7.0085506,110.4173139
+PKM_SMG_011,Puskesmas Karangayu,Semarang,1.07,68,-6.9804773,110.3928069
+PKM_SMG_012,"Puskesmas Karangdoro (Pelayanan UGD, Rawat Inap dan Rawat Bersalin 24 Jam)",Semarang,1.17,47,-6.963845,110.435838
+PKM_SMG_013,Puskesmas Karang Malang,Semarang,1.16,25,-7.094334,110.334057
+PKM_SMG_014,Puskesmas Kedungmundu,Semarang,1.26,90,-7.0260414,110.4602739
+PKM_SMG_015,Puskesmas Krobokan Lama,Semarang,1.18,39,-6.974921,110.394389
+PKM_SMG_016,UPTD Puskesmas Lamper Tengah,Semarang,1.04,24,-7.005125,110.447348
+PKM_SMG_017,Puskesmas Lebdosari,Semarang,1.15,47,-6.9938522,110.3793614
+PKM_SMG_018,Puskesmas Mangkang,Semarang,1.25,8,-6.972014,110.2978933
+PKM_SMG_019,Puskesmas Manyaran,Semarang,1.17,42,-7.0057313,110.3794538
+PKM_SMG_020,PUSKESMAS MIJEN,Semarang,1.19,77,-7.0555464,110.3144477
+PKM_SMG_021,Puskesmas Miroto,Semarang,1.08,25,-6.983853,110.4190704
+PKM_SMG_022,Puskesmas Ngaliyan,Semarang,1.15,78,-6.9978992,110.3473702
+PKM_SMG_023,Puskesmas Ngemplak Simongan,Semarang,1.27,22,-7.0007427,110.3932213
+PKM_SMG_024,Puskesmas Ngesrep,Semarang,1.21,33,-7.0336142,110.4185555
+PKM_SMG_025,UPTD Puskesmas Padangsari,Semarang,1.18,22,-7.07042,110.421706
+PKM_SMG_026,Puskesmas Pandanaran,Semarang,1.13,38,-6.9869932,110.4146663
+PKM_SMG_027,Puskesmas Pegandan,Semarang,1.0,2,-7.0161076,110.3938188
+PKM_SMG_028,Puskesmas Poncol,Semarang,1.15,39,-6.9738947,110.4146029
+PKM_SMG_029,Puskesmas Pudakpayung,Semarang,1.24,21,-7.0912732,110.4143908
+PKM_SMG_030,Puskesmas Purwoyoso,Semarang,1.11,28,-6.98819,110.367302
+PKM_SMG_031,Puskesmas Rowosari,Semarang,1.19,62,-7.0555567,110.4718212
+PKM_SMG_032,Puskesmas Sekaran,Semarang,1.29,62,-7.0519504,110.3934893
+PKM_SMG_033,Puskesmas Srondol,Semarang,1.18,38,-7.0588407,110.4140973
+PKM_SMG_034,Puskesmas Tambakaji,Semarang,1.22,18,-6.9833238,110.3503705
+PKM_SMG_035,UPTD Puskesmas Tlogosari Kulon,Semarang,1.16,97,-6.980917,110.457426
+PKM_SMG_036,Puskesmas Tlogosari Wetan,Semarang,1.19,57,-6.9967303,110.4643258
+PKM_SMG_037,UPTD Puskesmas Karanganyar,Semarang,1.38,13,-6.972013,110.334487
