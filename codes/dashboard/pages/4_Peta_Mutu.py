@@ -21,19 +21,25 @@ st.markdown("<div class='page-sub'>Mendeteksi disparitas kuantitatif antara rati
 # ==========================================
 @st.cache_data
 def load_and_sync_data():
-    # Load metadata koordinat yang sudah kita tambal manual
-    df_meta = pd.read_csv("gmaps_meta_dashboard_FINAL.csv")
-    
-    # Load data hasil inferensi statistik
+    # 1. Load data LLM (Tingkat Keluhan)
     df_llm = pd.read_csv("../outputs/statistik/skor_per_puskesmas.csv")
     df_llm = df_llm.rename(columns={'id_puskesmas': 'puskesmas_id'})
     
-    # Agregasi keluhan teks global (mengambil rata-rata intensitas_shrunk dari 5 dimensi)
     df_agg = df_llm.groupby('puskesmas_id').agg(
         pct_keluhan=('intensitas_shrunk', lambda x: x.mean() * 100)
     ).reset_index()
+
+    # 2. Load koordinat dari CSV manualmu
+    df_meta = pd.read_csv("gmaps_meta_dashboard_FINAL.csv")
     
-    # Gabungkan menjadi satu single dataframe utama
+    # 3. AMBIL RATING ASLI DARI LIBRARY TEMANMU (Bintang 1 sampai 5)
+    gmaps_meta_asli = load_gmaps_meta()
+    
+    # Timpa/replace nilai rating & ulasan di df_meta pakai data asli dari library
+    df_meta['avg_rating'] = df_meta['puskesmas_id'].map(lambda x: gmaps_meta_asli.get(x, {}).get('avg', 0))
+    df_meta['jumlah_ulasan'] = df_meta['puskesmas_id'].map(lambda x: gmaps_meta_asli.get(x, {}).get('total', 0))
+    
+    # 4. Gabungkan menjadi satu single dataframe utama
     df_final = pd.merge(df_meta, df_agg, on='puskesmas_id', how='inner')
     return df_final
 
@@ -88,6 +94,11 @@ st.markdown("<br>", unsafe_allow_html=True)
 st.subheader("📊 Kuadran Performa Mutu")
 
 if not df_filtered.empty:
+    # BIKIN PETA WARNA STATIS (Biar warna wilayah tidak berubah saat difilter)
+    wilayah_unik = df['wilayah'].unique()
+    warna_safe = px.colors.qualitative.Safe
+    peta_warna_statis = {wilayah: warna_safe[i % len(warna_safe)] for i, wilayah in enumerate(wilayah_unik)}
+
     # Garis pembatas kuadran menggunakan median dari data global wilayah aktif
     median_rating = df_filtered['avg_rating'].median()
     median_keluhan = df_filtered['pct_keluhan'].median()
@@ -98,36 +109,36 @@ if not df_filtered.empty:
         y='pct_keluhan', 
         size='jumlah_ulasan', 
         color='wilayah',
+        color_discrete_map=peta_warna_statis,  # <--- INI KUNCI UTAMANYA CUY!
         hover_name='puskesmas_title',
         hover_data={'avg_rating': True, 'pct_keluhan': ':.1f', 'jumlah_ulasan': True, 'wilayah': False},
         labels={
-            'avg_rating': 'Rata-rata Bintang Google Maps', 
+            'avg_rating': 'Rata-rata Rating Keseluruhan (Google Maps)', 
             'pct_keluhan': 'Tingkat Keluhan Aktual - Bayes Shrunk (%)',
             'jumlah_ulasan': 'Volume Ulasan'
         },
-        size_max=40, # Diperbesar sedikit biar bubble-nya makin mantap
-        opacity=0.75,
-        color_discrete_sequence=px.colors.qualitative.Safe
+        size_max=40,
+        opacity=0.75
     )
 
-    # Injeksi Garis Median Pembatas (Posisi teks dipindah ke 'bottom right' agar aman)
+    # Injeksi Garis Median Pembatas
     fig.add_hline(y=median_keluhan, line_dash="dash", line_color="rgba(128,128,128,0.6)", 
                   annotation_text=f"Median Keluhan ({median_keluhan:.1f}%)", annotation_position="bottom right")
     fig.add_vline(x=median_rating, line_dash="dash", line_color="rgba(128,128,128,0.6)", 
-                  annotation_text=f"Median Bintang ({median_rating:.1f})", annotation_position="bottom right")
+                  annotation_text=f"Median Rating ({median_rating:.1f})", annotation_position="bottom right")
 
-    # Anotasi Karakteristik Kuadran (Dipaku ke pojok kanvas menggunakan xref & yref 'paper')
+    # Anotasi Karakteristik Kuadran
     fig.add_annotation(x=0.99, y=0.02, xref="paper", yref="paper", text="🌟 Benar-benar baik", showarrow=False, font=dict(color="green", size=12), xanchor="right", yanchor="bottom")
     fig.add_annotation(x=0.99, y=0.98, xref="paper", yref="paper", text="⚠️ MENYESATKAN (Sinyal)", showarrow=False, font=dict(color="red", size=12), xanchor="right", yanchor="top")
     fig.add_annotation(x=0.01, y=0.02, xref="paper", yref="paper", text="⚪ Sepi data / Netral", showarrow=False, font=dict(color="gray", size=12), xanchor="left", yanchor="bottom")
     fig.add_annotation(x=0.01, y=0.98, xref="paper", yref="paper", text="❌ Konsisten buruk", showarrow=False, font=dict(color="darkred", size=12), xanchor="left", yanchor="top")
 
     # Kunci Sumbu X agar rentangnya statis (skala 0.8 sampai 5.2)
-    # Ini bikin visualisasi anomali rating jadi lebih masuk akal dan gak terlalu mepet
     fig.update_xaxes(range=[0.8, 5.2])
 
     fig.update_layout(height=550, template="plotly_white", margin=dict(l=15, r=15, t=15, b=15))
     st.plotly_chart(fig, use_container_width=True)
+
 
 # ==========================================
 # 3. SPASIAL ADAPTIF MAPS (DENGAN KETERANGAN WARNA)
@@ -189,11 +200,12 @@ if not df_filtered.empty:
             else:
                 marker_color = '#64748b'  # Abu-abu
 
+            # Pop-up sudah diubah terminologinya menjadi "Rating Keseluruhan"
             popup_html = f"""
             <div style='font-family: sans-serif; width: 200px;'>
                 <h4 style='margin:0 0 5px 0; color:#1e293b;'>Puskesmas {row['puskesmas_title']}</h4>
                 <span style='color:#64748b; font-size:11px;'>Wilayah: {row['wilayah']}</span><br><br>
-                ⭐ Rating Bintang: <b>{row['avg_rating']}</b><br>
+                ⭐ Rating Keseluruhan: <b>{row['avg_rating']}</b><br>
                 🚨 Indeks Keluhan: <b>{row['pct_keluhan']:.1f}%</b><br>
                 📝 Total Ulasan: <b>{row['jumlah_ulasan']} ulasan</b>
             </div>
