@@ -13,12 +13,10 @@ st.markdown("""
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
     
-    /* Reset font global agar serasi dengan halaman profil */
     .reportview-container, .main, div, span, p {
         font-family: 'Inter', sans-serif;
     }
     
-    /* Desain Elemen Hero */
     .hero-container {
         text-align: center;
         padding: 25px 10px 10px 10px;
@@ -33,7 +31,7 @@ st.markdown("""
     .hero-sub {
         font-size: 15.5px;
         color: #64748b;
-        max-width: 720px;
+        max-width: 750px;
         margin: 0 auto;
         line-height: 1.6;
     }
@@ -42,7 +40,6 @@ st.markdown("""
         font-weight: 600;
     }
     
-    /* Kartu Metrik Ringkasan Data */
     .stat-card {
         background: #ffffff;
         border-radius: 14px;
@@ -64,7 +61,6 @@ st.markdown("""
         font-weight: 500;
     }
     
-    /* Judul Sub-Section */
     .section-title {
         font-size: 19px;
         font-weight: 700;
@@ -73,7 +69,6 @@ st.markdown("""
         letter-spacing: -0.01em;
     }
     
-    /* Kartu Tiga Langkah Kerja */
     .step-card {
         background: #ffffff;
         border-radius: 14px;
@@ -102,56 +97,70 @@ st.markdown("""
         line-height: 1.55;
     }
     
-    /* Kartu Dimensi SERVQUAL */
+    /* MODIFIKASI CSS KARTU DIMENSI VERTIKAL */
     .dim-card {
         background: #ffffff;
         border-radius: 14px;
-        padding: 16px 22px;
+        padding: 18px 24px;
         margin-bottom: 12px;
         box-shadow: 0 1px 3px rgba(16,32,48,.07);
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-start; /* Mengikuti gaya penulisan profil agar sejajar dari atas */
         gap: 15px;
     }
     .dim-term {
-        font-size: 15.5px;
+        font-size: 16px;
         font-weight: 700;
         color: #16202b;
         letter-spacing: -0.01em;
+        margin-bottom: 2px;
     }
     .dim-label {
         font-size: 13px;
-        font-weight: 600;
+        font-weight: 500;
         color: #475569;
-        margin-top: 1px;
+        margin-bottom: 6px;
     }
     .dim-desc {
-        font-size: 12px;
-        color: #94a3b8;
-        margin-top: 3px;
-        line-height: 1.4;
+        font-size: 12.5px;
+        color: #64748b;
+        line-height: 1.5;
     }
     .dim-badge {
         font-size: 11.5px;
         font-weight: 600;
-        color: #185FA5;
-        background: #eaf1f9;
+        color: #2f9e6f;
+        background: #f0fdf4;
         padding: 5px 12px;
         border-radius: 8px;
         white-space: nowrap;
     }
     
-    /* Catatan Keterbatasan Data */
     .note-box {
         background: #f8fafc;
         border-left: 4px solid #cbd5e1;
-        padding: 16px 20px;
+        padding: 20px 24px;
         border-radius: 0 14px 14px 0;
         margin-top: 45px;
+    }
+    .note-title {
+        font-size: 14px;
+        font-weight: 700;
+        color: #1e293b;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    .note-content {
         font-size: 12.5px;
         color: #475569;
         line-height: 1.6;
+    }
+    .note-list {
+        margin: 8px 0 0 18px;
+        padding: 0;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -175,7 +184,6 @@ st.markdown("<br>", unsafe_allow_html=True)
 # ==========================================
 # 2. GAMBARAN DATA (METRIK RINGKASAN)
 # ==========================================
-# Mengambil ringkasan statistik dataset secara aman (fleksibel jika return berupa dict/tuple)
 stats = dataset_stats()
 if isinstance(stats, dict):
     total_pkm = stats.get("n_puskesmas", stats.get("total_puskesmas", 0))
@@ -195,7 +203,7 @@ with c2:
     st.markdown(f"""
     <div class="stat-card">
         <div class="stat-val">{total_wilayah}</div>
-        <div class="stat-lbl">Wilayah Administratif</div>
+        <div class="stat-lbl">Wilayah Terwakili</div>
     </div>
     """, unsafe_allow_html=True)
 
@@ -219,7 +227,7 @@ with step2:
     <div class="step-card" style="border-top-color: #185FA5;">
         <div class="step-num">Langkah 2</div>
         <div class="step-title">🤖 Kelompokkan</div>
-        <div class="step-desc">Menggunakan Large Language Model (LLM) tingkat lanjut untuk memilah teks keluhan mentah ke dalam klaster taksonomi mutu internasional.</div>
+        <div class="step-desc">Menggunakan pemodelan bahasa (LLM) untuk memilah teks keluhan mentah ke dalam klaster taksonomi mutu SERVQUAL secara otomatis.</div>
     </div>
     """, unsafe_allow_html=True)
 
@@ -228,22 +236,23 @@ with step3:
     <div class="step-card" style="border-top-color: #2f9e6f;">
         <div class="step-num">Langkah 3</div>
         <div class="step-title">📊 Tampilkan</div>
-        <div class="step-desc">Menyajikan profil performa faskes, peta klaster kuadran anomali mutu, hingga sebaran topik keluhan kritis untuk rekomendasi kebijakan.</div>
+        <div class="step-desc">Menyajikan profil performa faskes, peta klaster kuadran anomali mutu, hingga sebaran topik kritis untuk rekomendasi kebijakan.</div>
     </div>
     """, unsafe_allow_html=True)
 
 # ==========================================
-# 4. KERANGKA KERJA SERVQUAL (DIMENSI MUTU)
+# 4. KERANGKA KERJA SERVQUAL
 # ==========================================
 st.markdown("<div class='section-title'>📋 Dimensi Mutu yang Dievaluasi (SERVQUAL)</div>", unsafe_allow_html=True)
 
 for key in DIM_ORDER:
     if key in DIM_INFO:
         label, desc, short = DIM_INFO[key]
+        # Format fix: Key -> Label (tanpa kurung) -> Deskripsi
         st.markdown(f"""
         <div class="dim-card">
             <div class="dim-left">
-                <div class="dim-term">{key} <span style="font-weight:400; color:#64748b; font-size:13px;">({short})</span></div>
+                <div class="dim-term">{key}</div>
                 <div class="dim-label">{label}</div>
                 <div class="dim-desc">{desc}</div>
             </div>
@@ -252,13 +261,36 @@ for key in DIM_ORDER:
         """, unsafe_allow_html=True)
 
 # ==========================================
-# 5. NAVIGASI SIDEBAR & KETERBATASAN DATA
+# 5. NAVIGASI & KETERBATASAN DATA
 # ==========================================
-st.markdown(f"""
-<div class="note-box">
-    💡 <b>Petunjuk Navigasi:</b> Silakan gunakan panel menu di sebelah kiri layar untuk mengeksplorasi analisis mendalam secara interaktif: 
-    <b>Profil Puskesmas</b> untuk analisis individu faskes, <b>Analisis Topik</b> untuk tren sebaran narasi, atau <b>Peta Mutu</b> untuk melihat anomali sebaran rating spasial.<br><br>
-    ⚠️ <b>Catatan Keterbatasan Data:</b> Seluruh analisis dalam platform ini dibangun berdasarkan data umpan balik masyarakat yang tersedia secara digital pada platform Google Maps. 
-    Instrumen ini ditujukan sebagai data sekunder objektif untuk melengkapi metode survei konvensional di lapangan.
+st.markdown("<br>", unsafe_allow_html=True)
+
+st.markdown("""
+<div class="note-box" style="margin-top: 10px; border-left-color: #185FA5;">
+    <div class="note-title">🧭 Petunjuk Eksplorasi</div>
+    <div class="note-content">
+        Gunakan menu navigasi di sisi kiri layar untuk mengakses analisis mendalam:
+        <ul class="note-list">
+            <li><b>Profil Puskesmas:</b> Analisis detail performa per individu fasilitas kesehatan.</li>
+            <li><b>Topik Keluhan:</b> Eksplorasi tren narasi keluhan masyarakat yang paling dominan.</li>
+            <li><b>Peta Mutu:</b> Visualisasi spasial untuk mendeteksi anomali rating vs keluhan aktual.</li>
+            <li><b>Metodologi:</b> Penjelasan teknis mengenai pengolahan data dan inferensi statistik.</li>
+        </ul>
+    </div>
+</div>
+""", unsafe_allow_html=True)
+
+st.markdown("""
+<div class="note-box" style="margin-top: 15px;">
+    <div class="note-title">⚠️ Catatan Keterbatasan Data</div>
+    <div class="note-content">
+        Sebagai bentuk transparansi metodologi, platform ini memiliki batasan cakupan data sebagai berikut:
+        <ul class="note-list">
+            <li><b>Sumber Data Tunggal:</b> Analisis eksklusif menggunakan ulasan Google Maps; tidak mencakup survei kepuasan langsung atau ulasan di luar platform digital.</li>
+            <li><b>Representasi Wilayah:</b> Lokasi analisis saat ini terbatas pada Kabupaten Bantul, Kota Semarang, dan Kota Surabaya sebagai perwakilan tiga tingkatan wilayah.</li>
+            <li><b>Fokus Analisis:</b> Ekstraksi keluhan dilakukan secara spesifik pada ulasan dengan rating rendah (bintang 1 dan 2) untuk menangkap sinyal ketidakpuasan secara tajam.</li>
+            <li><b>Data Statis:</b> Dataset bersifat statis hasil penarikan data per tanggal <b>17 Mei 2026</b>, sehingga tidak mencerminkan ulasan yang masuk setelah tanggal tersebut.</li>
+        </ul>
+    </div>
 </div>
 """, unsafe_allow_html=True)
