@@ -154,11 +154,11 @@ region_chart = (
 )
 
 warna = {
-    "Responsiveness": "#4F6BED",
-    "Reliability": "#27AE60",
-    "Assurance": "#F2C94C",
-    "Empathy": "#EB5757",
-    "Tangibles": "#9B51E0",
+    "Empathy": "#E76F51",
+    "Responsiveness": "#2A9D8F",
+    "Reliability": "#457B9D",
+    "Assurance": "#E9C46A",
+    "Tangibles": "#F4A261",
     "Umum": "#6C757D"
 }
 
@@ -179,7 +179,8 @@ fig = px.bar(
 
 fig.update_traces(
     texttemplate="%{text:.1f}%",
-    textposition="outside"
+    textposition="outside",
+    marker=dict(cornerradius=12)
 )
 
 fig.update_layout(
@@ -195,7 +196,6 @@ st.plotly_chart(
     use_container_width=True,
     config={"displayModeBar": False}
 )
-
 # 2. Keluhan paling umum se-kabupaten
 # Daftar 10 isu spesifik teratas (hasil kanonikalisasi) + jumlah ulasan + tag dimensi.
 
@@ -256,11 +256,11 @@ isu_top = (
 # =====================================================
 
 warna = {
-    "Responsiveness": "#4F6BED",
-    "Reliability": "#27AE60",
-    "Assurance": "#F2C94C",
-    "Empathy": "#EB5757",
-    "Tangibles": "#9B51E0",
+    "Empathy": "#E76F51",
+    "Responsiveness": "#2A9D8F",
+    "Reliability": "#457B9D",
+    "Assurance": "#E9C46A",
+    "Tangibles": "#F4A261",
     "Umum": "#6C757D"
 }
 
@@ -405,12 +405,12 @@ dimensi_order = [
 ]
 
 warna = {
+    "Empathy": "#E76F51",
     "Responsiveness": "#2A9D8F",
     "Reliability": "#457B9D",
-    "Empathy": "#E76F51",
     "Assurance": "#E9C46A",
     "Tangibles": "#F4A261",
-    "Umum": "#6C757D",
+    "Umum": "#6C757D"
 }
 
 freq = (
@@ -656,7 +656,7 @@ Ringkasan Temuan
 
 <div style="
 font-size:14px;
-text-align: justify
+text-align: justify;
 line-height:1.8;
 color:#374151;
 ">
@@ -728,49 +728,31 @@ warna = {
 # =====================================================
 # DAFTAR PASANGAN DIMENSI
 # =====================================================
-
+cards_html = ""
 for _, row in lift_df.iterrows():
+    color_a = warna.get(row["dimensi_A"], "#6C757D")
+    color_b = warna.get(row["dimensi_B"], "#6C757D")
 
-    col1, col2 = st.columns([5, 1])
+    cards_html += (
+        '<div style="background:white;border:1px solid #E5E7EB;border-radius:16px;'
+        'padding:18px 24px;margin-bottom:12px;box-shadow:0 1px 3px rgba(0,0,0,.05);">'
+        '<div style="display:flex;justify-content:space-between;align-items:center;">'
+        '<div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;">'
+        f'<span style="background:{color_a};color:white;padding:7px 16px;'
+        f'border-radius:999px;font-size:13px;font-weight:600;">{row["dimensi_A"]}</span>'
+        '<span style="font-size:22px;font-weight:700;color:#9CA3AF;">+</span>'
+        f'<span style="background:{color_b};color:white;padding:7px 16px;'
+        f'border-radius:999px;font-size:13px;font-weight:600;">{row["dimensi_B"]}</span>'
+        '</div>'
+        '<div style="text-align:right;">'
+        '<div style="font-size:12px;color:#6B7280;margin-bottom:2px;">Lift</div>'
+        f'<div style="font-size:28px;font-weight:700;color:#111827;line-height:1;">{row["lift"]:.2f}</div>'
+        '</div>'
+        '</div>'
+        '</div>'
+    )
 
-    with col1:
-
-        st.markdown(
-            f"""
-<span style="
-background:{warna.get(row['dimensi_A'], '#6C757D')};
-color:white;
-text-align: justify;
-padding:4px 10px;
-border-radius:999px;
-font-size:12px;
-font-weight:600;
-">
-{row['dimensi_A']}
-</span>
-
-&nbsp;&nbsp;+&nbsp;&nbsp;
-
-<span style="
-background:{warna.get(row['dimensi_B'], '#6C757D')};
-color:white;
-text-align: justify;
-padding:4px 10px;
-border-radius:999px;
-font-size:12px;
-font-weight:600;
-">
-{row['dimensi_B']}
-</span>
-""",
-            unsafe_allow_html=True
-        )
-
-    with col2:
-        st.metric(
-            "Lift",
-            f"{row['lift']:.2f}"
-        )
+st.markdown(cards_html, unsafe_allow_html=True)
 
 # =====================================================
 # RINGKASAN TEMUAN
