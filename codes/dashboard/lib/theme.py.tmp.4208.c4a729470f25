@@ -49,7 +49,7 @@ _BASE_CSS = f"""
   /* ---- kartu generik (st.container(border=True)) ---- */
   div[data-testid="stVerticalBlockBorderWrapper"]{{
       background:#fff; border:none !important; border-radius:18px;
-      padding:18px 22px; box-shadow:0 1px 3px rgba(16,32,48,.07); margin-bottom:14px; }}
+      padding:6px 4px; box-shadow:0 1px 3px rgba(16,32,48,.07); margin-bottom:14px; }}
 
   /* ---- kartu rating Google Maps ---- */
   .pkm-name{{ font-size:23px; font-weight:700; line-height:1.15; color:{C_INK}; }}

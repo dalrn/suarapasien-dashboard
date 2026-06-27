@@ -1,816 +1,342 @@
-"""
-Topik Keluhan se-Kabupaten
+from pathlib import Path
 
-Tujuan halaman: pola keluhan di tingkat kabupaten (bukan per puskesmas): mana
-yang merata (perlu kebijakan dinas) vs lokal, dan bagaimana antar-wilayah.
-
-Sumber data:
-  - load_topik()            : persen keluhan & sebaran per dimensi, χ², lift
-  - load_isu_kanonik()      : isu spesifik (hasil clustering) + jumlah ulasan
-  - load_region_breakdown() : persen keluhan per dimensi per wilayah
-"""
-import streamlit as st
 import pandas as pd
 import plotly.express as px
+import plotly.graph_objects as go
+import streamlit as st
 
-from lib.theme import (
-    setup,
-    DIM_INFO,
-    DIM_ORDER,
-)
+from lib.theme import setup, DIM_INFO, DIM_ORDER, C_INK, C_SUB, C_FAINT
 
-from lib.data import (
-    load_topik,
-    load_isu_kanonik,
-    load_region_breakdown,
-    load_profiles,
-    dataset_stats,
-)
 
-# ==============================
-# Load Data
-# ==============================
-topik_df = load_topik()
-
-isu_df = load_isu_kanonik()
-
-region_df = load_region_breakdown()
-
-stats = dataset_stats()
-
-# ==============================
-# LOAD FINDINGS
-# ==============================
-
-from pathlib import Path
+# Data
 
 ROOT = Path(__file__).resolve().parents[2]
 OUT = ROOT / "outputs"
 
-findings = pd.read_csv(
-    OUT / "findings_full.csv"
-)
 
-# ==============================
-# HEADER
-# ==============================
+@st.cache_data
+def load_findings() -> pd.DataFrame:
+    return pd.read_csv(OUT / "findings_full.csv")
 
-setup("Topik Keluhan")
 
-st.markdown(
-    "<div class='page-title'>📣 Profil Keluhan Masyarakat</div>",
-    unsafe_allow_html=True
-)
+@st.cache_data
+def load_residuals() -> pd.DataFrame:
+    return pd.read_csv(OUT / "statistik" / "chi2_residual_terstandarisasi.csv")
 
-st.markdown(
-    """
-    <div class='page-sub'>
-    Apa yang paling sering dikeluhkan warga pada layanan puskesmas di wilayah yang dipilih.
-    </div>
-    <br>
-    """,
-    unsafe_allow_html=True
-)
 
-# =====================================================
-# Filter Wilayah
-# =====================================================
+@st.cache_data
+def load_chi2() -> dict:
+    return pd.read_csv(OUT / "statistik" / "chi2_ringkasan.csv").iloc[0].to_dict()
 
-profiles = load_profiles()
 
-by_region = {}
+@st.cache_data
+def load_lift() -> pd.DataFrame:
+    return pd.read_csv(OUT / "statistik" / "co_occurrence_lift.csv")
 
-for pid, p in profiles.items():
-    by_region.setdefault(
-        p["wilayah"],
-        []
-    ).append(pid)
 
-c1 = st.columns([1])[0]
+findings = load_findings()
+neg = findings[findings["polarity"] == "neg"]
 
-selected_region = c1.selectbox(
-    "Wilayah",
-    sorted(by_region.keys()),
-    help="Pilih kabupaten/kota yang ingin dianalisis."
-)
-
-# =====================================================
-# SECTION 1
-# Dimensi Keluhan Dominan
-# =====================================================
-
-st.markdown("---")
-
-st.subheader("📍 Dimensi Keluhan yang Paling Banyak Muncul")
-
-st.caption(
-    """
-    Menunjukkan aspek pelayanan yang paling sering menjadi sumber keluhan
-    masyarakat pada puskesmas di wilayah yang dipilih.
-    """
-)
-
-section1_df = findings[
-    (findings["wilayah"] == selected_region)
-    & (findings["polarity"] == "neg")
-].copy()
-
-dimensi_count = (
-    section1_df
-    .groupby("dimension")
-    .size()
-    .reset_index(name="Jumlah")
-)
-
-total_keluhan = dimensi_count["Jumlah"].sum()
-
-dimensi_count["Persentase"] = (
-    dimensi_count["Jumlah"]
-    / total_keluhan
-    * 100
-)
-
-DIM_ORDER_EXT = [
-    "Empathy",
-    "Responsiveness",
-    "Reliability",
-    "Assurance",
-    "Tangibles",
-    "Umum"
-]
-
-all_dims = pd.DataFrame({
-    "dimension": DIM_ORDER_EXT
-})
-
-region_chart = (
-    all_dims
-    .merge(
-        dimensi_count,
-        on="dimension",
-        how="left"
-    )
-    .fillna(0)
-)
-
-warna = {
+DIM_COLOR = {
     "Empathy": "#E76F51",
     "Responsiveness": "#2A9D8F",
     "Reliability": "#457B9D",
     "Assurance": "#E9C46A",
     "Tangibles": "#F4A261",
-    "Umum": "#6C757D"
+    "Umum": "#6C757D",
 }
+DIM_LABEL = {k: v[0] for k, v in DIM_INFO.items()}
+DIM_LABEL["Umum"] = "Keluhan umum"
+DIM_PLOT_ORDER = DIM_ORDER + ["Umum"]
+WILAYAH = ["Bantul", "Semarang", "Surabaya"]
 
-region_chart = region_chart.sort_values(
-    "Persentase",
-    ascending=False
-)
 
-fig = px.bar(
-    region_chart,
-    x="Persentase",
-    y="dimension",
-    orientation="h",
-    color="dimension",
-    color_discrete_map=warna,
-    text=region_chart["Persentase"].round(1)
-)
-
-fig.update_traces(
-    texttemplate="%{text:.1f}%",
-    textposition="outside",
-    marker=dict(cornerradius=12)
-)
-
-fig.update_layout(
-    showlegend=False,
-    xaxis_title="Persentase Keluhan (%)",
-    yaxis_title="",
-    height=430,
-    margin=dict(l=20, r=20, t=10, b=20)
-)
-
-st.plotly_chart(
-    fig,
-    use_container_width=True,
-    config={"displayModeBar": False}
-)
-# 2. Keluhan paling umum se-kabupaten
-# Daftar 10 isu spesifik teratas (hasil kanonikalisasi) + jumlah ulasan + tag dimensi.
-
-# =====================================================
-# SECTION 2
-# Keluhan paling umum di wilayah terpilih
-# =====================================================
-
-from pathlib import Path
-
-ROOT = Path(__file__).resolve().parents[2]
-OUT = ROOT / "outputs"
-
-findings = pd.read_csv(
-    OUT / "findings_full.csv"
-)
-
-st.markdown("---")
-
-st.subheader("📌 Keluhan yang Paling Banyak Dilaporkan")
-
-st.caption(
-    "Menampilkan 10 keluhan yang paling sering muncul berdasarkan ulasan masyarakat pada wilayah yang dipilih."
-)
-
-# =====================================================
-# Ambil data wilayah terpilih
-# =====================================================
-
-isu_df = findings[
-    (findings["wilayah"] == selected_region)
-    & (findings["polarity"] == "neg")
-]
-
-isu_top = (
-    isu_df
-    .groupby(
-        ["dimension", "sub_issue"],
-        as_index=False
-    )
-    .size()
-    .rename(
-        columns={
-            "dimension": "Dimensi",
-            "sub_issue": "Sub Isu",
-            "size": "Jumlah"
-        }
-    )
-    .sort_values(
-        "Jumlah",
-        ascending=False
-    )
-    .head(10)
-)
-
-# =====================================================
-# Warna Dimensi
-# =====================================================
-
-warna = {
-    "Empathy": "#E76F51",
-    "Responsiveness": "#2A9D8F",
-    "Reliability": "#457B9D",
-    "Assurance": "#E9C46A",
-    "Tangibles": "#F4A261",
-    "Umum": "#6C757D"
-}
-
-# =====================================================
-# Layout
-# =====================================================
-
-left_df = isu_top.iloc[:5]
-right_df = isu_top.iloc[5:]
-
-left, right = st.columns(2)
-
-# =====================================================
-# Function
-# =====================================================
-def tampilkan(df, container):
-
-    for _, row in df.iterrows():
-
-        color = warna.get(row["Dimensi"], "#808080")
-
-        container.markdown(
-            f"""
-<div style="
-background:white;
-border:1px solid #E5E7EB;
-border-radius:12px;
-padding:12px 16px;
-margin-bottom:10px;
-box-shadow:0 1px 2px rgba(0,0,0,.05);
-">
-
-<div style="
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:12px;
-">
-
-<div style="flex:1;">
-
-<div style="
-font-size:17px;
-font-weight:700;
-color:#1F2937;
-line-height:1.25;
-margin-bottom:6px;
-">
-{str(row["Sub Isu"]).title()}
-</div>
-
-<div style="
-display:flex;
-align-items:center;
-gap:7px;
-">
-
-<div style="
-width:10px;
-height:10px;
-border-radius:50%;
-background:{color};
-flex-shrink:0;
-"></div>
-
-<div style="
-font-size:12px;
-color:#6B7280;
-font-weight:500;
-">
-{row["Dimensi"]}
-</div>
-
-</div>
-
-</div>
-
-<div style="
-font-size:13px;
-font-weight:600;
-color:#6B7280;
-white-space:nowrap;
-">
-{row["Jumlah"]} keluhan
-</div>
-
-</div>
-
-</div>
-""",
-            unsafe_allow_html=True
-        )
-
-# =====================================================
-# Tampilkan
-# =====================================================
-
-tampilkan(left_df, left)
-tampilkan(right_df, right)
-
-# 3. Apakah pola sama di tiap wilayah?
-# Tabel dimensi × wilayah (% keluhan, dengan bar sel) +
-# pernyataan hasil uji χ² (berbeda nyata / tidak) + tooltip penjelasan.
-
-# =====================================================
-# TAMPILAN PERBANDINGAN WILAYAH
-# =====================================================
-# SECTION 3
-# Perbandingan Pola Keluhan Antar Wilayah
-# =====================================================
-
-st.markdown("<br>", unsafe_allow_html=True)
-st.divider()
-st.markdown("<div style='height:20px'></div>", unsafe_allow_html=True)
-
-st.subheader("📊Apakah Keluhan Masyarakat Sama di Setiap Wilayah?")
-
-st.caption(
-    """
-    Menampilkan perbandingan dimensi keluhan yang paling dominan
-    pada masing-masing wilayah.
-    """
-)
-
-# ================================
-# 1. SIAPKAN DATA
-# ================================
-
-from scipy.stats import chi2_contingency
-
-neg = findings[findings["polarity"] == "neg"].copy()
-
-wilayah_order = ["Bantul", "Semarang", "Surabaya"]
-
-dimensi_order = [
-    "Responsiveness",
-    "Reliability",
-    "Empathy",
-    "Assurance",
-    "Tangibles",
-    "Umum",
-]
-
-warna = {
-    "Empathy": "#E76F51",
-    "Responsiveness": "#2A9D8F",
-    "Reliability": "#457B9D",
-    "Assurance": "#E9C46A",
-    "Tangibles": "#F4A261",
-    "Umum": "#6C757D"
-}
-
-freq = (
-    neg.groupby(["dimension", "wilayah"])
-       .size()
-       .unstack(fill_value=0)
-       .reindex(index=dimensi_order, columns=wilayah_order, fill_value=0)
-)
-
-persen = freq.astype(float)
-
-for w in wilayah_order:
-    total = freq[w].sum()
-    persen[w] = (freq[w] / total * 100) if total > 0 else 0
-
-chi2_val, p_val, dof, _ = chi2_contingency(freq)
-
-# ================================
-# CSS
-# ================================
-
-st.markdown(
-"""
-<style>
-
-.compare-wrapper{
-    margin-top:18px;
-}
-
-.compare-header,
-.compare-row{
-    display:grid;
-    grid-template-columns:240px repeat(3,minmax(170px,1fr));
-    column-gap:22px;
-    align-items:center;
-}
-
-.compare-header{
-    padding:0 10px 12px 10px;
-    font-size:15px;
-    font-weight:700;
-    color:#6B7280;
-    border-bottom:2px solid #E5E7EB;
-    margin-bottom:8px;
-}
-
-.compare-header div:not(:first-child){
-    text-align:center;
-}
-
-.compare-row{
-    padding:16px 10px;
-    border-bottom:1px solid #F3F4F6;
-}
-
-.compare-row:hover{
-    background:#FAFAFA;
-    border-radius:12px;
-}
-
-.dimensi{
-    display:flex;
-    align-items:center;
-    gap:10px;
-    font-size:16px;
-    font-weight:600;
-    color:#111827;
-}
-
-.dot{
-    width:11px;
-    height:11px;
-    border-radius:50%;
-    flex-shrink:0;
-}
-
-.cell{
-    padding:0 6px;
-}
-
-.bar-bg{
-    height:10px;
-    background:#EEF2F7;
-    border-radius:999px;
-    overflow:hidden;
-}
-
-.bar{
-    height:100%;
-    border-radius:999px;
-}
-
-.value{
-    margin-top:6px;
-    font-size:13px;
-    font-weight:600;
-    text-align:right;
-    color:#6B7280;
-}
-
-.result-box{
-    margin-top:16px;
-    padding:18px 20px;
-    background:white;
-    border:1px solid #E5E7EB;
-    border-radius:16px;
-    box-shadow:0 1px 3px rgba(0,0,0,.05);
-}
-
-.result-title{
-    font-size:16px;
-    font-weight:700;
-    color:#111827;
-    margin-bottom:8px;
-}
-
-.result-text{
-    font-size:14px;
-    line-height:1.7;
-    color:#4B5563;
-}
-
-.result-stat{
-    margin-top:10px;
-    font-size:12px;
-    color:#6B7280;
-}
-
-</style>
-""",
-unsafe_allow_html=True
-)
-
-# ================================
-# BUILD TABLE
-# ================================
-
-rows_html = ""
-
-for dim in dimensi_order:
-
-    cells_html = ""
-
-    for wilayah in wilayah_order:
-
-        val = persen.loc[dim, wilayah]
-
-        cells_html += (
-            f'<div class="cell">'
-            f'<div class="bar-bg">'
-            f'<div class="bar" style="width:{val:.1f}%; background:{warna[dim]};"></div>'
-            f'</div>'
-            f'<div class="value">{val:.1f}%</div>'
-            f'</div>'
-        )
-
-    rows_html += (
-        f'<div class="compare-row">'
-        f'<div class="dimensi">'
-        f'<div class="dot" style="background:{warna[dim]};"></div>'
-        f'{dim}'
-        f'</div>'
-        f'{cells_html}'
-        f'</div>'
-    )
-
-html = (
-    '<div class="compare-wrapper">'
-    '<div class="compare-header">'
-    '<div>Dimensi</div>'
-    '<div>Bantul</div>'
-    '<div>Semarang</div>'
-    '<div>Surabaya</div>'
-    '</div>'
-    f'{rows_html}'
-    '</div>'
-)
-
-st.markdown(html, unsafe_allow_html=True)
-
-st.caption(
-    """
-    Setiap kolom wilayah berjumlah 100%.
-    Nilai yang ditampilkan menunjukkan proporsi keluhan pada masing-masing dimensi,
-    sehingga dapat digunakan untuk melihat keluhan yang paling dominan di setiap wilayah.
-    """
-)
-# ================================
-# HASIL UJI STATISTIK
-# ================================
-
-p_display = (
-    "< 0,001"
-    if p_val < 0.001
-    else f"= {p_val:.3f}"
-)
-
-if p_val < 0.05:
-
-    isi_temuan = (
-        f"""
-Melalui uji χ² independensi, ditemukan bahwa pola keluhan masyarakat
-<b>berbeda secara signifikan antar wilayah</b>
-(χ² = {chi2_val:.2f}; df = {dof}; p {p_display}). Dengan kata lain, setiap wilayah memiliki karakteristik permasalahan
-layanan yang berbeda sehingga prioritas perbaikan dan pembinaan mutu
-layanan puskesmas perlu disesuaikan dengan kondisi masing-masing wilayah.
-"""
-    )
-
-else:
-
-    isi_temuan = (
-        f"""
-Melalui uji χ² independensi, tidak ditemukan perbedaan yang signifikan
-pada pola keluhan masyarakat antar wilayah
-(χ² = {chi2_val:.2f}; df = {dof}; p {p_display}). Hal ini menunjukkan bahwa distribusi keluhan pada setiap wilayah relatif
-serupa sehingga strategi peningkatan mutu layanan dapat dilakukan dengan
-pendekatan yang lebih umum.
-"""
-    )
+# Setup + style
+setup("Topik Keluhan", wide=True)
 
 st.markdown(
     f"""
-<div style="
-background:white;
-border:1px solid #E5E7EB;
-text-align: justify;
-border-radius:16px;
-padding:20px 24px;
-margin-top:16px;
-box-shadow:0 1px 3px rgba(0,0,0,.05);
-">
+<style>
+  html, body, [data-testid="stAppViewContainer"] {{
+      background-color: #eef1f4 !important;
+  }}
 
-<div style="
-font-size:18px;
-text-align: justify;
-font-weight:700;
-color:#111827;
-margin-bottom:12px;
-">
-Ringkasan Temuan
-</div>
+  [data-testid="stPlotlyChart"] {{
+      background-color: #ffffff !important;
+      border-radius: 18px !important;
+      padding: 0px !important;
+      box-shadow: 0 1px 3px rgba(16,32,48,.07) !important;
+      box-sizing: border-box !important;
+      overflow: hidden !important;
+  }}
 
-<div style="
-font-size:14px;
-text-align: justify;
-line-height:1.8;
-color:#374151;
-">
-{isi_temuan}
-</div>
 
-</div>
+  .kicker{{ font-size:12px; font-weight:600; letter-spacing:.07em; text-transform:uppercase;
+            color:{C_FAINT}; margin:0 0 4px; }}
+  .sec-title{{ font-size:22px; font-weight:700; color:{C_INK}; margin:0 0 4px; letter-spacing:-.01em; }}
+  .sec-sub{{ font-size:13.5px; color:{C_SUB}; margin:0 0 16px; line-height:1.55; }}
+
+  /* daftar isu peringkat — kartu putih scrollable setinggi bar chart */
+  .issue-card{{ background:#fff; border-radius:18px; box-shadow:0 1px 3px rgba(16,32,48,.07);
+                padding:6px 20px; height:340px; overflow-y:auto; }}
+  .issue-card::-webkit-scrollbar{{ width:7px; }}
+  .issue-card::-webkit-scrollbar-thumb{{ background:#d4dae2; border-radius:99px; }}
+  
+  /* We use this new class for the bottom pairs to match the white card look */
+  .pair-card {{ background:#fff; border-radius:18px; box-shadow:0 1px 3px rgba(16,32,48,.07); 
+                height: 100%; padding-bottom: 24px; }}
+
+  .issue{{ display:flex; align-items:center; gap:14px; padding:13px 2px;
+           border-bottom:1px solid #eef1f4; }}
+  .issue:last-child{{ border-bottom:none; }}
+  .issue-rank{{ font-size:14px; font-weight:700; color:{C_FAINT}; width:22px; text-align:right; }}
+  .issue-dot{{ width:9px; height:9px; border-radius:50%; flex-shrink:0; }}
+  .issue-name{{ flex:1; font-size:14.5px; font-weight:600; color:{C_INK}; }}
+  .issue-dim{{ font-size:12px; color:{C_FAINT}; }}
+  .issue-n{{ font-size:15px; font-weight:700; color:{C_INK}; white-space:nowrap; }}
+  .issue-n span{{ font-size:11px; font-weight:500; color:{C_FAINT}; }}
+
+  /* kartu pasangan ko-okurensi */
+  .pair{{ display:flex; align-items:center; justify-content:center; gap:18px; padding:30px 10px 8px; }}
+  .pair-dim{{ font-size:27px; font-weight:700; letter-spacing:-.01em; }}
+  .pair-plus{{ font-size:22px; font-weight:600; color:{C_FAINT}; }}
+  .pair-lift{{ text-align:center; padding-bottom:8px; }}
+  .pair-lift b{{ font-size:15px; font-weight:700; color:{C_INK}; }}
+  .pair-lift span{{ font-size:12.5px; color:{C_SUB}; }}
+  
+</style>
 """,
-    unsafe_allow_html=True
+    unsafe_allow_html=True,
 )
 
 
-# =====================================================
-# SECTION 4
-# Keluhan yang Sering Datang Bersamaan
-# =====================================================
+def section_header(kicker, title, sub=""):
+    st.markdown(
+        f"<div class='kicker'>{kicker}</div><div class='sec-title'>{title}</div>"
+        + (f"<div class='sec-sub'>{sub}</div>" if sub else "<div style='height:14px'></div>"),
+        unsafe_allow_html=True,
+    )
+
+
+
+# Header
+head_l, head_r = st.columns([2.2, 1])
+with head_l:
+    st.markdown("<div class='kicker'>Profil Keluhan Masyarakat</div>", unsafe_allow_html=True)
+    st.markdown(
+        f"<div style='font-size:34px;font-weight:700;color:{C_INK};letter-spacing:-.02em;"
+        "line-height:1.1;margin-bottom:6px;'>Apa yang dikeluhkan warga</div>",
+        unsafe_allow_html=True,
+    )
+    st.markdown(
+        f"<div style='font-size:14px;color:{C_SUB};line-height:1.6;'>"
+        "Aspek pelayanan puskesmas yang paling sering dikeluhkan, dari ulasan "
+        "bintang 1–2 di Google Maps.</div>",
+        unsafe_allow_html=True,
+    )
+    st.markdown("<div style='height:30px'></div>", unsafe_allow_html=True)
+
+    selected = st.selectbox(
+        "Wilayah",
+        WILAYAH
+    )
+
+reg = neg[neg["wilayah"] == selected]
+all_total = len(neg)
+
+with head_r:
+    m1, m2 = st.columns(2)
+    m1.metric(
+        f"Keluhan di {selected}",
+        f"{len(reg):,}".replace(",", "."),
+        help=f"Jumlah temuan keluhan dari ulasan bintang 1–2 di {selected}.",
+    )
+    m2.metric(
+        "Keluhan di 3 wilayah",
+        f"{all_total:,}".replace(",", "."),
+        help="Total temuan keluhan di Bantul, Semarang, dan Surabaya.",
+    )
+
+st.markdown("<div style='height:30px'></div>", unsafe_allow_html=True)
+
+
+# Dimensi dominan (chart) + Isu spesifik teratas (list)
+col_chart, col_list = st.columns([1.15, 1], gap="large")
+
+residuals = load_residuals().set_index("dimension").reindex(DIM_ORDER)
+
+# Dimensi dominan
+with col_chart:
+    section_header(
+        "Berdasarkan dimensi SERVQUAL",
+        "Dimensi keluhan terbanyak",
+        "Bagian layanan mana yang paling sering bermasalah",
+    )
+
+    dim_count = (
+        reg.groupby("dimension").size()
+        .reindex(DIM_PLOT_ORDER, fill_value=0)
+        .rename("n").reset_index()
+    )
+    dim_count["pct"] = dim_count["n"] / dim_count["n"].sum() * 100
+    dim_count["label"] = dim_count["dimension"].map(DIM_LABEL)
+    dim_count = dim_count.sort_values("pct")
+
+    fig = go.Figure(
+        go.Bar(
+            x=dim_count["pct"],
+            y=dim_count["label"],
+            orientation="h",
+            width=0.55,
+            marker=dict(color=[DIM_COLOR[d] for d in dim_count["dimension"]], cornerradius=6),
+            text=[f"{p:.0f}%" for p in dim_count["pct"]],
+            textposition="outside",
+            textfont=dict(size=12.5, color=C_SUB),
+            customdata=dim_count[["dimension", "n"]],
+            hovertemplate="<b>%{customdata[0]}</b><br>%{customdata[1]} keluhan · %{x:.1f}%<extra></extra>",
+        )
+    )
+    fig.update_layout(
+        height=320,
+        margin=dict(l=20, r=44, t=40, b=40),
+        bargap=0.45,
+        xaxis=dict(visible=False, range=[0, dim_count["pct"].max() * 1.2]),
+        yaxis=dict(title="", tickfont=dict(size=13, color=C_INK)),
+        plot_bgcolor="white", paper_bgcolor="white",
+        font=dict(family="Inter", color=C_SUB),
+    )
+
+    st.plotly_chart(fig, use_container_width=True, config={"displayModeBar": False})
+
+# isu spesifik teratas
+with col_list:
+    section_header(
+        "Keluhan paling sering disebut",
+        "10 isu teratas",
+        "Keluhan spesifik dengan jumlah terbanyak di wilayah ini",
+    )
+
+    isu_top = (
+        reg.groupby(["dimension", "sub_issue"]).size()
+        .rename("n").reset_index()
+        .sort_values("n", ascending=False)
+        .head(20).reset_index(drop=True)
+    )
+
+    rows = ""
+    for i, r in isu_top.iterrows():
+        color = DIM_COLOR.get(r["dimension"], "#808080")
+        rows += (
+            f"<div class='issue'>"
+            f"<div class='issue-rank'>{i + 1}</div>"
+            f"<div class='issue-dot' style='background:{color}'></div>"
+            f"<div class='issue-name'>{str(r['sub_issue']).title()}"
+            f"<div class='issue-dim'>{DIM_LABEL[r['dimension']]}</div></div>"
+            f"<div class='issue-n'>{int(r['n'])} <span>keluhan</span></div>"
+            f"</div>"
+        )
+    st.markdown(f"<div class='issue-card'>{rows}</div>", unsafe_allow_html=True)
 
 st.markdown("---")
 
-st.subheader("🔗 Keluhan yang Sering Datang Bersamaan")
 
-st.markdown(
-    """
-    <div style="
-        font-size:14px;
-        color:#6B7280;
-        line-height:1.8;
-        text-align:justify;
-        margin-bottom:16px;
-    ">
-    Menunjukkan pasangan dimensi keluhan yang cenderung muncul dalam ulasan yang sama.
-    </div>
-    """,
-    unsafe_allow_html=True
+# Pola antar wilayah (heatmap residual)
+chi2 = load_chi2()
+sig = chi2["p_value"] < 0.05
+p_disp = "< 0,001" if chi2["p_value"] < 0.001 else f"= {chi2['p_value']:.3f}"
+badge_bg, badge_fg = ("#fdecea", "#c0392b") if sig else ("#eef1f4", C_SUB)
+badge = "Berbeda signifikan" if sig else "Tidak berbeda signifikan"
+
+section_header(
+    "Distribusi dimensi per wilayah",
+    "Pola keluhan setiap wilayah",
+    "Seberapa menonjol tiap dimensi di sebuah wilayah, dibanding pola gabungan ketiga wilayah",
 )
 
-# =====================================================
-# LOAD DATA
-# =====================================================
+res = residuals[WILAYAH]
+heat = px.imshow(
+    res.values,
+    x=[f"<b>{w}</b>" for w in WILAYAH],
+    y=[DIM_LABEL[d] for d in res.index],
+    color_continuous_scale=["#457B9D", "#eef1f4", "#d05a4e"],
+    zmin=-5.5, zmax=5.5,
+    text_auto=".1f",
+    aspect="auto",
+)
+heat.update_traces(
+    textfont=dict(size=14, family="Inter"),
+    hovertemplate="<b>%{y}</b> · %{x}<br>residual = %{z:.2f}<extra></extra>",
+    xgap=4, ygap=4,
+)
+heat.update_layout(
+    height=340,
+    margin=dict(l=20, r=120, t=40, b=40),
+    xaxis=dict(side="top", tickfont=dict(size=14, color=C_INK)),
+    yaxis=dict(tickfont=dict(size=13.5, color=C_INK)),
+    font=dict(family="Inter"),
+    coloraxis_colorbar=dict(
+        title="",
+        thickness=12,
+        len=1.01,
+        outlinewidth=0,
+        tickvals=[-4.5, 0, 4.5],
+        ticktext=["Lebih jarang", "Sesuai pola", "Lebih sering"],
+        tickfont=dict(size=11.5, color=C_SUB),
+    ),
+)
 
-lift_df = pd.read_csv(
-    OUT / "statistik" / "co_occurrence_lift.csv"
+st.plotly_chart(heat, use_container_width=True, config={"displayModeBar": False})
+
+with st.expander("Detail uji statistik"):
+    st.markdown(
+        f"""
+**Uji χ² independensi**
+
+| Statistik | Nilai |
+|---|---|
+| χ² | {chi2['chi2']:.2f} |
+| df | {int(chi2['dof'])} |
+| p-value | {p_disp} |
+
+Distribusi dimensi keluhan **{'berbeda' if sig else 'tidak berbeda'} secara signifikan**
+antar wilayah. Angka heatmap adalah *standardized residual*: |residual| > 2 menandai sel
+yang menyimpang nyata dari pola gabungan.
+"""
+    )
+
+st.markdown("---")
+
+
+# Keluhan yang sering datang bersamaan
+
+section_header(
+    "Co-ocurrence dalam satu ulasan",
+    "Keluhan yang sering datang bersamaan",
+    "Pasangan dimensi yang muncul dalam ulasan yang sama lebih sering daripada kebetulan",
 )
 
 lift_df = (
-    lift_df[lift_df["lift"] > 1]
+    load_lift().query("lift > 1")
     .sort_values("lift", ascending=False)
     .reset_index(drop=True)
 )
 
-# =====================================================
-# WARNA DIMENSI
-# =====================================================
+pair_cols = st.columns(len(lift_df)) if len(lift_df) else []
 
-warna = {
-    "Empathy": "#E76F51",
-    "Responsiveness": "#2A9D8F",
-    "Reliability": "#457B9D",
-    "Assurance": "#E9C46A",
-    "Tangibles": "#F4A261",
-    "Umum": "#6C757D"
-}
+for col, (_, r) in zip(pair_cols, lift_df.iterrows()):
+    ca, cb = DIM_COLOR[r["dimensi_A"]], DIM_COLOR[r["dimensi_B"]]
+    with col:
+        st.markdown(
+            f"<div class='pair-card'>"
+            f"<div class='pair'>"
+            f"<span class='pair-dim' style='color:{ca}'>{r['dimensi_A']}</span>"
+            f"<span class='pair-plus'>+</span>"
+            f"<span class='pair-dim' style='color:{cb}'>{r['dimensi_B']}</span>"
+            f"</div>"
+            f"<div class='pair-lift'><b>Lift = {r['lift']:.2f}×</b><br>"
+            f"<span>muncul bersama lebih sering daripada kebetulan</span></div>"
+            f"</div>",
+            unsafe_allow_html=True,
+        )
 
-# =====================================================
-# DAFTAR PASANGAN DIMENSI
-# =====================================================
-cards_html = ""
-for _, row in lift_df.iterrows():
-    color_a = warna.get(row["dimensi_A"], "#6C757D")
-    color_b = warna.get(row["dimensi_B"], "#6C757D")
-
-    tooltip_text = (
-        f"{row['dimensi_A']} dan {row['dimensi_B']} sering disebut bersamaan dalam satu ulasan, "
-        f"{row['lift']:.2f}x lebih sering dibanding jika kemunculannya acak/tidak saling terkait. "
-        "Semakin tinggi nilainya, semakin kuat indikasi bahwa kedua aspek ini berasal dari "
-        "akar masalah yang sama dan sebaiknya dibenahi bersamaan."
-    )
-
-    cards_html += (
-        '<div style="background:white;border:1px solid #E5E7EB;border-radius:16px;'
-        'padding:18px 24px;margin-bottom:12px;box-shadow:0 1px 3px rgba(0,0,0,.05);">'
-        '<div style="display:flex;justify-content:space-between;align-items:center;">'
-        '<div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;">'
-        f'<span style="background:{color_a};color:white;padding:7px 16px;'
-        f'border-radius:999px;font-size:13px;font-weight:600;">{row["dimensi_A"]}</span>'
-        '<span style="font-size:22px;font-weight:700;color:#9CA3AF;">x</span>'
-        f'<span style="background:{color_b};color:white;padding:7px 16px;'
-        f'border-radius:999px;font-size:13px;font-weight:600;">{row["dimensi_B"]}</span>'
-        '</div>'
-        '<div style="text-align:right;display:flex;align-items:center;gap:6px;">'
-        '<div>'
-        '<div style="font-size:12px;color:#6B7280;margin-bottom:2px;">Lift</div>'
-        f'<div style="font-size:28px;font-weight:700;color:#111827;line-height:1;">{row["lift"]:.2f}</div>'
-        '</div>'
-        f'<span title="{tooltip_text}" style="display:inline-block;cursor:help;'
-        'color:#94a3b8;font-size:13px;border:1px solid #cbd5e1;border-radius:50%;'
-        'width:18px;height:18px;text-align:center;line-height:17px;flex-shrink:0;">ⓘ</span>'
-        '</div>'
-        '</div>'
-        '</div>'
-    )
-
-st.markdown(cards_html, unsafe_allow_html=True)
-
-# =====================================================
-# RINGKASAN TEMUAN
-# =====================================================
-
-if len(lift_df):
-
-    top_pair = lift_df.iloc[0]
-
-    st.markdown(
-        f"""
-<div style="
-background:white;
-border:1px solid #E5E7EB;
-border-radius:16px;
-text-align: justify;
-padding:20px 24px;
-margin-top:10px;
-margin-bottom:18px;
-box-shadow:0 1px 3px rgba(0,0,0,.05);
-">
-
-<div style="
-font-size:18px;
-text-align: justify;
-font-weight:700;
-color:#111827;
-margin-bottom:12px;
-">
-Ringkasan Temuan
-</div>
-
-<div style="
-font-size:14px;
-text-align: justify;
-line-height:1.8;
-color:#374151;
-">
-
-Pasangan dimensi yang paling sering muncul bersamaan adalah
-<b>{top_pair['dimensi_A']}</b> dan
-<b>{top_pair['dimensi_B']}</b>
-(lift = <b>{top_pair['lift']:.2f}</b>).
-
-Hal ini menunjukkan bahwa keluhan pada kedua aspek tersebut
-sering muncul dalam pengalaman pasien yang sama sehingga
-upaya perbaikan dapat dipertimbangkan secara terpadu.
-
-</div>
-
-</div>
-""",
-        unsafe_allow_html=True
-    )
+st.markdown("<div style='height:48px'></div>", unsafe_allow_html=True)
