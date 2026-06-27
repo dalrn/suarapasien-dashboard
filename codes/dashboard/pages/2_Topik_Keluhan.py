@@ -688,11 +688,6 @@ st.markdown(
         margin-bottom:16px;
     ">
     Menunjukkan pasangan dimensi keluhan yang cenderung muncul dalam ulasan yang sama.
-    Semakin tinggi nilai lift, semakin kuat keterkaitan kedua dimensi tersebut.
-    Lift di atas 1 menunjukkan bahwa dua dimensi keluhan muncul bersama lebih sering
-    dibandingkan yang diharapkan secara acak. Pasangan dengan nilai lift yang lebih tinggi
-    dapat menjadi prioritas perbaikan karena kemungkinan berasal dari akar permasalahan
-    layanan yang saling berkaitan.
     </div>
     """,
     unsafe_allow_html=True
@@ -733,6 +728,13 @@ for _, row in lift_df.iterrows():
     color_a = warna.get(row["dimensi_A"], "#6C757D")
     color_b = warna.get(row["dimensi_B"], "#6C757D")
 
+    tooltip_text = (
+        f"{row['dimensi_A']} dan {row['dimensi_B']} sering disebut bersamaan dalam satu ulasan, "
+        f"{row['lift']:.2f}x lebih sering dibanding jika kemunculannya acak/tidak saling terkait. "
+        "Semakin tinggi nilainya, semakin kuat indikasi bahwa kedua aspek ini berasal dari "
+        "akar masalah yang sama dan sebaiknya dibenahi bersamaan."
+    )
+
     cards_html += (
         '<div style="background:white;border:1px solid #E5E7EB;border-radius:16px;'
         'padding:18px 24px;margin-bottom:12px;box-shadow:0 1px 3px rgba(0,0,0,.05);">'
@@ -740,13 +742,18 @@ for _, row in lift_df.iterrows():
         '<div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap;">'
         f'<span style="background:{color_a};color:white;padding:7px 16px;'
         f'border-radius:999px;font-size:13px;font-weight:600;">{row["dimensi_A"]}</span>'
-        '<span style="font-size:22px;font-weight:700;color:#9CA3AF;">+</span>'
+        '<span style="font-size:22px;font-weight:700;color:#9CA3AF;">x</span>'
         f'<span style="background:{color_b};color:white;padding:7px 16px;'
         f'border-radius:999px;font-size:13px;font-weight:600;">{row["dimensi_B"]}</span>'
         '</div>'
-        '<div style="text-align:right;">'
+        '<div style="text-align:right;display:flex;align-items:center;gap:6px;">'
+        '<div>'
         '<div style="font-size:12px;color:#6B7280;margin-bottom:2px;">Lift</div>'
         f'<div style="font-size:28px;font-weight:700;color:#111827;line-height:1;">{row["lift"]:.2f}</div>'
+        '</div>'
+        f'<span title="{tooltip_text}" style="display:inline-block;cursor:help;'
+        'color:#94a3b8;font-size:13px;border:1px solid #cbd5e1;border-radius:50%;'
+        'width:18px;height:18px;text-align:center;line-height:17px;flex-shrink:0;">ⓘ</span>'
         '</div>'
         '</div>'
         '</div>'
