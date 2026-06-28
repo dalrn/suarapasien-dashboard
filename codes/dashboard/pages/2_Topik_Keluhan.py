@@ -125,7 +125,7 @@ with head_l:
     st.markdown("<div class='kicker'>Profil Keluhan Masyarakat</div>", unsafe_allow_html=True)
     st.markdown(
         f"<div style='font-size:34px;font-weight:700;color:{C_INK};letter-spacing:-.02em;"
-        "line-height:1.1;margin-bottom:6px;'>Apa yang dikeluhkan warga</div>",
+        "line-height:1.1;margin-bottom:6px;'>Apa yang Dikeluhkan Warga</div>",
         unsafe_allow_html=True,
     )
     st.markdown(
@@ -169,7 +169,7 @@ residuals = load_residuals().set_index("dimension").reindex(DIM_ORDER)
 with col_chart:
     section_header(
         "Berdasarkan dimensi SERVQUAL",
-        "Dimensi keluhan terbanyak",
+        "Dimensi Keluhan Terbanyak",
         "Bagian layanan mana yang paling sering bermasalah",
     )
 
@@ -212,7 +212,7 @@ with col_chart:
 with col_list:
     section_header(
         "Keluhan paling sering disebut",
-        "10 isu teratas",
+        "Isu Utama Puskesmas",
         "Keluhan spesifik dengan jumlah terbanyak di wilayah ini",
     )
 
@@ -249,7 +249,7 @@ badge = "Berbeda signifikan" if sig else "Tidak berbeda signifikan"
 
 section_header(
     "Distribusi dimensi per wilayah",
-    "Pola keluhan setiap wilayah",
+    "Pola Keluhan Setiap Wilayah",
     "Seberapa menonjol tiap dimensi di sebuah wilayah, dibanding pola gabungan ketiga wilayah",
 )
 
@@ -311,7 +311,7 @@ st.markdown("---")
 
 section_header(
     "Co-ocurrence dalam satu ulasan",
-    "Keluhan yang sering datang bersamaan",
+    "Keluhan yang Sering Datang Bersamaan",
     "Pasangan dimensi yang muncul dalam ulasan yang sama lebih sering daripada kebetulan",
 )
 
