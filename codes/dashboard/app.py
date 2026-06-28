@@ -273,7 +273,7 @@ st.markdown("""
         <ul class="note-list">
             <li><b>Profil Puskesmas:</b> Analisis detail performa per individu fasilitas kesehatan.</li>
             <li><b>Topik Keluhan:</b> Eksplorasi tren narasi keluhan masyarakat yang paling dominan.</li>
-            <li><b>Peta Mutu:</b> Visualisasi spasial untuk mendeteksi anomali rating vs keluhan aktual.</li>
+            <li><b>Peta Mutu:</b> Pemetaan spasial interaktif untuk mendeteksi sebaran titik kritis dan dimensi keluhan dominan secara geografis.</li>
             <li><b>Metodologi:</b> Penjelasan teknis mengenai pengolahan data dan inferensi statistik.</li>
         </ul>
     </div>
