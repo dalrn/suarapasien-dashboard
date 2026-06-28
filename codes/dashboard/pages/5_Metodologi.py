@@ -208,7 +208,7 @@ st.info("💡 **Interpretasi:** Nilai Cohen's Kappa yang memadai membuktikan bah
 # ==========================================
 st.markdown("<div class='section-title'>3. Landasan Inferensi Statistik</div>", unsafe_allow_html=True)
 
-with st.expander("📊 Cohen's Kappa (Uji Kesepakatan Pelabelan)", expanded=False):
+with st.expander("Cohen's Kappa (Uji Kesepakatan Pelabelan)", expanded=False):
     st.markdown(
         "Mengukur tingkat kesepakatan (reliabilitas) antara dua penilai dalam mengkategorikan ulasan, "
         "mengabaikan probabilitas kesepakatan yang terjadi secara kebetulan."
@@ -220,7 +220,7 @@ with st.expander("📊 Cohen's Kappa (Uji Kesepakatan Pelabelan)", expanded=Fals
     st.markdown("- $p_o$ : Proporsi kesepakatan aktual yang terobservasi (*observed agreement*) ")
     st.markdown("- $p_e$ : Proporsi kesepakatan yang diharapkan terjadi secara kebetulan (*expected agreement*) ")
 
-with st.expander("📉 Empirical Bayes Shrinkage & Wilson Score CI", expanded=False):
+with st.expander("Empirical Bayes Shrinkage & Wilson Score CI", expanded=False):
     st.markdown("""
     Puskesmas dengan jumlah ulasan sangat sedikit (misal: 2 ulasan, keduanya mengeluh pelayanan lama) akan 
     menghasilkan proporsi ekstrem (100%). Untuk menghindari bias ini, estimasi proporsi disusutkan (*shrinkage*) 
@@ -231,13 +231,13 @@ with st.expander("📉 Empirical Bayes Shrinkage & Wilson Score CI", expanded=Fa
     dengan pendekatan distribusi normal standar (Wald Interval).
     """)
 
-with st.expander("🔍 Z-Test Proporsi & Klastering Isu (Silhouette Score)", expanded=False):
+with st.expander("Z-Test Proporsi & Klastering Isu (Silhouette Score)", expanded=False):
     st.markdown("""
     * **Uji Z Dua Proporsi:** Digunakan untuk membandingkan tingkat keluhan satu puskesmas dengan gabungan seluruh puskesmas lain. Label "lebih sering dikeluhkan" hanya diberikan jika terbukti signifikan secara statistik, bukan karena kebetulan sampel.
     * **Semantic Embedding Clustering:** Frasa keluhan yang bermakna sama (e.g., "antre panjang" dan "nunggu lama") dikelompokkan secara otomatis berbasis semantik. Jumlah klaster optimal diputuskan berdasarkan metrik kebaikan evaluasi **Silhouette Score**.
     """)
 
-with st.expander("🔗 Association Rules (Lift) & Uji Chi-Square", expanded=False):
+with st.expander("Association Rules (Lift) & Uji Chi-Square", expanded=False):
     st.markdown("""
     * **Lift Co-occurrence:** Menghitung probabilitas dua keluhan (misal: antrean lama & petugas tidak ramah) muncul bersamaan dalam satu ulasan dibandingkan asumsi independen. Jika $Lift > 1$, berarti asosiasi keduanya nyata dan butuh solusi simultan.
     * **Uji Chi-Square Independensi ($\chi^2$):** Menguji apakah distribusi dimensi keluhan bergantung pada wilayah geografis. Dilanjutkan dengan analisis **Standardized Residuals** untuk mendeteksi secara presisi kombinasi keluhan khas yang menonjol (anomali) di suatu wilayah spesifik.

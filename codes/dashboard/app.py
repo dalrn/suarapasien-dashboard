@@ -172,9 +172,9 @@ hero_html = """
 <div class="hero-container">
     <div class="hero-title">🩺 SuaraPasien</div>
     <div class="hero-sub">
-        Platform Analisis Sentimen Terstruktur untuk Evaluasi Komprehensif Pelayanan Kesehatan Masyarakat. 
-        Dirancang menggunakan pemodelan Natural Language Processing (NLP) berbasis aspek untuk mentransformasikan 
-        ulasan publik menjadi instrumen <span class="hero-highlight">pelengkap akreditasi faskes</span> yang objektif dan real-time.
+        Platform Analisis Sentimen Terstruktur untuk Pemantauan Mutu Puskesmas. 
+        Dirancang menggunakan pemodelan Natural Language Processing (NLP) berbasis aspek untuk mengekstraksi 
+        ulasan publik di Google Maps menjadi <span class="hero-highlight">instrumen pelengkap evaluasi faskes yang objektif dan faktual.</span>
     </div>
 </div>
 """
@@ -210,14 +210,14 @@ with c2:
 # ==========================================
 # 3. CARA KERJA PIPELINE SYSTEM
 # ==========================================
-st.markdown("<div class='section-title'>⚙️ Bagaimana SuaraPasien Bekerja?</div>", unsafe_allow_html=True)
+st.markdown("<div class='section-title'>Bagaimana SuaraPasien Bekerja?</div>", unsafe_allow_html=True)
 
 step1, step2, step3 = st.columns(3)
 with step1:
     st.markdown("""
     <div class="step-card">
         <div class="step-num">Langkah 1</div>
-        <div class="step-title">📥 Dengar</div>
+        <div class="step-title">Dengar</div>
         <div class="step-desc">Mengekstraksi narasi umpan balik publik secara masif langsung dari ulasan faskes di Google Maps tanpa batasan kuantitatif formal.</div>
     </div>
     """, unsafe_allow_html=True)
@@ -226,7 +226,7 @@ with step2:
     st.markdown("""
     <div class="step-card" style="border-top-color: #185FA5;">
         <div class="step-num">Langkah 2</div>
-        <div class="step-title">🤖 Kelompokkan</div>
+        <div class="step-title">Kelompokkan</div>
         <div class="step-desc">Menggunakan pemodelan bahasa (LLM) untuk memilah teks keluhan mentah ke dalam klaster taksonomi mutu SERVQUAL secara otomatis.</div>
     </div>
     """, unsafe_allow_html=True)
@@ -235,7 +235,7 @@ with step3:
     st.markdown("""
     <div class="step-card" style="border-top-color: #2f9e6f;">
         <div class="step-num">Langkah 3</div>
-        <div class="step-title">📊 Tampilkan</div>
+        <div class="step-title">Tampilkan</div>
         <div class="step-desc">Menyajikan profil performa faskes, peta klaster kuadran anomali mutu, hingga sebaran topik kritis untuk rekomendasi kebijakan.</div>
     </div>
     """, unsafe_allow_html=True)
@@ -243,7 +243,7 @@ with step3:
 # ==========================================
 # 4. KERANGKA KERJA SERVQUAL
 # ==========================================
-st.markdown("<div class='section-title'>📋 Dimensi Mutu yang Dievaluasi (SERVQUAL)</div>", unsafe_allow_html=True)
+st.markdown("<div class='section-title'>Dimensi Mutu yang Dievaluasi (SERVQUAL)</div>", unsafe_allow_html=True)
 
 for key in DIM_ORDER:
     if key in DIM_INFO:
@@ -267,13 +267,13 @@ st.markdown("<br>", unsafe_allow_html=True)
 
 st.markdown("""
 <div class="note-box" style="margin-top: 10px; border-left-color: #185FA5;">
-    <div class="note-title">🧭 Petunjuk Eksplorasi</div>
+    <div class="note-title">Petunjuk Eksplorasi</div>
     <div class="note-content">
         Gunakan menu navigasi di sisi kiri layar untuk mengakses analisis mendalam:
         <ul class="note-list">
             <li><b>Profil Puskesmas:</b> Analisis detail performa per individu fasilitas kesehatan.</li>
             <li><b>Topik Keluhan:</b> Eksplorasi tren narasi keluhan masyarakat yang paling dominan.</li>
-            <li><b>Peta Mutu:</b> Visualisasi spasial untuk mendeteksi anomali rating vs keluhan aktual.</li>
+            <li><b>Peta Mutu:</b> Pemetaan spasial interaktif untuk mendeteksi sebaran titik kritis dan dimensi keluhan dominan secara geografis.</li>
             <li><b>Metodologi:</b> Penjelasan teknis mengenai pengolahan data dan inferensi statistik.</li>
         </ul>
     </div>
@@ -282,7 +282,7 @@ st.markdown("""
 
 st.markdown("""
 <div class="note-box" style="margin-top: 15px;">
-    <div class="note-title">⚠️ Catatan Keterbatasan Data</div>
+    <div class="note-title">Catatan Keterbatasan Data</div>
     <div class="note-content">
         Sebagai bentuk transparansi metodologi, platform ini memiliki batasan cakupan data sebagai berikut:
         <ul class="note-list">
