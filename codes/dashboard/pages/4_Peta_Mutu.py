@@ -90,7 +90,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-st.markdown("<div class='page-title'>🗺️ Peta Intelijen Mutu Faskes</div>", unsafe_allow_html=True)
+st.markdown("<div class='page-title'>🗺️ Peta Mutu Puskesmas</div>", unsafe_allow_html=True)
 st.markdown("<div class='page-sub'>Pemetaan spasial interaktif untuk mendeteksi sebaran titik kritis permasalahan layanan secara geografis.</div>", unsafe_allow_html=True)
 
 # ==========================================
