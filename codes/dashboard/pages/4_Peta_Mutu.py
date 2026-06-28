@@ -22,7 +22,7 @@ st.markdown("<div class='page-sub'>Mendeteksi disparitas kuantitatif antara rati
 @st.cache_data
 def load_and_sync_data():
     # 1. Load data LLM (Tingkat Keluhan)
-    df_llm = pd.read_csv("../outputs/statistik/skor_per_puskesmas.csv")
+    df_llm = pd.read_csv(r"C:\Users\Andalan\Documents\Lomba\Satria Data 2026 - Belmawa\codes\outputs\statistik\skor_per_puskesmas.csv")
     df_llm = df_llm.rename(columns={'id_puskesmas': 'puskesmas_id'})
     
     df_agg = df_llm.groupby('puskesmas_id').agg(
@@ -30,7 +30,7 @@ def load_and_sync_data():
     ).reset_index()
 
     # 2. Load koordinat dari CSV manualmu
-    df_meta = pd.read_csv("gmaps_meta_dashboard_FINAL.csv")
+    df_meta = pd.read_csv(r"C:\Users\Andalan\Documents\Lomba\Satria Data 2026 - Belmawa\codes\dashboard\gmaps_meta_dashboard_FINAL.csv")
     
     # 3. AMBIL RATING ASLI DARI LIBRARY TEMANMU (Bintang 1 sampai 5)
     gmaps_meta_asli = load_gmaps_meta()

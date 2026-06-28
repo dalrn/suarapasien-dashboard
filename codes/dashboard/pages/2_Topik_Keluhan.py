@@ -217,7 +217,7 @@ with col_list:
     )
 
     isu_top = (
-        reg.groupby(["dimension", "sub_issue"]).size()
+        reg.groupby(["dimension", "isu_kanonik"]).size()
         .rename("n").reset_index()
         .sort_values("n", ascending=False)
         .head(20).reset_index(drop=True)
@@ -230,7 +230,7 @@ with col_list:
             f"<div class='issue'>"
             f"<div class='issue-rank'>{i + 1}</div>"
             f"<div class='issue-dot' style='background:{color}'></div>"
-            f"<div class='issue-name'>{str(r['sub_issue']).title()}"
+            f"<div class='issue-name'>{str(r['isu_kanonik']).title()}"
             f"<div class='issue-dim'>{DIM_LABEL[r['dimension']]}</div></div>"
             f"<div class='issue-n'>{int(r['n'])} <span>keluhan</span></div>"
             f"</div>"
@@ -310,33 +310,51 @@ st.markdown("---")
 # Keluhan yang sering datang bersamaan
 
 section_header(
-    "Co-ocurrence dalam satu ulasan",
-    "Keluhan yang sering datang bersamaan",
-    "Pasangan dimensi yang muncul dalam ulasan yang sama lebih sering daripada kebetulan",
+    "Co-occurrence dalam satu ulasan",
+    f"Keluhan yang sering datang bersamaan — {selected}",
+    "Pasangan dimensi yang muncul dalam ulasan yang sama lebih sering daripada kebetulan, "
+    "dihitung khusus untuk wilayah ini",
 )
 
+# Lift dihitung pada ulasan-keluhan di wilayah terpilih (reg).
+_by_rev = reg.groupby("review_id")["dimension"].apply(set)
+_p = {d: _by_rev.apply(lambda s: d in s).mean() for d in DIM_ORDER}
+_pairs = []
+for _i, _a in enumerate(DIM_ORDER):
+    for _b in DIM_ORDER[_i + 1:]:
+        _pboth = _by_rev.apply(lambda s: _a in s and _b in s).mean()
+        _den = _p[_a] * _p[_b]
+        if _den > 0:
+            _pairs.append((_a, _b, _pboth / _den))
 lift_df = (
-    load_lift().query("lift > 1")
-    .sort_values("lift", ascending=False)
-    .reset_index(drop=True)
+    pd.DataFrame(_pairs, columns=["dimensi_A", "dimensi_B", "lift"])
+    .query("lift > 1").sort_values("lift", ascending=False).reset_index(drop=True)
 )
 
-pair_cols = st.columns(len(lift_df)) if len(lift_df) else []
-
-for col, (_, r) in zip(pair_cols, lift_df.iterrows()):
-    ca, cb = DIM_COLOR[r["dimensi_A"]], DIM_COLOR[r["dimensi_B"]]
-    with col:
-        st.markdown(
-            f"<div class='pair-card'>"
-            f"<div class='pair'>"
-            f"<span class='pair-dim' style='color:{ca}'>{r['dimensi_A']}</span>"
-            f"<span class='pair-plus'>+</span>"
-            f"<span class='pair-dim' style='color:{cb}'>{r['dimensi_B']}</span>"
-            f"</div>"
-            f"<div class='pair-lift'><b>Lift = {r['lift']:.2f}×</b><br>"
-            f"<span>muncul bersama lebih sering daripada kebetulan</span></div>"
-            f"</div>",
-            unsafe_allow_html=True,
-        )
+if len(lift_df):
+    pair_cols = st.columns(len(lift_df))
+    for col, (_, r) in zip(pair_cols, lift_df.iterrows()):
+        ca, cb = DIM_COLOR[r["dimensi_A"]], DIM_COLOR[r["dimensi_B"]]
+        with col:
+            st.markdown(
+                f"<div class='pair-card'>"
+                f"<div class='pair'>"
+                f"<span class='pair-dim' style='color:{ca}'>{r['dimensi_A']}</span>"
+                f"<span class='pair-plus'>+</span>"
+                f"<span class='pair-dim' style='color:{cb}'>{r['dimensi_B']}</span>"
+                f"</div>"
+                f"<div class='pair-lift'><b>Lift = {r['lift']:.2f}×</b><br>"
+                f"<span>muncul bersama lebih sering daripada kebetulan</span></div>"
+                f"</div>",
+                unsafe_allow_html=True,
+            )
+else:
+    st.markdown(
+        f"<div style='background:#fff;border-radius:18px;box-shadow:0 1px 3px rgba(16,32,48,.07);"
+        f"padding:26px 24px;text-align:center;color:{C_SUB};font-size:14px;line-height:1.6;'>"
+        f"Di <b>{selected}</b>, tidak ada pasangan dimensi yang muncul bersamaan melebihi kebetulan — "
+        f"keluhan cenderung <b>berdiri sendiri</b>, tidak datang satu paket.</div>",
+        unsafe_allow_html=True,
+    )
 
 st.markdown("<div style='height:48px'></div>", unsafe_allow_html=True)
