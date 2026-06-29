@@ -30,7 +30,8 @@ _BASE_CSS = f"""
   .stApp{{ background:{C_BG}; }}
   html, body, [class*="css"]{{ font-family:'Inter',sans-serif; }}
   .block-container{{ max-width:880px; padding-top:2.2rem; padding-bottom:3rem; }}
-  #MainMenu, header[data-testid="stHeader"], footer{{ visibility:hidden; height:0; }}
+  #MainMenu, footer, .stAppDeployButton {{ visibility:hidden; height:0; display:none; }}
+  header[data-testid="stHeader"] {{ background: transparent; }}
 
   /* divider lebih lega */
   hr{{ margin:2.2rem 0 !important; border-color:#e2e7ee; }}
