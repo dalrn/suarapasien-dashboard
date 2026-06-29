@@ -1,0 +1,6 @@
+﻿Dimensi,Tingkat keluhan (%),CI 95%,Kepercayaan,Isu utama
+Responsiveness,14,"[0.06, 0.31]",Datanya sedang,pelayanan lama
+Reliability,36,"[0.21, 0.54]",Datanya sedang,informasi biaya tidak jelas
+Assurance,14,"[0.06, 0.31]",Datanya sedang,kondisi pasien memburuk
+Empathy,46,"[0.30, 0.64]",Datanya sedang,dokter tidak ramah
+Tangibles,14,"[0.06, 0.31]",Datanya sedang,ventilasi udara buruk

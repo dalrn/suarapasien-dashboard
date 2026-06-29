@@ -83,8 +83,8 @@ st.markdown(
   .issue-card::-webkit-scrollbar-thumb{{ background:#d4dae2; border-radius:99px; }}
   
   /* We use this new class for the bottom pairs to match the white card look */
-  .pair-card {{ background:#fff; border-radius:18px; box-shadow:0 1px 3px rgba(16,32,48,.07); 
-                height: 100%; padding-bottom: 24px; }}
+  .pair-card {{ background:#fff; border-radius:18px; box-shadow:0 1px 3px rgba(16,32,48,.07);
+                height: 100%; padding-bottom: 24px; overflow:hidden; }}
 
   .issue{{ display:flex; align-items:center; gap:14px; padding:13px 2px;
            border-bottom:1px solid #eef1f4; }}
@@ -97,10 +97,12 @@ st.markdown(
   .issue-n span{{ font-size:11px; font-weight:500; color:{C_FAINT}; }}
 
   /* kartu pasangan ko-okurensi */
-  .pair{{ display:flex; align-items:center; justify-content:center; gap:18px; padding:30px 10px 8px; }}
-  .pair-dim{{ font-size:27px; font-weight:700; letter-spacing:-.01em; }}
-  .pair-plus{{ font-size:22px; font-weight:600; color:{C_FAINT}; }}
-  .pair-lift{{ text-align:center; padding-bottom:8px; }}
+  .pair{{ display:flex; flex-direction:column; align-items:center; justify-content:center;
+          gap:2px; padding:22px 8px 6px; text-align:center; }}
+  .pair-dim{{ font-size:14.5px; font-weight:700; letter-spacing:-.005em; line-height:1.3;
+              max-width:100%; overflow-wrap:break-word; }}
+  .pair-plus{{ font-size:12px; font-weight:600; color:{C_FAINT}; margin:1px 0; }}
+  .pair-lift{{ text-align:center; padding-bottom:8px; padding-top:6px; }}
   .pair-lift b{{ font-size:15px; font-weight:700; color:{C_INK}; }}
   .pair-lift span{{ font-size:12.5px; color:{C_SUB}; }}
   

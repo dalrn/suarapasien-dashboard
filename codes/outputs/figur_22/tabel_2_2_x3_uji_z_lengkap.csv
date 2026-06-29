@@ -1,0 +1,636 @@
+﻿Puskesmas,Dimensi,z,p_value,Kesimpulan
+Bambanglipuro,Assurance,-1.122,0.2619,Gagal tolak H0 (setara)
+Banguntapan 1,Assurance,1.04,0.2983,Gagal tolak H0 (setara)
+Banguntapan 2,Assurance,0.13,0.8967,Gagal tolak H0 (setara)
+Banguntapan 3,Assurance,-0.117,0.9067,Gagal tolak H0 (setara)
+Bantul 1,Assurance,-1.013,0.3109,Gagal tolak H0 (setara)
+Bantul 2,Assurance,0.222,0.8245,Gagal tolak H0 (setara)
+Dlingo 1,Assurance,0.151,0.8803,Gagal tolak H0 (setara)
+Dlingo 2,Assurance,-0.647,0.5176,Gagal tolak H0 (setara)
+Imogiri 1,Assurance,-0.886,0.3756,Gagal tolak H0 (setara)
+Imogiri 2,Assurance,-1.195,0.2319,Gagal tolak H0 (setara)
+Jetis 1,Assurance,-0.951,0.3417,Gagal tolak H0 (setara)
+Jetis 2,Assurance,0.464,0.6428,Gagal tolak H0 (setara)
+Kasihan 1,Assurance,-0.861,0.3892,Gagal tolak H0 (setara)
+Kasihan 2,Assurance,-0.974,0.33,Gagal tolak H0 (setara)
+Kretek,Assurance,-0.552,0.5811,Gagal tolak H0 (setara)
+Pajangan,Assurance,-0.951,0.3417,Gagal tolak H0 (setara)
+Pandak 1,Assurance,-1.094,0.2738,Gagal tolak H0 (setara)
+Pandak 2,Assurance,-2.102,0.0355,Tolak H0 — lebih jarang dikeluhkan
+Piyungan,Assurance,-0.746,0.4554,Gagal tolak H0 (setara)
+Pleret,Assurance,-1.196,0.2318,Gagal tolak H0 (setara)
+Pundong,Assurance,0.137,0.8911,Gagal tolak H0 (setara)
+Sanden,Assurance,-0.802,0.4227,Gagal tolak H0 (setara)
+Sedayu 1,Assurance,-1.195,0.2319,Gagal tolak H0 (setara)
+Sedayu 2,Assurance,-1.046,0.2956,Gagal tolak H0 (setara)
+Sewon 1,Assurance,1.686,0.0917,Gagal tolak H0 (setara)
+Sewon 2,Assurance,-0.203,0.839,Gagal tolak H0 (setara)
+Srandakan,Assurance,-0.723,0.4696,Gagal tolak H0 (setara)
+Balas  Klumprik,Assurance,1.661,0.0966,Gagal tolak H0 (setara)
+Bangkingan,Assurance,1.661,0.0966,Gagal tolak H0 (setara)
+Banyu  Urip,Assurance,0.566,0.5716,Gagal tolak H0 (setara)
+Bulak  Banteng,Assurance,-0.929,0.3528,Gagal tolak H0 (setara)
+Dukuh  Kupang,Assurance,0.266,0.7903,Gagal tolak H0 (setara)
+Gayungan,Assurance,-0.047,0.9622,Gagal tolak H0 (setara)
+Gunung  Anyar,Assurance,1.642,0.1006,Gagal tolak H0 (setara)
+Jagir,Assurance,1.831,0.0671,Gagal tolak H0 (setara)
+Jemursari,Assurance,-0.805,0.4206,Gagal tolak H0 (setara)
+Kalijudan,Assurance,-0.48,0.631,Gagal tolak H0 (setara)
+Kebonsari,Assurance,5.396,0.0,Tolak H0 — lebih sering dikeluhkan
+Kedurus,Assurance,-0.819,0.4127,Gagal tolak H0 (setara)
+Keputih,Assurance,0.556,0.5779,Gagal tolak H0 (setara)
+Klampis  Ngasem,Assurance,0.608,0.5435,Gagal tolak H0 (setara)
+Made,Assurance,0.857,0.3916,Gagal tolak H0 (setara)
+Menur,Assurance,2.921,0.0035,Tolak H0 — lebih sering dikeluhkan
+Morokrembangan,Assurance,0.081,0.9356,Gagal tolak H0 (setara)
+Mulyorejo,Assurance,3.44,0.0006,Tolak H0 — lebih sering dikeluhkan
+Ngagel  Rejo,Assurance,2.34,0.0193,Tolak H0 — lebih sering dikeluhkan
+Pakis,Assurance,0.003,0.9973,Gagal tolak H0 (setara)
+Putat  Jaya,Assurance,0.758,0.4484,Gagal tolak H0 (setara)
+Sawah  Pulo,Assurance,-0.331,0.7407,Gagal tolak H0 (setara)
+Sawahan,Assurance,-0.044,0.9646,Gagal tolak H0 (setara)
+Sidosermo,Assurance,-0.495,0.6206,Gagal tolak H0 (setara)
+Siwalankerto,Assurance,2.825,0.0047,Tolak H0 — lebih sering dikeluhkan
+Tambak  Wedi,Assurance,-0.432,0.6659,Gagal tolak H0 (setara)
+Wiyung,Assurance,0.618,0.5366,Gagal tolak H0 (setara)
+Wonokromo,Assurance,1.636,0.1018,Gagal tolak H0 (setara)
+Asemrowo,Assurance,-0.915,0.3601,Gagal tolak H0 (setara)
+Balongsari,Assurance,-0.748,0.4543,Gagal tolak H0 (setara)
+Benowo,Assurance,0.352,0.7247,Gagal tolak H0 (setara)
+Dr Soetomo,Assurance,2.328,0.0199,Tolak H0 — lebih sering dikeluhkan
+Dupak,Assurance,0.471,0.6374,Gagal tolak H0 (setara)
+Gading,Assurance,1.289,0.1975,Gagal tolak H0 (setara)
+Gundih,Assurance,0.495,0.6204,Gagal tolak H0 (setara)
+Jeruk,Assurance,0.128,0.8978,Gagal tolak H0 (setara)
+Kalirungkut,Assurance,-0.352,0.7248,Gagal tolak H0 (setara)
+Kedungdoro,Assurance,0.483,0.6292,Gagal tolak H0 (setara)
+Kenjeran,Assurance,-0.819,0.4127,Gagal tolak H0 (setara)
+Ketabang,Assurance,-0.178,0.8588,Gagal tolak H0 (setara)
+Krembangan Selatan,Assurance,-0.652,0.5143,Gagal tolak H0 (setara)
+Lidah Kulon,Assurance,0.222,0.8245,Gagal tolak H0 (setara)
+Lontar,Assurance,-0.536,0.5917,Gagal tolak H0 (setara)
+Manukan Kulon,Assurance,-1.01,0.3125,Gagal tolak H0 (setara)
+Medokan Ayu,Assurance,-0.268,0.7889,Gagal tolak H0 (setara)
+Mojo,Assurance,-0.775,0.4384,Gagal tolak H0 (setara)
+Pacar Keling,Assurance,0.696,0.4862,Gagal tolak H0 (setara)
+Pegirian,Assurance,2.065,0.0389,Tolak H0 — lebih sering dikeluhkan
+Peneleh,Assurance,-0.348,0.7276,Gagal tolak H0 (setara)
+Perak Timur,Assurance,0.238,0.8119,Gagal tolak H0 (setara)
+Pucangsewu,Assurance,-1.817,0.0692,Gagal tolak H0 (setara)
+Rangkah,Assurance,1.636,0.1018,Gagal tolak H0 (setara)
+Sememi,Assurance,0.001,0.999,Gagal tolak H0 (setara)
+Sidotopo,Assurance,-0.385,0.6999,Gagal tolak H0 (setara)
+Sidotopo Wetan,Assurance,-2.384,0.0171,Tolak H0 — lebih jarang dikeluhkan
+Simolawang,Assurance,-0.036,0.9715,Gagal tolak H0 (setara)
+Simomulyo,Assurance,1.504,0.1326,Gagal tolak H0 (setara)
+Tambakrejo,Assurance,0.405,0.6855,Gagal tolak H0 (setara)
+Tanah Kali Kedinding,Assurance,-0.639,0.5225,Gagal tolak H0 (setara)
+Tanjungsari,Assurance,2.027,0.0427,Tolak H0 — lebih sering dikeluhkan
+Tembok Dukuh,Assurance,1.083,0.279,Gagal tolak H0 (setara)
+Tenggilis,Assurance,1.384,0.1665,Gagal tolak H0 (setara)
+Wonokusumo,Assurance,-1.184,0.2362,Gagal tolak H0 (setara)
+Bandarharjo,Assurance,-0.217,0.8282,Gagal tolak H0 (setara)
+Bangetayu,Assurance,-1.164,0.2443,Gagal tolak H0 (setara)
+Bugangan,Assurance,-0.884,0.3767,Gagal tolak H0 (setara)
+Bulu Lor,Assurance,-0.217,0.8282,Gagal tolak H0 (setara)
+Candilama,Assurance,-1.491,0.136,Gagal tolak H0 (setara)
+Gayamsari,Assurance,-0.432,0.6659,Gagal tolak H0 (setara)
+Genuk,Assurance,-0.719,0.472,Gagal tolak H0 (setara)
+Gunungpati,Assurance,-0.216,0.8294,Gagal tolak H0 (setara)
+Halmahera,Assurance,-1.391,0.1641,Gagal tolak H0 (setara)
+Kagok,Assurance,-2.133,0.0329,Tolak H0 — lebih jarang dikeluhkan
+Karangayu,Assurance,2.027,0.0427,Tolak H0 — lebih sering dikeluhkan
+Karangdoro,Assurance,-0.46,0.6456,Gagal tolak H0 (setara)
+Karangmalang,Assurance,-1.975,0.0483,Tolak H0 — lebih jarang dikeluhkan
+Kedungmundu,Assurance,-2.551,0.0107,Tolak H0 — lebih jarang dikeluhkan
+Krobokan,Assurance,-0.676,0.4988,Gagal tolak H0 (setara)
+Lamper Tengah,Assurance,-1.852,0.064,Gagal tolak H0 (setara)
+Lebdosari,Assurance,-0.46,0.6456,Gagal tolak H0 (setara)
+Mangkang,Assurance,-0.511,0.6093,Gagal tolak H0 (setara)
+Manyaran,Assurance,-0.103,0.9176,Gagal tolak H0 (setara)
+Mijen,Assurance,-1.147,0.2514,Gagal tolak H0 (setara)
+Miroto,Assurance,-0.464,0.6429,Gagal tolak H0 (setara)
+Ngaliyan,Assurance,-0.044,0.9646,Gagal tolak H0 (setara)
+Ngemplak Simongan,Assurance,-0.714,0.4752,Gagal tolak H0 (setara)
+Ngesrep,Assurance,-1.094,0.2738,Gagal tolak H0 (setara)
+Padangsari,Assurance,-0.177,0.8595,Gagal tolak H0 (setara)
+Pandanaran,Assurance,-0.196,0.8448,Gagal tolak H0 (setara)
+Pegandan,Assurance,-0.7,0.4838,Gagal tolak H0 (setara)
+Poncol,Assurance,-0.676,0.4988,Gagal tolak H0 (setara)
+Pudakpayung,Assurance,-0.073,0.9418,Gagal tolak H0 (setara)
+Purwoyoso,Assurance,-0.152,0.8791,Gagal tolak H0 (setara)
+Rowosari,Assurance,-2.95,0.0032,Tolak H0 — lebih jarang dikeluhkan
+Sekaran,Assurance,-1.668,0.0953,Gagal tolak H0 (setara)
+Srondol,Assurance,-1.014,0.3107,Gagal tolak H0 (setara)
+Tambakaji,Assurance,0.272,0.786,Gagal tolak H0 (setara)
+Telogosari Kulon,Assurance,-2.038,0.0415,Tolak H0 — lebih jarang dikeluhkan
+Telogosari Wetan,Assurance,-1.246,0.2129,Gagal tolak H0 (setara)
+Karanganyar,Assurance,0.464,0.6428,Gagal tolak H0 (setara)
+Bambanglipuro,Empathy,1.166,0.2438,Gagal tolak H0 (setara)
+Banguntapan 1,Empathy,-1.385,0.1662,Gagal tolak H0 (setara)
+Banguntapan 2,Empathy,-1.083,0.2789,Gagal tolak H0 (setara)
+Banguntapan 3,Empathy,1.9,0.0575,Gagal tolak H0 (setara)
+Bantul 1,Empathy,2.303,0.0213,Tolak H0 — lebih sering dikeluhkan
+Bantul 2,Empathy,0.669,0.5038,Gagal tolak H0 (setara)
+Dlingo 1,Empathy,0.535,0.5929,Gagal tolak H0 (setara)
+Dlingo 2,Empathy,-1.108,0.268,Gagal tolak H0 (setara)
+Imogiri 1,Empathy,-0.583,0.5598,Gagal tolak H0 (setara)
+Imogiri 2,Empathy,-0.567,0.5708,Gagal tolak H0 (setara)
+Jetis 1,Empathy,-1.098,0.2722,Gagal tolak H0 (setara)
+Jetis 2,Empathy,-1.279,0.2008,Gagal tolak H0 (setara)
+Kasihan 1,Empathy,1.723,0.085,Gagal tolak H0 (setara)
+Kasihan 2,Empathy,-0.766,0.4439,Gagal tolak H0 (setara)
+Kretek,Empathy,-2.147,0.0318,Tolak H0 — lebih jarang dikeluhkan
+Pajangan,Empathy,0.342,0.7321,Gagal tolak H0 (setara)
+Pandak 1,Empathy,-0.728,0.4668,Gagal tolak H0 (setara)
+Pandak 2,Empathy,0.794,0.4273,Gagal tolak H0 (setara)
+Piyungan,Empathy,-0.859,0.3902,Gagal tolak H0 (setara)
+Pleret,Empathy,-0.39,0.6964,Gagal tolak H0 (setara)
+Pundong,Empathy,-0.005,0.9959,Gagal tolak H0 (setara)
+Sanden,Empathy,2.128,0.0333,Tolak H0 — lebih sering dikeluhkan
+Sedayu 1,Empathy,-0.946,0.3443,Gagal tolak H0 (setara)
+Sedayu 2,Empathy,-1.754,0.0795,Gagal tolak H0 (setara)
+Sewon 1,Empathy,-0.572,0.5675,Gagal tolak H0 (setara)
+Sewon 2,Empathy,0.102,0.9188,Gagal tolak H0 (setara)
+Srandakan,Empathy,0.359,0.7197,Gagal tolak H0 (setara)
+Balas  Klumprik,Empathy,-0.946,0.3443,Gagal tolak H0 (setara)
+Bangkingan,Empathy,-0.946,0.3443,Gagal tolak H0 (setara)
+Banyu  Urip,Empathy,0.103,0.9178,Gagal tolak H0 (setara)
+Bulak  Banteng,Empathy,-0.042,0.9665,Gagal tolak H0 (setara)
+Dukuh  Kupang,Empathy,-1.602,0.1091,Gagal tolak H0 (setara)
+Gayungan,Empathy,0.785,0.4322,Gagal tolak H0 (setara)
+Gunung  Anyar,Empathy,2.051,0.0403,Tolak H0 — lebih sering dikeluhkan
+Jagir,Empathy,0.58,0.5618,Gagal tolak H0 (setara)
+Jemursari,Empathy,1.665,0.096,Gagal tolak H0 (setara)
+Kalijudan,Empathy,2.244,0.0248,Tolak H0 — lebih sering dikeluhkan
+Kebonsari,Empathy,0.97,0.3319,Gagal tolak H0 (setara)
+Kedurus,Empathy,1.724,0.0847,Gagal tolak H0 (setara)
+Keputih,Empathy,1.631,0.1028,Gagal tolak H0 (setara)
+Klampis  Ngasem,Empathy,-1.612,0.107,Gagal tolak H0 (setara)
+Made,Empathy,1.839,0.066,Gagal tolak H0 (setara)
+Menur,Empathy,0.463,0.6436,Gagal tolak H0 (setara)
+Morokrembangan,Empathy,3.066,0.0022,Tolak H0 — lebih sering dikeluhkan
+Mulyorejo,Empathy,1.225,0.2206,Gagal tolak H0 (setara)
+Ngagel  Rejo,Empathy,2.668,0.0076,Tolak H0 — lebih sering dikeluhkan
+Pakis,Empathy,0.205,0.8373,Gagal tolak H0 (setara)
+Putat  Jaya,Empathy,1.279,0.2009,Gagal tolak H0 (setara)
+Sawah  Pulo,Empathy,1.484,0.1378,Gagal tolak H0 (setara)
+Sawahan,Empathy,1.177,0.2393,Gagal tolak H0 (setara)
+Sidosermo,Empathy,0.965,0.3344,Gagal tolak H0 (setara)
+Siwalankerto,Empathy,0.908,0.3637,Gagal tolak H0 (setara)
+Tambak  Wedi,Empathy,1.692,0.0906,Gagal tolak H0 (setara)
+Wiyung,Empathy,5.127,0.0,Tolak H0 — lebih sering dikeluhkan
+Wonokromo,Empathy,-0.323,0.7469,Gagal tolak H0 (setara)
+Asemrowo,Empathy,1.28,0.2005,Gagal tolak H0 (setara)
+Balongsari,Empathy,-0.001,0.9989,Gagal tolak H0 (setara)
+Benowo,Empathy,0.055,0.9564,Gagal tolak H0 (setara)
+Dr Soetomo,Empathy,5.687,0.0,Tolak H0 — lebih sering dikeluhkan
+Dupak,Empathy,1.378,0.1682,Gagal tolak H0 (setara)
+Gading,Empathy,-0.765,0.4442,Gagal tolak H0 (setara)
+Gundih,Empathy,1.9,0.0575,Gagal tolak H0 (setara)
+Jeruk,Empathy,1.902,0.0572,Gagal tolak H0 (setara)
+Kalirungkut,Empathy,-3.171,0.0015,Tolak H0 — lebih jarang dikeluhkan
+Kedungdoro,Empathy,1.46,0.1442,Gagal tolak H0 (setara)
+Kenjeran,Empathy,2.595,0.0094,Tolak H0 — lebih sering dikeluhkan
+Ketabang,Empathy,2.368,0.0179,Tolak H0 — lebih sering dikeluhkan
+Krembangan Selatan,Empathy,0.069,0.9447,Gagal tolak H0 (setara)
+Lidah Kulon,Empathy,0.669,0.5038,Gagal tolak H0 (setara)
+Lontar,Empathy,3.305,0.0009,Tolak H0 — lebih sering dikeluhkan
+Manukan Kulon,Empathy,-0.285,0.7758,Gagal tolak H0 (setara)
+Medokan Ayu,Empathy,-2.685,0.0073,Tolak H0 — lebih jarang dikeluhkan
+Mojo,Empathy,2.561,0.0104,Tolak H0 — lebih sering dikeluhkan
+Pacar Keling,Empathy,-1.784,0.0744,Gagal tolak H0 (setara)
+Pegirian,Empathy,0.79,0.4298,Gagal tolak H0 (setara)
+Peneleh,Empathy,-0.776,0.4377,Gagal tolak H0 (setara)
+Perak Timur,Empathy,0.422,0.6727,Gagal tolak H0 (setara)
+Pucangsewu,Empathy,-0.77,0.4413,Gagal tolak H0 (setara)
+Rangkah,Empathy,-0.101,0.9198,Gagal tolak H0 (setara)
+Sememi,Empathy,1.297,0.1945,Gagal tolak H0 (setara)
+Sidotopo,Empathy,-0.28,0.7792,Gagal tolak H0 (setara)
+Sidotopo Wetan,Empathy,3.694,0.0002,Tolak H0 — lebih sering dikeluhkan
+Simolawang,Empathy,-0.548,0.584,Gagal tolak H0 (setara)
+Simomulyo,Empathy,-0.101,0.9195,Gagal tolak H0 (setara)
+Tambakrejo,Empathy,1.868,0.0618,Gagal tolak H0 (setara)
+Tanah Kali Kedinding,Empathy,0.01,0.9922,Gagal tolak H0 (setara)
+Tanjungsari,Empathy,1.656,0.0977,Gagal tolak H0 (setara)
+Tembok Dukuh,Empathy,1.506,0.132,Gagal tolak H0 (setara)
+Tenggilis,Empathy,0.32,0.7488,Gagal tolak H0 (setara)
+Wonokusumo,Empathy,2.462,0.0138,Tolak H0 — lebih sering dikeluhkan
+Bandarharjo,Empathy,-1.775,0.0759,Gagal tolak H0 (setara)
+Bangetayu,Empathy,-2.908,0.0036,Tolak H0 — lebih jarang dikeluhkan
+Bugangan,Empathy,-3.439,0.0006,Tolak H0 — lebih jarang dikeluhkan
+Bulu Lor,Empathy,-1.077,0.2816,Gagal tolak H0 (setara)
+Candilama,Empathy,-1.851,0.0642,Gagal tolak H0 (setara)
+Gayamsari,Empathy,-4.154,0.0,Tolak H0 — lebih jarang dikeluhkan
+Genuk,Empathy,-0.567,0.5708,Gagal tolak H0 (setara)
+Gunungpati,Empathy,-3.813,0.0001,Tolak H0 — lebih jarang dikeluhkan
+Halmahera,Empathy,-2.656,0.0079,Tolak H0 — lebih jarang dikeluhkan
+Kagok,Empathy,-3.487,0.0005,Tolak H0 — lebih jarang dikeluhkan
+Karangayu,Empathy,-3.462,0.0005,Tolak H0 — lebih jarang dikeluhkan
+Karangdoro,Empathy,-0.39,0.6964,Gagal tolak H0 (setara)
+Karangmalang,Empathy,-1.981,0.0475,Tolak H0 — lebih jarang dikeluhkan
+Kedungmundu,Empathy,-5.135,0.0,Tolak H0 — lebih jarang dikeluhkan
+Krobokan,Empathy,-1.989,0.0467,Tolak H0 — lebih jarang dikeluhkan
+Lamper Tengah,Empathy,-4.14,0.0,Tolak H0 — lebih jarang dikeluhkan
+Lebdosari,Empathy,-0.976,0.3292,Gagal tolak H0 (setara)
+Mangkang,Empathy,-0.808,0.4189,Gagal tolak H0 (setara)
+Manyaran,Empathy,-1.159,0.2464,Gagal tolak H0 (setara)
+Mijen,Empathy,-1.694,0.0902,Gagal tolak H0 (setara)
+Miroto,Empathy,-0.779,0.4361,Gagal tolak H0 (setara)
+Ngaliyan,Empathy,-2.031,0.0422,Tolak H0 — lebih jarang dikeluhkan
+Ngemplak Simongan,Empathy,-3.157,0.0016,Tolak H0 — lebih jarang dikeluhkan
+Ngesrep,Empathy,-0.728,0.4668,Gagal tolak H0 (setara)
+Padangsari,Empathy,-3.157,0.0016,Tolak H0 — lebih jarang dikeluhkan
+Pandanaran,Empathy,-1.846,0.0649,Gagal tolak H0 (setara)
+Pegandan,Empathy,-1.465,0.1428,Gagal tolak H0 (setara)
+Poncol,Empathy,-1.667,0.0954,Gagal tolak H0 (setara)
+Pudakpayung,Empathy,-1.693,0.0904,Gagal tolak H0 (setara)
+Purwoyoso,Empathy,0.394,0.6935,Gagal tolak H0 (setara)
+Rowosari,Empathy,-4.107,0.0,Tolak H0 — lebih jarang dikeluhkan
+Sekaran,Empathy,-3.597,0.0003,Tolak H0 — lebih jarang dikeluhkan
+Srondol,Empathy,-1.195,0.232,Gagal tolak H0 (setara)
+Tambakaji,Empathy,-2.039,0.0414,Tolak H0 — lebih jarang dikeluhkan
+Telogosari Kulon,Empathy,-1.171,0.2415,Gagal tolak H0 (setara)
+Telogosari Wetan,Empathy,0.285,0.7756,Gagal tolak H0 (setara)
+Karanganyar,Empathy,-0.701,0.4833,Gagal tolak H0 (setara)
+Bambanglipuro,Reliability,-1.621,0.1049,Gagal tolak H0 (setara)
+Banguntapan 1,Reliability,-1.006,0.3145,Gagal tolak H0 (setara)
+Banguntapan 2,Reliability,-1.107,0.2685,Gagal tolak H0 (setara)
+Banguntapan 3,Reliability,-2.86,0.0042,Tolak H0 — lebih jarang dikeluhkan
+Bantul 1,Reliability,0.409,0.6826,Gagal tolak H0 (setara)
+Bantul 2,Reliability,-1.365,0.1724,Gagal tolak H0 (setara)
+Dlingo 1,Reliability,-2.112,0.0347,Tolak H0 — lebih jarang dikeluhkan
+Dlingo 2,Reliability,-0.041,0.967,Gagal tolak H0 (setara)
+Imogiri 1,Reliability,0.891,0.373,Gagal tolak H0 (setara)
+Imogiri 2,Reliability,-0.623,0.5335,Gagal tolak H0 (setara)
+Jetis 1,Reliability,1.45,0.1471,Gagal tolak H0 (setara)
+Jetis 2,Reliability,-0.241,0.8093,Gagal tolak H0 (setara)
+Kasihan 1,Reliability,-2.299,0.0215,Tolak H0 — lebih jarang dikeluhkan
+Kasihan 2,Reliability,0.681,0.4959,Gagal tolak H0 (setara)
+Kretek,Reliability,0.894,0.3711,Gagal tolak H0 (setara)
+Pajangan,Reliability,-0.358,0.7202,Gagal tolak H0 (setara)
+Pandak 1,Reliability,-0.313,0.7542,Gagal tolak H0 (setara)
+Pandak 2,Reliability,-0.059,0.9533,Gagal tolak H0 (setara)
+Piyungan,Reliability,1.257,0.2086,Gagal tolak H0 (setara)
+Pleret,Reliability,-0.356,0.7217,Gagal tolak H0 (setara)
+Pundong,Reliability,1.836,0.0663,Gagal tolak H0 (setara)
+Sanden,Reliability,-0.999,0.3179,Gagal tolak H0 (setara)
+Sedayu 1,Reliability,0.519,0.604,Gagal tolak H0 (setara)
+Sedayu 2,Reliability,0.894,0.3711,Gagal tolak H0 (setara)
+Sewon 1,Reliability,0.498,0.6188,Gagal tolak H0 (setara)
+Sewon 2,Reliability,-0.21,0.8334,Gagal tolak H0 (setara)
+Srandakan,Reliability,-0.111,0.9115,Gagal tolak H0 (setara)
+Balas  Klumprik,Reliability,2.04,0.0413,Tolak H0 — lebih sering dikeluhkan
+Bangkingan,Reliability,-2.144,0.032,Tolak H0 — lebih jarang dikeluhkan
+Banyu  Urip,Reliability,2.219,0.0265,Tolak H0 — lebih sering dikeluhkan
+Bulak  Banteng,Reliability,1.791,0.0732,Gagal tolak H0 (setara)
+Dukuh  Kupang,Reliability,0.186,0.8525,Gagal tolak H0 (setara)
+Gayungan,Reliability,1.55,0.1212,Gagal tolak H0 (setara)
+Gunung  Anyar,Reliability,0.185,0.853,Gagal tolak H0 (setara)
+Jagir,Reliability,0.678,0.498,Gagal tolak H0 (setara)
+Jemursari,Reliability,-1.596,0.1104,Gagal tolak H0 (setara)
+Kalijudan,Reliability,-0.034,0.9728,Gagal tolak H0 (setara)
+Kebonsari,Reliability,1.612,0.107,Gagal tolak H0 (setara)
+Kedurus,Reliability,-0.475,0.6347,Gagal tolak H0 (setara)
+Keputih,Reliability,-1.204,0.2287,Gagal tolak H0 (setara)
+Klampis  Ngasem,Reliability,1.187,0.2351,Gagal tolak H0 (setara)
+Made,Reliability,-1.635,0.102,Gagal tolak H0 (setara)
+Menur,Reliability,0.962,0.3359,Gagal tolak H0 (setara)
+Morokrembangan,Reliability,-2.251,0.0244,Tolak H0 — lebih jarang dikeluhkan
+Mulyorejo,Reliability,0.958,0.3382,Gagal tolak H0 (setara)
+Ngagel  Rejo,Reliability,0.277,0.7821,Gagal tolak H0 (setara)
+Pakis,Reliability,1.046,0.2954,Gagal tolak H0 (setara)
+Putat  Jaya,Reliability,1.783,0.0746,Gagal tolak H0 (setara)
+Sawah  Pulo,Reliability,0.715,0.4748,Gagal tolak H0 (setara)
+Sawahan,Reliability,-1.553,0.1203,Gagal tolak H0 (setara)
+Sidosermo,Reliability,-0.907,0.3644,Gagal tolak H0 (setara)
+Siwalankerto,Reliability,2.568,0.0102,Tolak H0 — lebih sering dikeluhkan
+Tambak  Wedi,Reliability,1.546,0.122,Gagal tolak H0 (setara)
+Wiyung,Reliability,-1.006,0.3143,Gagal tolak H0 (setara)
+Wonokromo,Reliability,2.229,0.0258,Tolak H0 — lebih sering dikeluhkan
+Asemrowo,Reliability,0.761,0.4469,Gagal tolak H0 (setara)
+Balongsari,Reliability,0.797,0.4254,Gagal tolak H0 (setara)
+Benowo,Reliability,0.071,0.9432,Gagal tolak H0 (setara)
+Dr Soetomo,Reliability,-2.359,0.0183,Tolak H0 — lebih jarang dikeluhkan
+Dupak,Reliability,0.721,0.4707,Gagal tolak H0 (setara)
+Gading,Reliability,-0.525,0.5996,Gagal tolak H0 (setara)
+Gundih,Reliability,-0.413,0.6793,Gagal tolak H0 (setara)
+Jeruk,Reliability,0.543,0.5872,Gagal tolak H0 (setara)
+Kalirungkut,Reliability,0.738,0.4607,Gagal tolak H0 (setara)
+Kedungdoro,Reliability,0.958,0.3382,Gagal tolak H0 (setara)
+Kenjeran,Reliability,-0.742,0.4582,Gagal tolak H0 (setara)
+Ketabang,Reliability,1.719,0.0857,Gagal tolak H0 (setara)
+Krembangan Selatan,Reliability,-0.714,0.4755,Gagal tolak H0 (setara)
+Lidah Kulon,Reliability,0.388,0.6981,Gagal tolak H0 (setara)
+Lontar,Reliability,0.34,0.7341,Gagal tolak H0 (setara)
+Manukan Kulon,Reliability,2.475,0.0133,Tolak H0 — lebih sering dikeluhkan
+Medokan Ayu,Reliability,1.229,0.2189,Gagal tolak H0 (setara)
+Mojo,Reliability,0.141,0.8875,Gagal tolak H0 (setara)
+Pacar Keling,Reliability,1.534,0.1251,Gagal tolak H0 (setara)
+Pegirian,Reliability,0.253,0.8005,Gagal tolak H0 (setara)
+Peneleh,Reliability,-0.355,0.7222,Gagal tolak H0 (setara)
+Perak Timur,Reliability,-0.924,0.3557,Gagal tolak H0 (setara)
+Pucangsewu,Reliability,2.469,0.0136,Tolak H0 — lebih sering dikeluhkan
+Rangkah,Reliability,1.559,0.1189,Gagal tolak H0 (setara)
+Sememi,Reliability,0.302,0.7623,Gagal tolak H0 (setara)
+Sidotopo,Reliability,-1.02,0.3078,Gagal tolak H0 (setara)
+Sidotopo Wetan,Reliability,-1.352,0.1764,Gagal tolak H0 (setara)
+Simolawang,Reliability,1.26,0.2078,Gagal tolak H0 (setara)
+Simomulyo,Reliability,-0.359,0.7198,Gagal tolak H0 (setara)
+Tambakrejo,Reliability,-1.303,0.1927,Gagal tolak H0 (setara)
+Tanah Kali Kedinding,Reliability,1.033,0.3016,Gagal tolak H0 (setara)
+Tanjungsari,Reliability,0.321,0.7484,Gagal tolak H0 (setara)
+Tembok Dukuh,Reliability,0.673,0.501,Gagal tolak H0 (setara)
+Tenggilis,Reliability,0.476,0.6338,Gagal tolak H0 (setara)
+Wonokusumo,Reliability,-0.229,0.8191,Gagal tolak H0 (setara)
+Bandarharjo,Reliability,0.037,0.9702,Gagal tolak H0 (setara)
+Bangetayu,Reliability,-0.369,0.7118,Gagal tolak H0 (setara)
+Bugangan,Reliability,1.234,0.2171,Gagal tolak H0 (setara)
+Bulu Lor,Reliability,-1.715,0.0863,Gagal tolak H0 (setara)
+Candilama,Reliability,-0.25,0.8027,Gagal tolak H0 (setara)
+Gayamsari,Reliability,0.428,0.6685,Gagal tolak H0 (setara)
+Genuk,Reliability,-1.003,0.3158,Gagal tolak H0 (setara)
+Gunungpati,Reliability,-1.748,0.0805,Gagal tolak H0 (setara)
+Halmahera,Reliability,-1.476,0.1401,Gagal tolak H0 (setara)
+Kagok,Reliability,0.277,0.7814,Gagal tolak H0 (setara)
+Karangayu,Reliability,3.257,0.0011,Tolak H0 — lebih sering dikeluhkan
+Karangdoro,Reliability,-0.65,0.5156,Gagal tolak H0 (setara)
+Karangmalang,Reliability,1.094,0.2741,Gagal tolak H0 (setara)
+Kedungmundu,Reliability,-2.177,0.0295,Tolak H0 — lebih jarang dikeluhkan
+Krobokan,Reliability,-0.194,0.8462,Gagal tolak H0 (setara)
+Lamper Tengah,Reliability,1.938,0.0526,Gagal tolak H0 (setara)
+Lebdosari,Reliability,-2.414,0.0158,Tolak H0 — lebih jarang dikeluhkan
+Mangkang,Reliability,-0.434,0.6643,Gagal tolak H0 (setara)
+Manyaran,Reliability,-1.851,0.0641,Gagal tolak H0 (setara)
+Mijen,Reliability,-0.764,0.4448,Gagal tolak H0 (setara)
+Miroto,Reliability,-1.724,0.0847,Gagal tolak H0 (setara)
+Ngaliyan,Reliability,-0.633,0.5268,Gagal tolak H0 (setara)
+Ngemplak Simongan,Reliability,-2.544,0.011,Tolak H0 — lebih jarang dikeluhkan
+Ngesrep,Reliability,-1.365,0.1724,Gagal tolak H0 (setara)
+Padangsari,Reliability,0.46,0.6459,Gagal tolak H0 (setara)
+Pandanaran,Reliability,0.931,0.3517,Gagal tolak H0 (setara)
+Pegandan,Reliability,0.138,0.8899,Gagal tolak H0 (setara)
+Poncol,Reliability,-0.516,0.6055,Gagal tolak H0 (setara)
+Pudakpayung,Reliability,0.668,0.5038,Gagal tolak H0 (setara)
+Purwoyoso,Reliability,-2.783,0.0054,Tolak H0 — lebih jarang dikeluhkan
+Rowosari,Reliability,-0.764,0.445,Gagal tolak H0 (setara)
+Sekaran,Reliability,-1.276,0.2019,Gagal tolak H0 (setara)
+Srondol,Reliability,-0.702,0.4824,Gagal tolak H0 (setara)
+Tambakaji,Reliability,-0.059,0.9533,Gagal tolak H0 (setara)
+Telogosari Kulon,Reliability,-0.686,0.4926,Gagal tolak H0 (setara)
+Telogosari Wetan,Reliability,-0.925,0.355,Gagal tolak H0 (setara)
+Karanganyar,Reliability,-0.822,0.4111,Gagal tolak H0 (setara)
+Bambanglipuro,Responsiveness,0.049,0.9611,Gagal tolak H0 (setara)
+Banguntapan 1,Responsiveness,0.051,0.9594,Gagal tolak H0 (setara)
+Banguntapan 2,Responsiveness,0.685,0.4936,Gagal tolak H0 (setara)
+Banguntapan 3,Responsiveness,-1.09,0.2757,Gagal tolak H0 (setara)
+Bantul 1,Responsiveness,0.827,0.4082,Gagal tolak H0 (setara)
+Bantul 2,Responsiveness,2.385,0.0171,Tolak H0 — lebih sering dikeluhkan
+Dlingo 1,Responsiveness,-0.774,0.4388,Gagal tolak H0 (setara)
+Dlingo 2,Responsiveness,-0.425,0.6707,Gagal tolak H0 (setara)
+Imogiri 1,Responsiveness,-0.695,0.4871,Gagal tolak H0 (setara)
+Imogiri 2,Responsiveness,1.822,0.0684,Gagal tolak H0 (setara)
+Jetis 1,Responsiveness,2.023,0.0431,Tolak H0 — lebih sering dikeluhkan
+Jetis 2,Responsiveness,1.276,0.202,Gagal tolak H0 (setara)
+Kasihan 1,Responsiveness,2.094,0.0362,Tolak H0 — lebih sering dikeluhkan
+Kasihan 2,Responsiveness,1.378,0.1681,Gagal tolak H0 (setara)
+Kretek,Responsiveness,2.214,0.0269,Tolak H0 — lebih sering dikeluhkan
+Pajangan,Responsiveness,2.023,0.0431,Tolak H0 — lebih sering dikeluhkan
+Pandak 1,Responsiveness,-0.46,0.6457,Gagal tolak H0 (setara)
+Pandak 2,Responsiveness,0.361,0.7184,Gagal tolak H0 (setara)
+Piyungan,Responsiveness,-0.359,0.7193,Gagal tolak H0 (setara)
+Pleret,Responsiveness,1.213,0.225,Gagal tolak H0 (setara)
+Pundong,Responsiveness,-0.258,0.7961,Gagal tolak H0 (setara)
+Sanden,Responsiveness,-0.538,0.5903,Gagal tolak H0 (setara)
+Sedayu 1,Responsiveness,0.664,0.5064,Gagal tolak H0 (setara)
+Sedayu 2,Responsiveness,1.012,0.3115,Gagal tolak H0 (setara)
+Sewon 1,Responsiveness,2.531,0.0114,Tolak H0 — lebih sering dikeluhkan
+Sewon 2,Responsiveness,2.005,0.045,Tolak H0 — lebih sering dikeluhkan
+Srandakan,Responsiveness,0.793,0.4275,Gagal tolak H0 (setara)
+Balas  Klumprik,Responsiveness,-3.195,0.0014,Tolak H0 — lebih jarang dikeluhkan
+Bangkingan,Responsiveness,0.664,0.5064,Gagal tolak H0 (setara)
+Banyu  Urip,Responsiveness,-0.584,0.5594,Gagal tolak H0 (setara)
+Bulak  Banteng,Responsiveness,0.356,0.7215,Gagal tolak H0 (setara)
+Dukuh  Kupang,Responsiveness,3.948,0.0001,Tolak H0 — lebih sering dikeluhkan
+Gayungan,Responsiveness,0.825,0.4093,Gagal tolak H0 (setara)
+Gunung  Anyar,Responsiveness,0.453,0.6503,Gagal tolak H0 (setara)
+Jagir,Responsiveness,0.856,0.3918,Gagal tolak H0 (setara)
+Jemursari,Responsiveness,-1.232,0.2178,Gagal tolak H0 (setara)
+Kalijudan,Responsiveness,-2.414,0.0158,Tolak H0 — lebih jarang dikeluhkan
+Kebonsari,Responsiveness,-1.039,0.2988,Gagal tolak H0 (setara)
+Kedurus,Responsiveness,-1.479,0.1392,Gagal tolak H0 (setara)
+Keputih,Responsiveness,0.166,0.8686,Gagal tolak H0 (setara)
+Klampis  Ngasem,Responsiveness,2.285,0.0223,Tolak H0 — lebih sering dikeluhkan
+Made,Responsiveness,-3.053,0.0023,Tolak H0 — lebih jarang dikeluhkan
+Menur,Responsiveness,3.002,0.0027,Tolak H0 — lebih sering dikeluhkan
+Morokrembangan,Responsiveness,0.968,0.333,Gagal tolak H0 (setara)
+Mulyorejo,Responsiveness,-2.015,0.0439,Tolak H0 — lebih jarang dikeluhkan
+Ngagel  Rejo,Responsiveness,-0.535,0.5929,Gagal tolak H0 (setara)
+Pakis,Responsiveness,2.12,0.034,Tolak H0 — lebih sering dikeluhkan
+Putat  Jaya,Responsiveness,-1.953,0.0508,Gagal tolak H0 (setara)
+Sawah  Pulo,Responsiveness,0.5,0.617,Gagal tolak H0 (setara)
+Sawahan,Responsiveness,-1.638,0.1015,Gagal tolak H0 (setara)
+Sidosermo,Responsiveness,-0.821,0.4115,Gagal tolak H0 (setara)
+Siwalankerto,Responsiveness,-1.509,0.1314,Gagal tolak H0 (setara)
+Tambak  Wedi,Responsiveness,2.001,0.0454,Tolak H0 — lebih sering dikeluhkan
+Wiyung,Responsiveness,-2.734,0.0063,Tolak H0 — lebih jarang dikeluhkan
+Wonokromo,Responsiveness,1.351,0.1767,Gagal tolak H0 (setara)
+Asemrowo,Responsiveness,2.333,0.0196,Tolak H0 — lebih sering dikeluhkan
+Balongsari,Responsiveness,0.392,0.6954,Gagal tolak H0 (setara)
+Benowo,Responsiveness,-0.762,0.4458,Gagal tolak H0 (setara)
+Dr Soetomo,Responsiveness,-5.323,0.0,Tolak H0 — lebih jarang dikeluhkan
+Dupak,Responsiveness,0.626,0.5314,Gagal tolak H0 (setara)
+Gading,Responsiveness,0.138,0.89,Gagal tolak H0 (setara)
+Gundih,Responsiveness,-0.842,0.3999,Gagal tolak H0 (setara)
+Jeruk,Responsiveness,0.661,0.5086,Gagal tolak H0 (setara)
+Kalirungkut,Responsiveness,4.737,0.0,Tolak H0 — lebih sering dikeluhkan
+Kedungdoro,Responsiveness,2.3,0.0215,Tolak H0 — lebih sering dikeluhkan
+Kenjeran,Responsiveness,1.27,0.204,Gagal tolak H0 (setara)
+Ketabang,Responsiveness,-2.906,0.0037,Tolak H0 — lebih jarang dikeluhkan
+Krembangan Selatan,Responsiveness,3.413,0.0006,Tolak H0 — lebih sering dikeluhkan
+Lidah Kulon,Responsiveness,-0.815,0.4149,Gagal tolak H0 (setara)
+Lontar,Responsiveness,0.931,0.3519,Gagal tolak H0 (setara)
+Manukan Kulon,Responsiveness,3.57,0.0004,Tolak H0 — lebih sering dikeluhkan
+Medokan Ayu,Responsiveness,4.409,0.0,Tolak H0 — lebih sering dikeluhkan
+Mojo,Responsiveness,2.709,0.0067,Tolak H0 — lebih sering dikeluhkan
+Pacar Keling,Responsiveness,1.115,0.265,Gagal tolak H0 (setara)
+Pegirian,Responsiveness,-1.192,0.2331,Gagal tolak H0 (setara)
+Peneleh,Responsiveness,2.172,0.0299,Tolak H0 — lebih sering dikeluhkan
+Perak Timur,Responsiveness,-0.449,0.6533,Gagal tolak H0 (setara)
+Pucangsewu,Responsiveness,3.846,0.0001,Tolak H0 — lebih sering dikeluhkan
+Rangkah,Responsiveness,3.387,0.0007,Tolak H0 — lebih sering dikeluhkan
+Sememi,Responsiveness,1.43,0.1527,Gagal tolak H0 (setara)
+Sidotopo,Responsiveness,3.126,0.0018,Tolak H0 — lebih sering dikeluhkan
+Sidotopo Wetan,Responsiveness,-2.18,0.0293,Tolak H0 — lebih jarang dikeluhkan
+Simolawang,Responsiveness,2.213,0.0269,Tolak H0 — lebih sering dikeluhkan
+Simomulyo,Responsiveness,1.661,0.0966,Gagal tolak H0 (setara)
+Tambakrejo,Responsiveness,0.931,0.3518,Gagal tolak H0 (setara)
+Tanah Kali Kedinding,Responsiveness,1.31,0.1904,Gagal tolak H0 (setara)
+Tanjungsari,Responsiveness,0.4,0.6895,Gagal tolak H0 (setara)
+Tembok Dukuh,Responsiveness,-0.754,0.451,Gagal tolak H0 (setara)
+Tenggilis,Responsiveness,2.731,0.0063,Tolak H0 — lebih sering dikeluhkan
+Wonokusumo,Responsiveness,-0.263,0.7928,Gagal tolak H0 (setara)
+Bandarharjo,Responsiveness,-1.527,0.1269,Gagal tolak H0 (setara)
+Bangetayu,Responsiveness,-2.72,0.0065,Tolak H0 — lebih jarang dikeluhkan
+Bugangan,Responsiveness,-1.495,0.1348,Gagal tolak H0 (setara)
+Bulu Lor,Responsiveness,-1.882,0.0598,Gagal tolak H0 (setara)
+Candilama,Responsiveness,-5.492,0.0,Tolak H0 — lebih jarang dikeluhkan
+Gayamsari,Responsiveness,-3.105,0.0019,Tolak H0 — lebih jarang dikeluhkan
+Genuk,Responsiveness,-2.809,0.005,Tolak H0 — lebih jarang dikeluhkan
+Gunungpati,Responsiveness,-0.766,0.4437,Gagal tolak H0 (setara)
+Halmahera,Responsiveness,0.085,0.9321,Gagal tolak H0 (setara)
+Kagok,Responsiveness,-0.156,0.8764,Gagal tolak H0 (setara)
+Karangayu,Responsiveness,-6.056,0.0,Tolak H0 — lebih jarang dikeluhkan
+Karangdoro,Responsiveness,-4.752,0.0,Tolak H0 — lebih jarang dikeluhkan
+Karangmalang,Responsiveness,-2.887,0.0039,Tolak H0 — lebih jarang dikeluhkan
+Kedungmundu,Responsiveness,1.554,0.1203,Gagal tolak H0 (setara)
+Krobokan,Responsiveness,-3.832,0.0001,Tolak H0 — lebih jarang dikeluhkan
+Lamper Tengah,Responsiveness,-1.39,0.1646,Gagal tolak H0 (setara)
+Lebdosari,Responsiveness,-1.471,0.1413,Gagal tolak H0 (setara)
+Mangkang,Responsiveness,-0.882,0.378,Gagal tolak H0 (setara)
+Manyaran,Responsiveness,-3.128,0.0018,Tolak H0 — lebih jarang dikeluhkan
+Mijen,Responsiveness,-3.668,0.0002,Tolak H0 — lebih jarang dikeluhkan
+Miroto,Responsiveness,-2.479,0.0132,Tolak H0 — lebih jarang dikeluhkan
+Ngaliyan,Responsiveness,-3.505,0.0005,Tolak H0 — lebih jarang dikeluhkan
+Ngemplak Simongan,Responsiveness,2.672,0.0075,Tolak H0 — lebih sering dikeluhkan
+Ngesrep,Responsiveness,-4.016,0.0001,Tolak H0 — lebih jarang dikeluhkan
+Padangsari,Responsiveness,-1.246,0.2129,Gagal tolak H0 (setara)
+Pandanaran,Responsiveness,-3.748,0.0002,Tolak H0 — lebih jarang dikeluhkan
+Pegandan,Responsiveness,1.722,0.085,Gagal tolak H0 (setara)
+Poncol,Responsiveness,-2.523,0.0116,Tolak H0 — lebih jarang dikeluhkan
+Pudakpayung,Responsiveness,-0.65,0.5157,Gagal tolak H0 (setara)
+Purwoyoso,Responsiveness,-1.13,0.2584,Gagal tolak H0 (setara)
+Rowosari,Responsiveness,0.527,0.5985,Gagal tolak H0 (setara)
+Sekaran,Responsiveness,-0.773,0.4395,Gagal tolak H0 (setara)
+Srondol,Responsiveness,-3.085,0.002,Tolak H0 — lebih jarang dikeluhkan
+Tambakaji,Responsiveness,-2.526,0.0115,Tolak H0 — lebih jarang dikeluhkan
+Telogosari Kulon,Responsiveness,-2.443,0.0146,Tolak H0 — lebih jarang dikeluhkan
+Telogosari Wetan,Responsiveness,-4.385,0.0,Tolak H0 — lebih jarang dikeluhkan
+Karanganyar,Responsiveness,-1.08,0.2801,Gagal tolak H0 (setara)
+Bambanglipuro,Tangibles,0.384,0.701,Gagal tolak H0 (setara)
+Banguntapan 1,Tangibles,1.079,0.2806,Gagal tolak H0 (setara)
+Banguntapan 2,Tangibles,2.266,0.0234,Tolak H0 — lebih sering dikeluhkan
+Banguntapan 3,Tangibles,-0.459,0.6461,Gagal tolak H0 (setara)
+Bantul 1,Tangibles,-1.131,0.2579,Gagal tolak H0 (setara)
+Bantul 2,Tangibles,0.843,0.3994,Gagal tolak H0 (setara)
+Dlingo 1,Tangibles,-1.073,0.2834,Gagal tolak H0 (setara)
+Dlingo 2,Tangibles,-0.738,0.4606,Gagal tolak H0 (setara)
+Imogiri 1,Tangibles,0.558,0.5769,Gagal tolak H0 (setara)
+Imogiri 2,Tangibles,1.147,0.2513,Gagal tolak H0 (setara)
+Jetis 1,Tangibles,-0.595,0.552,Gagal tolak H0 (setara)
+Jetis 2,Tangibles,0.394,0.6934,Gagal tolak H0 (setara)
+Kasihan 1,Tangibles,0.561,0.5747,Gagal tolak H0 (setara)
+Kasihan 2,Tangibles,1.521,0.1283,Gagal tolak H0 (setara)
+Kretek,Tangibles,3.829,0.0001,Tolak H0 — lebih sering dikeluhkan
+Pajangan,Tangibles,0.182,0.856,Gagal tolak H0 (setara)
+Pandak 1,Tangibles,0.09,0.9281,Gagal tolak H0 (setara)
+Pandak 2,Tangibles,-0.026,0.9793,Gagal tolak H0 (setara)
+Piyungan,Tangibles,-0.875,0.3818,Gagal tolak H0 (setara)
+Pleret,Tangibles,2.097,0.036,Tolak H0 — lebih sering dikeluhkan
+Pundong,Tangibles,-1.326,0.1848,Gagal tolak H0 (setara)
+Sanden,Tangibles,0.621,0.5345,Gagal tolak H0 (setara)
+Sedayu 1,Tangibles,1.964,0.0495,Tolak H0 — lebih sering dikeluhkan
+Sedayu 2,Tangibles,-1.255,0.2094,Gagal tolak H0 (setara)
+Sewon 1,Tangibles,-0.649,0.5163,Gagal tolak H0 (setara)
+Sewon 2,Tangibles,0.691,0.4896,Gagal tolak H0 (setara)
+Srandakan,Tangibles,-0.984,0.325,Gagal tolak H0 (setara)
+Balas  Klumprik,Tangibles,-0.486,0.6269,Gagal tolak H0 (setara)
+Bangkingan,Tangibles,1.147,0.2513,Gagal tolak H0 (setara)
+Banyu  Urip,Tangibles,0.047,0.9626,Gagal tolak H0 (setara)
+Bulak  Banteng,Tangibles,4.393,0.0,Tolak H0 — lebih sering dikeluhkan
+Dukuh  Kupang,Tangibles,-1.556,0.1198,Gagal tolak H0 (setara)
+Gayungan,Tangibles,-0.787,0.4313,Gagal tolak H0 (setara)
+Gunung  Anyar,Tangibles,-0.328,0.7426,Gagal tolak H0 (setara)
+Jagir,Tangibles,-0.437,0.6623,Gagal tolak H0 (setara)
+Jemursari,Tangibles,-0.637,0.5241,Gagal tolak H0 (setara)
+Kalijudan,Tangibles,-2.05,0.0403,Tolak H0 — lebih jarang dikeluhkan
+Kebonsari,Tangibles,0.304,0.7615,Gagal tolak H0 (setara)
+Kedurus,Tangibles,-1.433,0.152,Gagal tolak H0 (setara)
+Keputih,Tangibles,2.679,0.0074,Tolak H0 — lebih sering dikeluhkan
+Klampis  Ngasem,Tangibles,-1.052,0.293,Gagal tolak H0 (setara)
+Made,Tangibles,-0.742,0.4584,Gagal tolak H0 (setara)
+Menur,Tangibles,0.182,0.856,Gagal tolak H0 (setara)
+Morokrembangan,Tangibles,0.999,0.3176,Gagal tolak H0 (setara)
+Mulyorejo,Tangibles,-0.588,0.5566,Gagal tolak H0 (setara)
+Ngagel  Rejo,Tangibles,-0.469,0.6393,Gagal tolak H0 (setara)
+Pakis,Tangibles,-0.939,0.348,Gagal tolak H0 (setara)
+Putat  Jaya,Tangibles,-0.218,0.8275,Gagal tolak H0 (setara)
+Sawah  Pulo,Tangibles,-0.523,0.6007,Gagal tolak H0 (setara)
+Sawahan,Tangibles,1.785,0.0743,Gagal tolak H0 (setara)
+Sidosermo,Tangibles,-0.246,0.8058,Gagal tolak H0 (setara)
+Siwalankerto,Tangibles,-0.778,0.4366,Gagal tolak H0 (setara)
+Tambak  Wedi,Tangibles,0.623,0.5335,Gagal tolak H0 (setara)
+Wiyung,Tangibles,-2.583,0.0098,Tolak H0 — lebih jarang dikeluhkan
+Wonokromo,Tangibles,-0.322,0.7477,Gagal tolak H0 (setara)
+Asemrowo,Tangibles,-0.234,0.8151,Gagal tolak H0 (setara)
+Balongsari,Tangibles,-0.396,0.6918,Gagal tolak H0 (setara)
+Benowo,Tangibles,-1.672,0.0946,Gagal tolak H0 (setara)
+Dr Soetomo,Tangibles,0.513,0.6079,Gagal tolak H0 (setara)
+Dupak,Tangibles,-0.634,0.526,Gagal tolak H0 (setara)
+Gading,Tangibles,2.158,0.0309,Tolak H0 — lebih sering dikeluhkan
+Gundih,Tangibles,1.117,0.2641,Gagal tolak H0 (setara)
+Jeruk,Tangibles,-1.108,0.2681,Gagal tolak H0 (setara)
+Kalirungkut,Tangibles,0.745,0.4565,Gagal tolak H0 (setara)
+Kedungdoro,Tangibles,-0.081,0.9357,Gagal tolak H0 (setara)
+Kenjeran,Tangibles,-1.919,0.055,Gagal tolak H0 (setara)
+Ketabang,Tangibles,-0.297,0.7667,Gagal tolak H0 (setara)
+Krembangan Selatan,Tangibles,-0.607,0.5441,Gagal tolak H0 (setara)
+Lidah Kulon,Tangibles,0.843,0.3994,Gagal tolak H0 (setara)
+Lontar,Tangibles,-1.03,0.3032,Gagal tolak H0 (setara)
+Manukan Kulon,Tangibles,0.23,0.8184,Gagal tolak H0 (setara)
+Medokan Ayu,Tangibles,2.1,0.0358,Tolak H0 — lebih sering dikeluhkan
+Mojo,Tangibles,-2.133,0.033,Tolak H0 — lebih jarang dikeluhkan
+Pacar Keling,Tangibles,1.339,0.1805,Gagal tolak H0 (setara)
+Pegirian,Tangibles,-0.037,0.9707,Gagal tolak H0 (setara)
+Peneleh,Tangibles,-1.073,0.2831,Gagal tolak H0 (setara)
+Perak Timur,Tangibles,0.95,0.3421,Gagal tolak H0 (setara)
+Pucangsewu,Tangibles,0.273,0.7849,Gagal tolak H0 (setara)
+Rangkah,Tangibles,-0.8,0.4234,Gagal tolak H0 (setara)
+Sememi,Tangibles,-0.091,0.9276,Gagal tolak H0 (setara)
+Sidotopo,Tangibles,-1.393,0.1637,Gagal tolak H0 (setara)
+Sidotopo Wetan,Tangibles,1.311,0.1899,Gagal tolak H0 (setara)
+Simolawang,Tangibles,-0.037,0.9707,Gagal tolak H0 (setara)
+Simomulyo,Tangibles,-1.034,0.3012,Gagal tolak H0 (setara)
+Tambakrejo,Tangibles,-1.318,0.1875,Gagal tolak H0 (setara)
+Tanah Kali Kedinding,Tangibles,0.304,0.7615,Gagal tolak H0 (setara)
+Tanjungsari,Tangibles,-0.459,0.6461,Gagal tolak H0 (setara)
+Tembok Dukuh,Tangibles,-0.201,0.8404,Gagal tolak H0 (setara)
+Tenggilis,Tangibles,-0.888,0.3743,Gagal tolak H0 (setara)
+Wonokusumo,Tangibles,-2.473,0.0134,Tolak H0 — lebih jarang dikeluhkan
+Bandarharjo,Tangibles,-1.415,0.1571,Gagal tolak H0 (setara)
+Bangetayu,Tangibles,0.456,0.6484,Gagal tolak H0 (setara)
+Bugangan,Tangibles,0.486,0.627,Gagal tolak H0 (setara)
+Bulu Lor,Tangibles,-1.415,0.1571,Gagal tolak H0 (setara)
+Candilama,Tangibles,0.491,0.6234,Gagal tolak H0 (setara)
+Gayamsari,Tangibles,0.022,0.9821,Gagal tolak H0 (setara)
+Genuk,Tangibles,1.964,0.0495,Tolak H0 — lebih sering dikeluhkan
+Gunungpati,Tangibles,-0.045,0.964,Gagal tolak H0 (setara)
+Halmahera,Tangibles,1.626,0.104,Gagal tolak H0 (setara)
+Kagok,Tangibles,-0.549,0.5831,Gagal tolak H0 (setara)
+Karangayu,Tangibles,-1.51,0.1311,Gagal tolak H0 (setara)
+Karangdoro,Tangibles,0.834,0.404,Gagal tolak H0 (setara)
+Karangmalang,Tangibles,-0.367,0.7138,Gagal tolak H0 (setara)
+Kedungmundu,Tangibles,-0.492,0.6225,Gagal tolak H0 (setara)
+Krobokan,Tangibles,-0.154,0.8778,Gagal tolak H0 (setara)
+Lamper Tengah,Tangibles,-1.18,0.2378,Gagal tolak H0 (setara)
+Lebdosari,Tangibles,0.834,0.404,Gagal tolak H0 (setara)
+Mangkang,Tangibles,2.357,0.0184,Tolak H0 — lebih sering dikeluhkan
+Manyaran,Tangibles,-0.93,0.3526,Gagal tolak H0 (setara)
+Mijen,Tangibles,-0.164,0.8697,Gagal tolak H0 (setara)
+Miroto,Tangibles,-0.367,0.7138,Gagal tolak H0 (setara)
+Ngaliyan,Tangibles,1.291,0.1968,Gagal tolak H0 (setara)
+Ngemplak Simongan,Tangibles,-0.233,0.8154,Gagal tolak H0 (setara)
+Ngesrep,Tangibles,-0.662,0.5078,Gagal tolak H0 (setara)
+Padangsari,Tangibles,-0.233,0.8154,Gagal tolak H0 (setara)
+Pandanaran,Tangibles,1.287,0.198,Gagal tolak H0 (setara)
+Pegandan,Tangibles,-0.348,0.7281,Gagal tolak H0 (setara)
+Poncol,Tangibles,-0.154,0.8778,Gagal tolak H0 (setara)
+Pudakpayung,Tangibles,-1.128,0.2594,Gagal tolak H0 (setara)
+Purwoyoso,Tangibles,-0.448,0.6544,Gagal tolak H0 (setara)
+Rowosari,Tangibles,0.807,0.4196,Gagal tolak H0 (setara)
+Sekaran,Tangibles,-0.843,0.3994,Gagal tolak H0 (setara)
+Srondol,Tangibles,2.69,0.0071,Tolak H0 — lebih sering dikeluhkan
+Tambakaji,Tangibles,3.028,0.0025,Tolak H0 — lebih sering dikeluhkan
+Telogosari Kulon,Tangibles,0.235,0.8142,Gagal tolak H0 (setara)
+Telogosari Wetan,Tangibles,-1.223,0.2213,Gagal tolak H0 (setara)
+Karanganyar,Tangibles,-0.852,0.3942,Gagal tolak H0 (setara)

@@ -65,9 +65,11 @@ def load_region_breakdown() -> dict:
 def dataset_stats() -> dict:
     """Angka ringkas untuk Beranda."""
     prof = load_profiles()
+    findings = pd.read_csv(OUT / "findings_full.csv", usecols=["review_id", "polarity"])
     return {
         "n_puskesmas": len(prof),
         "n_wilayah": len({p["wilayah"] for p in prof.values()}),
+        "n_ulasan_keluhan": int(findings[findings["polarity"] == "neg"]["review_id"].nunique()),
     }
 
 

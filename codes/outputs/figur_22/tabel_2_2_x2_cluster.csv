@@ -1,18 +1,4 @@
-﻿dimensi,isu_kanonik,n_ulasan
-Responsiveness,antrean dokter lama,2057
-Responsiveness,pelayanan lambat,762
-Responsiveness,antrean obat lama,224
-Responsiveness,telepon tidak diangkat,192
-Responsiveness,pendaftaran lama,160
-Responsiveness,hasil lab lama,133
-Reliability,sistem antrean tidak jelas,1478
-Reliability,surat dokter dan rujukan dipersulit,1407
-Reliability,jam operasional tidak sesuai,477
-Reliability,obat tidak diberikan,245
-Reliability,daftar online tidak diprioritaskan,233
-Reliability,BPJS dipersulit,163
-Reliability,informasi vaksin tidak akurat,146
-Reliability,informasi biaya tidak jelas,117
+﻿Dimensi,Isu kanonik (cluster),Jumlah ulasan
 Assurance,pemeriksaan tidak menyeluruh,413
 Assurance,dokter tidak profesional,400
 Assurance,kondisi pasien memburuk,311
@@ -27,6 +13,20 @@ Empathy,perawat tidak ramah,576
 Empathy,dokter kurang menjelaskan,392
 Empathy,petugas membentak pasien,340
 Empathy,prosedur tidak dijelaskan,266
+Reliability,sistem antrean tidak jelas,1478
+Reliability,surat dokter dan rujukan dipersulit,1407
+Reliability,jam operasional tidak sesuai,477
+Reliability,obat tidak diberikan,245
+Reliability,daftar online tidak diprioritaskan,233
+Reliability,BPJS dipersulit,163
+Reliability,informasi vaksin tidak akurat,146
+Reliability,informasi biaya tidak jelas,117
+Responsiveness,antrean dokter lama,2057
+Responsiveness,pelayanan lambat,762
+Responsiveness,antrean obat lama,224
+Responsiveness,telepon tidak diangkat,192
+Responsiveness,pendaftaran lama,160
+Responsiveness,hasil lab lama,133
 Tangibles,ruang tunggu panas,99
 Tangibles,ruang tunggu sempit,94
 Tangibles,tempat dan toilet kotor,91
