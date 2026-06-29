@@ -30,7 +30,7 @@ st.markdown("""
         padding: 20px 10px 6px 10px;
     }
     .hero-title {
-        font-size: 42px;
+        font-size: 44px;
         font-weight: 700;
         color: #16202b;
         letter-spacing: -0.02em;
@@ -70,7 +70,7 @@ st.markdown("""
     }
 
     .section-title {
-        font-size: 19px;
+        font-size: 21px;
         font-weight: 700;
         color: #16202b;
         margin: 32px 0 4px 0;
@@ -166,6 +166,10 @@ st.markdown("""
     }
     .sq-chip b {
         font-weight: 700;
+    }
+    .sq-chip-more {
+        background: #eef1f4;
+        color: #64748b;
     }
 
     .note-box {
@@ -298,10 +302,18 @@ for key in DIM_ORDER:
     sub = isu_df[isu_df["dimensi"] == key].sort_values("n_ulasan", ascending=False)
     total = int(sub["n_ulasan"].sum())
     top = sub.head(4)
+    rest = sub.iloc[4:]
     chips = "".join(
         f"<span class='sq-chip'>{r.isu_kanonik.title()} <b>{int(r.n_ulasan)}</b></span>"
         for r in top.itertuples()
     )
+    if len(rest):
+        n_rest_clusters = len(rest)
+        n_rest_reviews = int(rest["n_ulasan"].sum())
+        chips += (
+            f"<span class='sq-chip sq-chip-more'><b>{n_rest_clusters}</b> isu lainnya "
+            f"<b>{n_rest_reviews}</b></span>"
+        )
     st.markdown(f"""
     <div class="sq-card" style="--dim-color:{color};">
         <div class="sq-head">
@@ -313,7 +325,7 @@ for key in DIM_ORDER:
     """, unsafe_allow_html=True)
 
 st.markdown(
-    "<div style='font-size:12px;color:#94a3b8;margin-top:-2px;'>Lihat seluruh isu & "
+    "<div style='font-size:12px;color:#94a3b8;margin-top:-2px;'>Lihat seluruh isu dan "
     "sebarannya di halaman <b>Topik Keluhan</b>.</div>",
     unsafe_allow_html=True,
 )

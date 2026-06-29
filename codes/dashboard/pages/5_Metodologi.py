@@ -16,22 +16,8 @@ st.markdown("""
         font-family: 'Inter', sans-serif;
     }
     
-    .page-title {
-        font-size: 28px;
-        font-weight: 700;
-        color: #16202b;
-        letter-spacing: -0.02em;
-        margin-bottom: 5px;
-    }
-    .page-sub {
-        font-size: 14.5px;
-        color: #64748b;
-        margin-bottom: 30px;
-        line-height: 1.6;
-    }
-    
     .section-title {
-        font-size: 19px;
+        font-size: 21px;
         font-weight: 700;
         color: #16202b;
         margin: 35px 0 15px 0;
@@ -68,7 +54,16 @@ st.markdown("""
         color: #475569;
         line-height: 1.5;
     }
-    
+    .flow-desc a {
+        color: #185FA5;
+        font-weight: 600;
+        text-decoration: none;
+        border-bottom: 1px dashed #aac4e0;
+    }
+    .flow-desc a:hover {
+        border-bottom-style: solid;
+    }
+
     /* Kartu Metrik Keandalan */
     .metric-box {
         background: #f8fafc;
@@ -125,7 +120,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-st.markdown("<div class='page-title'>📋 Metodologi & Keandalan</div>", unsafe_allow_html=True)
+st.markdown("<div class='page-title'>Metodologi & Keandalan</div>", unsafe_allow_html=True)
 st.markdown("<div class='page-sub'>Transparansi alur kerja data (dari ulasan mentah hingga penilaian analitik) serta bukti keandalan model statistik yang dapat dipertanggungjawabkan secara akademis.</div>", unsafe_allow_html=True)
 
 # ==========================================
@@ -138,7 +133,7 @@ st.markdown("""
     <div class="flow-step">Tahap 1 & 2</div>
     <div class="flow-title">Pengumpulan & Prapemrosesan Ulasan Google Maps</div>
     <div class="flow-desc">
-        Menggunakan <i>Apify Google Maps Reviews Scraper</i>, berhasil diekstraksi <b>69.031 observasi data</b> dari Bantul, Semarang, dan Surabaya. 
+        Menggunakan <a href="https://console.apify.com/actors/Xb8osYTtOjlsgI6k9" target="_blank" rel="noopener"><i>Apify Google Maps Reviews Scraper</i></a>, berhasil diekstraksi <b>69.031 observasi data</b> dari Bantul, Semarang, dan Surabaya.
         Data kemudian direduksi menjadi <b>8.641 ulasan</b> dengan melakukan pembersihan duplikat, penghapusan ulasan non-teks/emotikon, dan pemfilteran spesifik pada <b>rating bintang 1 dan 2</b> (fokus pada <i>complaint mining</i>).
     </div>
 </div>
@@ -179,7 +174,7 @@ m1, m2, m3 = st.columns(3)
 with m1:
     st.markdown("""
     <div class="metric-box">
-        <div class="metric-value">Tinggi</div>
+        <div class="metric-value">κ = 0,74</div>
         <div class="metric-label">Konsistensi Anotator (Cohen's κ)</div>
         <div class="metric-desc">Tingkat kesepakatan murni antar 3 peneliti (di luar faktor kebetulan) dalam menentukan dimensi layanan.</div>
     </div>
@@ -187,61 +182,99 @@ with m1:
 with m2:
     st.markdown("""
     <div class="metric-box">
-        <div class="metric-value">Stabil</div>
-        <div class="metric-label">F1-Score (Dev vs Held-Out)</div>
-        <div class="metric-desc">Diuji pada 114 <i>test data</i> baru yang belum pernah dilihat model, membuktikan sistem generalisasi baik dan tidak <i>overfitting</i>.</div>
+        <div class="metric-value">0,745 → 0,724</div>
+        <div class="metric-label">Macro-F1 (Val vs Test)</div>
+        <div class="metric-desc">Diuji pada 114 <i>test data</i> yang belum pernah dilihat model (CI95% [0,637 – 0,786]).</div>
     </div>
     """, unsafe_allow_html=True)
 with m3:
     st.markdown("""
     <div class="metric-box">
-        <div class="metric-value">>90%</div>
+        <div class="metric-value">96,5%</div>
         <div class="metric-label">Akurasi Polaritas Sentimen</div>
         <div class="metric-desc">Model secara akurat mendeteksi nuansa negatif/keluhan yang bersembunyi di balik gaya bahasa informal.</div>
     </div>
     """, unsafe_allow_html=True)
 
-st.info("💡 **Interpretasi:** Nilai Cohen's Kappa yang memadai membuktikan bahwa kriteria dimensi SERVQUAL didefinisikan secara objektif. Performa F1-Score yang stabil pada data pengujian independen (114 ulasan) mengonfirmasi bahwa mesin ABSA SuaraPasien layak digunakan untuk inferensi populasi.")
-
 # ==========================================
-# 3. METODE STATISTIK YANG DIPAKAI (REVISI FORMAT RUMUS)
+# 3. METODE STATISTIK YANG DIPAKAI
 # ==========================================
 st.markdown("<div class='section-title'>3. Landasan Inferensi Statistik</div>", unsafe_allow_html=True)
 
-with st.expander("Cohen's Kappa (Uji Kesepakatan Pelabelan)", expanded=False):
-    st.markdown(
-        "Mengukur tingkat kesepakatan (reliabilitas) antara dua penilai dalam mengkategorikan ulasan, "
-        "mengabaikan probabilitas kesepakatan yang terjadi secara kebetulan."
-    )
-    # Di dalam st.latex, jangan pakai tanda $$ lagi agar tidak rusak formatnya
-    st.latex(r"\kappa = \frac{p_o - p_e}{1 - p_e}")
-    
-    st.markdown("**Keterangan:**")
-    st.markdown("- $p_o$ : Proporsi kesepakatan aktual yang terobservasi (*observed agreement*) ")
-    st.markdown("- $p_e$ : Proporsi kesepakatan yang diharapkan terjadi secara kebetulan (*expected agreement*) ")
+st.markdown("""
+<style>
+    .stat-card {
+        background: #ffffff;
+        border-radius: 14px;
+        padding: 18px 22px;
+        margin-bottom: 14px;
+        box-shadow: 0 1px 3px rgba(16,32,48,.05);
+        border: 1px solid #eef1f4;
+    }
+    .stat-card-title {
+        font-size: 14.5px;
+        font-weight: 700;
+        color: #16202b;
+        margin-bottom: 8px;
+    }
+    .stat-desc {
+        font-size: 13px;
+        color: #475569;
+        line-height: 1.6;
+    }
+</style>
+""", unsafe_allow_html=True)
 
-with st.expander("Empirical Bayes Shrinkage & Wilson Score CI", expanded=False):
-    st.markdown("""
-    Puskesmas dengan jumlah ulasan sangat sedikit (misal: 2 ulasan, keduanya mengeluh pelayanan lama) akan 
-    menghasilkan proporsi ekstrem (100%). Untuk menghindari bias ini, estimasi proporsi disusutkan (*shrinkage*) 
-    ke arah rata-rata populasi kabupaten menggunakan pendekatan **Empirical Bayes**.
-    
-    Selain itu, batas atas dan bawah rasio keluhan dihitung menggunakan **Wilson Score Interval** karena 
-    jauh lebih stabil untuk sampel kecil dan proporsi ekstrem yang mendekati nilai 0 atau 1 jika dibandingkan 
-    dengan pendekatan distribusi normal standar (Wald Interval).
-    """)
+st.markdown("""
+<div class="stat-card">
+    <div class="stat-card-title">Cohen's Kappa</div>
+    <div class="stat-desc">Mengukur reliabilitas kesepakatan antar-anotator dalam menentukan dimensi
+    SERVQUAL pada satu ulasan, dengan probabilitas kesepakatan karena kebetulan sudah dihilangkan
+    dari skornya sehingga angka yang dihasilkan benar-benar merefleksikan konsistensi penilaian.</div>
+</div>
 
-with st.expander("Z-Test Proporsi & Klastering Isu (Silhouette Score)", expanded=False):
-    st.markdown("""
-    * **Uji Z Dua Proporsi:** Digunakan untuk membandingkan tingkat keluhan satu puskesmas dengan gabungan seluruh puskesmas lain. Label "lebih sering dikeluhkan" hanya diberikan jika terbukti signifikan secara statistik, bukan karena kebetulan sampel.
-    * **Semantic Embedding Clustering:** Frasa keluhan yang bermakna sama (e.g., "antre panjang" dan "nunggu lama") dikelompokkan secara otomatis berbasis semantik. Jumlah klaster optimal diputuskan berdasarkan metrik kebaikan evaluasi **Silhouette Score**.
-    """)
+<div class="stat-card">
+    <div class="stat-card-title">Empirical Bayes Shrinkage</div>
+    <div class="stat-desc">Puskesmas ber-ulasan sedikit (misal 2 ulasan, semua mengeluh → 100%)
+    proporsinya ditarik (<i>shrink</i>) ke arah rata-rata kabupaten, sehingga tidak di-ranking
+    berdasarkan kebetulan sampel kecil.</div>
+</div>
 
-with st.expander("Association Rules (Lift) & Uji Chi-Square", expanded=False):
-    st.markdown("""
-    * **Lift Co-occurrence:** Menghitung probabilitas dua keluhan (misal: antrean lama & petugas tidak ramah) muncul bersamaan dalam satu ulasan dibandingkan asumsi independen. Jika $Lift > 1$, berarti asosiasi keduanya nyata dan butuh solusi simultan.
-    * **Uji Chi-Square Independensi ($\chi^2$):** Menguji apakah distribusi dimensi keluhan bergantung pada wilayah geografis. Dilanjutkan dengan analisis **Standardized Residuals** untuk mendeteksi secara presisi kombinasi keluhan khas yang menonjol (anomali) di suatu wilayah spesifik.
-    """)
+<div class="stat-card">
+    <div class="stat-card-title">Wilson Score Confidence Interval</div>
+    <div class="stat-desc">Selang kepercayaan tingkat keluhan dihitung memakai Wilson Score Interval,
+    jauh lebih stabil untuk proporsi ekstrem (dekat 0% atau 100%) dibanding interval standar,
+    penting karena banyak puskesmas hanya memiliki sedikit ulasan.</div>
+</div>
+
+<div class="stat-card">
+    <div class="stat-card-title">Uji Z Dua Proporsi</div>
+    <div class="stat-desc">Membandingkan tingkat keluhan satu puskesmas dengan gabungan seluruh
+    puskesmas lain (peer). Label "lebih sering dikeluhkan" hanya diberikan bila hasilnya signifikan
+    secara statistik (p &lt; 0,05), bukan sekadar selisih angka mentah.</div>
+</div>
+
+<div class="stat-card">
+    <div class="stat-card-title">KMeans Clustering dengan Semantic Embedding</div>
+    <div class="stat-desc">Untuk menyatukan ribuan frasa keluhan jadi isu kanonik, tiap frasa diubah
+    jadi <i>semantic embedding</i> lalu dikelompokkan dengan KMeans. Jumlah klaster optimal dipilih
+    dari Silhouette Score tertinggi, sehingga klaster yang terbentuk benar-benar koheren secara makna.</div>
+</div>
+
+<div class="stat-card">
+    <div class="stat-card-title">Association Rules Lift</div>
+    <div class="stat-desc">Mengukur apakah dua keluhan (misal antrean lama &amp; petugas tidak ramah)
+    muncul bersamaan dalam satu ulasan lebih sering daripada yang diharapkan secara kebetulan.
+    Lift &gt; 1 berarti asosiasinya nyata dan kedua isu butuh solusi yang simultan.</div>
+</div>
+
+<div class="stat-card">
+    <div class="stat-card-title">Uji Chi-Square Independensi</div>
+    <div class="stat-desc">Menguji apakah distribusi dimensi keluhan bergantung pada wilayah geografis,
+    dilanjutkan analisis standardized residual untuk menandai kombinasi wilayah×dimensi yang paling
+    menyimpang dari pola gabungan.</div>
+</div>
+""", unsafe_allow_html=True)
 
 # ==========================================
 # 4. CATATAN KETERBATASAN DATA (REVISI FINAL)

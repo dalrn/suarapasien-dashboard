@@ -81,8 +81,6 @@ st.markdown("""
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
     .reportview-container, .main, div, span, p { font-family: 'Inter', sans-serif; }
-    .page-title { font-size: 28px; font-weight: 700; color: #1e293b; letter-spacing: -0.02em; margin-bottom: 5px; }
-    .page-sub { font-size: 14.5px; color: #64748b; line-height: 1.6; margin-bottom: 25px; }
     .control-panel { background: #f8fafc; border: 1px solid #e2e8f0; padding: 15px 20px; border-radius: 12px; margin-bottom: 20px; }
     .legend-box { display:flex; justify-content:center; gap:15px; flex-wrap:wrap; margin-top:15px; font-size:13px; color:#475569; padding: 10px; background: #ffffff; border-radius: 8px; border: 1px solid #e2e8f0;}
     .legend-item { display:flex; align-items:center; gap:6px; }
@@ -90,7 +88,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-st.markdown("<div class='page-title'>🗺️ Peta Mutu Puskesmas</div>", unsafe_allow_html=True)
+st.markdown("<div class='page-title'>Peta Mutu Puskesmas</div>", unsafe_allow_html=True)
 st.markdown("<div class='page-sub'>Pemetaan spasial interaktif untuk mendeteksi sebaran titik kritis permasalahan layanan secara geografis.</div>", unsafe_allow_html=True)
 
 # ==========================================
@@ -176,7 +174,7 @@ if not df_filtered.empty:
             
             folium.CircleMarker(
                 location=[row['latitude'], row['longitude']],
-                radius=np.log1p(row['jumlah_ulasan']) * 3.0, # Radius tetap menunjukkan volume ulasan
+                radius=np.log1p(row['jumlah_ulasan']) * 1.2, # Radius tetap menunjukkan volume ulasan
                 color=marker_color,
                 fill=True,
                 fill_color=marker_color,

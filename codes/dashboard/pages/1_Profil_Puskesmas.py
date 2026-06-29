@@ -43,7 +43,7 @@ HTML = r"""
 
  .gcard{ background:#fff; border-radius:18px; padding:18px 24px; margin-bottom:14px; box-shadow:0 1px 3px rgba(16,32,48,.07); }
  .gcard-head{ display:flex; justify-content:space-between; align-items:flex-start; gap:12px; margin-bottom:14px; }
- .pkm-name{ font-size:23px; font-weight:700; line-height:1.15; }
+ .pkm-name{ font-size:25px; font-weight:700; line-height:1.15; }
  .pkm-region{ font-size:13px; color:#64748b; margin-top:2px; }
  .gmaps-btn{ display:inline-flex; align-items:center; gap:6px; font-size:12.5px; font-weight:600;
        text-decoration:none; color:#185FA5; background:#eaf1f9; padding:8px 13px; border-radius:10px; white-space:nowrap; }
@@ -61,7 +61,7 @@ HTML = r"""
  .dist-n{ font-size:11.5px; color:#94a3b8; width:46px; text-align:right; }
 
  .top{ background:#fff; border-radius:18px; padding:18px 24px; margin-bottom:16px; box-shadow:0 1px 3px rgba(16,32,48,.07); }
- .top-title{ font-size:14px; font-weight:600; color:#334155; margin-bottom:6px; }
+ .top-title{ font-size:16px; font-weight:600; color:#334155; margin-bottom:6px; }
  .radar-box{ height:330px; }
  .radar-cap{ font-size:12px; color:#94a3b8; margin-top:4px; line-height:1.5; text-align:center; }
 
@@ -81,7 +81,7 @@ HTML = r"""
 
  .card{ background:#fff; border-radius:18px; padding:20px 24px; box-shadow:0 1px 3px rgba(16,32,48,.07); }
  .card-head{ display:flex; justify-content:space-between; align-items:flex-start; gap:12px; }
- .dim-term{ font-size:19px; font-weight:700; letter-spacing:-.01em; }
+ .dim-term{ font-size:21px; font-weight:700; letter-spacing:-.01em; }
  .dim-label{ font-size:13.5px; font-weight:600; color:#475569; margin-top:3px; }
  .dim-desc{ font-size:12.5px; color:#94a3b8; margin-top:1px; }
  .badge{ font-size:12.5px; font-weight:600; padding:5px 13px; border-radius:20px; white-space:nowrap; }
@@ -373,7 +373,7 @@ profiles = load_profiles()
 gmaps_meta = load_gmaps_meta()
 rankings = compute_rankings()
 
-st.markdown("<div class='page-title'>🩺 Profil Puskesmas</div>", unsafe_allow_html=True)
+st.markdown("<div class='page-title'>Profil Puskesmas</div>", unsafe_allow_html=True)
 st.markdown("<div class='page-sub'>Apa yang paling sering dikeluhkan warga, dirangkum dari "
             "ulasan mereka di Google Maps.</div>", unsafe_allow_html=True)
 

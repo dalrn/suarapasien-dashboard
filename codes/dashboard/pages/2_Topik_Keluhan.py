@@ -52,7 +52,7 @@ WILAYAH = ["Bantul", "Semarang", "Surabaya"]
 
 
 # Setup + style
-setup("Topik Keluhan", wide=True)
+setup("Topik Keluhan")
 
 st.markdown(
     f"""
@@ -73,7 +73,7 @@ st.markdown(
 
   .kicker{{ font-size:12px; font-weight:600; letter-spacing:.07em; text-transform:uppercase;
             color:{C_FAINT}; margin:0 0 4px; }}
-  .sec-title{{ font-size:22px; font-weight:700; color:{C_INK}; margin:0 0 4px; letter-spacing:-.01em; }}
+  .sec-title{{ font-size:24px; font-weight:700; color:{C_INK}; margin:0 0 4px; letter-spacing:-.01em; }}
   .sec-sub{{ font-size:13.5px; color:{C_SUB}; margin:0 0 16px; line-height:1.55; }}
 
   /* daftar isu peringkat — kartu putih scrollable setinggi bar chart */
@@ -122,22 +122,15 @@ def section_header(kicker, title, sub=""):
 
 
 # Header
-head_l, head_r = st.columns([2.2, 1])
-with head_l:
-    st.markdown("<div class='kicker'>Profil Keluhan Masyarakat</div>", unsafe_allow_html=True)
-    st.markdown(
-        f"<div style='font-size:34px;font-weight:700;color:{C_INK};letter-spacing:-.02em;"
-        "line-height:1.1;margin-bottom:6px;'>Apa yang Dikeluhkan Warga</div>",
-        unsafe_allow_html=True,
-    )
-    st.markdown(
-        f"<div style='font-size:14px;color:{C_SUB};line-height:1.6;'>"
-        "Aspek pelayanan puskesmas yang paling sering dikeluhkan, dari ulasan "
-        "bintang 1–2 di Google Maps.</div>",
-        unsafe_allow_html=True,
-    )
-    st.markdown("<div style='height:30px'></div>", unsafe_allow_html=True)
+st.markdown("<div class='page-title'>Profil Keluhan Masyarakat</div>", unsafe_allow_html=True)
+st.markdown(
+    "<div class='page-sub'>Aspek pelayanan puskesmas yang paling sering dikeluhkan, dari ulasan "
+    "bintang 1–2 di Google Maps.</div>",
+    unsafe_allow_html=True,
+)
 
+head_l, head_r = st.columns([1, 0.6])
+with head_l:
     selected = st.selectbox(
         "Wilayah",
         WILAYAH
@@ -290,21 +283,25 @@ heat.update_layout(
 st.plotly_chart(heat, use_container_width=True, config={"displayModeBar": False})
 
 with st.expander("Detail uji statistik"):
-    st.markdown(
-        f"""
-**Uji χ² independensi**
-
+    tbl_col, desc_col = st.columns([1, 2], gap="small")
+    with tbl_col:
+        st.markdown(
+            f"""
 | Statistik | Nilai |
 |---|---|
 | χ² | {chi2['chi2']:.2f} |
 | df | {int(chi2['dof'])} |
 | p-value | {p_disp} |
+"""
+        )
+    with desc_col:
+        st.markdown(
+            f"""**Uji χ² independensi**
 
 Distribusi dimensi keluhan **{'berbeda' if sig else 'tidak berbeda'} secara signifikan**
 antar wilayah. Angka heatmap adalah *standardized residual*: |residual| > 2 menandai sel
-yang menyimpang nyata dari pola gabungan.
-"""
-    )
+yang menyimpang nyata dari pola gabungan."""
+        )
 
 st.markdown("---")
 
@@ -334,22 +331,34 @@ lift_df = (
 )
 
 if len(lift_df):
-    pair_cols = st.columns(len(lift_df))
-    for col, (_, r) in zip(pair_cols, lift_df.iterrows()):
-        ca, cb = DIM_COLOR[r["dimensi_A"]], DIM_COLOR[r["dimensi_B"]]
-        with col:
-            st.markdown(
-                f"<div class='pair-card'>"
-                f"<div class='pair'>"
-                f"<span class='pair-dim' style='color:{ca}'>{r['dimensi_A']}</span>"
-                f"<span class='pair-plus'>+</span>"
-                f"<span class='pair-dim' style='color:{cb}'>{r['dimensi_B']}</span>"
-                f"</div>"
-                f"<div class='pair-lift'><b>Lift = {r['lift']:.2f}×</b><br>"
-                f"<span>muncul bersama lebih sering daripada kebetulan</span></div>"
-                f"</div>",
-                unsafe_allow_html=True,
-            )
+    MAX_PER_ROW = 3
+    rows = [lift_df.iloc[i:i + MAX_PER_ROW] for i in range(0, len(lift_df), MAX_PER_ROW)]
+    for row_idx, row_df in enumerate(rows):
+        if row_idx > 0:
+            st.markdown("<div style='height:18px'></div>", unsafe_allow_html=True)
+        n_in_row = len(row_df)
+        if n_in_row < MAX_PER_ROW:
+            pad = (MAX_PER_ROW - n_in_row) / 2
+            ratios = [pad] + [1] * n_in_row + [pad]
+            slots = st.columns(ratios)
+            pair_cols = slots[1:-1]
+        else:
+            pair_cols = st.columns(MAX_PER_ROW)
+        for col, (_, r) in zip(pair_cols, row_df.iterrows()):
+            ca, cb = DIM_COLOR[r["dimensi_A"]], DIM_COLOR[r["dimensi_B"]]
+            with col:
+                st.markdown(
+                    f"<div class='pair-card'>"
+                    f"<div class='pair'>"
+                    f"<span class='pair-dim' style='color:{ca}'>{r['dimensi_A']}</span>"
+                    f"<span class='pair-plus'>+</span>"
+                    f"<span class='pair-dim' style='color:{cb}'>{r['dimensi_B']}</span>"
+                    f"</div>"
+                    f"<div class='pair-lift'><b>Lift = {r['lift']:.2f}×</b><br>"
+                    f"<span>muncul bersama lebih sering daripada kebetulan</span></div>"
+                    f"</div>",
+                    unsafe_allow_html=True,
+                )
 else:
     st.markdown(
         f"<div style='background:#fff;border-radius:18px;box-shadow:0 1px 3px rgba(16,32,48,.07);"
