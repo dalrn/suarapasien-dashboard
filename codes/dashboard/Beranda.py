@@ -1,10 +1,16 @@
 """SuaraPasien — Beranda. Entry script halaman utama penyambut dan gambaran umum data."""
+import base64
+from pathlib import Path
+
 import pandas as pd
 import streamlit as st
 from lib.theme import setup, DIM_INFO, DIM_ORDER
 from lib.data import dataset_stats, load_isu_kanonik
 
 setup("Beranda")
+
+_LOGO_PATH = Path(__file__).parent / "bubble_pulse.png"
+_LOGO_B64 = base64.b64encode(_LOGO_PATH.read_bytes()).decode()
 
 DIM_COLOR = {
     "Empathy": "#E76F51",
@@ -30,11 +36,20 @@ st.markdown("""
         padding: 20px 10px 6px 10px;
     }
     .hero-title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
         font-size: 44px;
         font-weight: 700;
         color: #16202b;
         letter-spacing: -0.02em;
         margin-bottom: 8px;
+    }
+    .hero-title img {
+        height: 48px;
+        width: 48px;
+        object-fit: contain;
     }
     .hero-sub {
         font-size: 15px;
@@ -213,9 +228,9 @@ st.markdown("""
 # ==========================================
 # 1. HERO
 # ==========================================
-st.markdown("""
+st.markdown(f"""
 <div class="hero-container">
-    <div class="hero-title">🩺 SuaraPasien</div>
+    <div class="hero-title"><img src="data:image/png;base64,{_LOGO_B64}" alt="SuaraPasien logo"> SuaraPasien</div>
     <div class="hero-sub">
         Platform analisis sentimen untuk pemantauan mutu puskesmas. Mengubah ulasan publik
         Google Maps menjadi <span class="hero-highlight">instrumen pelengkap evaluasi fasilitas kesehatan yang

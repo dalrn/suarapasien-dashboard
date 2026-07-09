@@ -182,7 +182,7 @@ with m1:
 with m2:
     st.markdown("""
     <div class="metric-box">
-        <div class="metric-value">0,745 → 0,724</div>
+        <div class="metric-value">0,799 → 0,780</div>
         <div class="metric-label">Macro-F1 (Val vs Test)</div>
         <div class="metric-desc">Diuji pada 114 <i>test data</i> yang belum pernah dilihat model (CI95% [0,637 – 0,786]).</div>
     </div>
