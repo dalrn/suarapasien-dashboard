@@ -47,8 +47,8 @@ st.markdown("""
         margin-bottom: 8px;
     }
     .hero-title img {
-        height: 48px;
-        width: 48px;
+        height: 72px;
+        width: 72px;
         object-fit: contain;
     }
     .hero-sub {

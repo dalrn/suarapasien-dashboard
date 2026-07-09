@@ -3,7 +3,11 @@
 Satu sumber kebenaran untuk warna, tipografi, dan komponen kartu — supaya tiap
 halaman tinggal memanggil `setup()` dan otomatis konsisten tanpa menyalin CSS.
 """
+from pathlib import Path
+
 import streamlit as st
+
+_LOGO_PATH = Path(__file__).parent.parent / "logo.png"
 
 # (SERVQUAL term, label ramah, deskripsi, label-radar)
 DIM_INFO = {
@@ -83,7 +87,7 @@ _WIDE_CSS = """
 
 
 def setup(page_title: str, wide: bool = False):
-    st.set_page_config(page_title=f"SuaraPasien · {page_title}", page_icon="🩺",
+    st.set_page_config(page_title=f"SuaraPasien · {page_title}", page_icon=str(_LOGO_PATH),
                        layout="wide" if wide else "centered")
     st.markdown(_BASE_CSS, unsafe_allow_html=True)
     if wide:
