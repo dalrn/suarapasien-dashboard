@@ -9,7 +9,7 @@ from lib.data import dataset_stats, load_isu_kanonik
 
 setup("Beranda")
 
-_LOGO_PATH = Path(__file__).parent / "bubble_pulse.png"
+_LOGO_PATH = Path(__file__).parent / "logo.png"
 _LOGO_B64 = base64.b64encode(_LOGO_PATH.read_bytes()).decode()
 
 DIM_COLOR = {
